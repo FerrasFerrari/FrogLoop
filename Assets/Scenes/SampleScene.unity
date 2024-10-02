@@ -280,6 +280,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 7
   rb: {fileID: 783961701}
+  dashSpeed: 14
+  dashLength: 0.3
+  dashCooldown: 1
 --- !u!50 &783961701
 Rigidbody2D:
   serializedVersion: 4
