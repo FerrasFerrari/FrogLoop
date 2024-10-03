@@ -12,9 +12,17 @@ public class PlayerAttack : MonoBehaviour
 
     public float attackRate = 2f;
     float nextAttackTime = 0f;
+
+    public Camera sceneCamera;
+    private Vector2 mousePosition;
+    public Rigidbody2D rb;
+    public GameObject rotationPoint;
+
     void Update()
     {
-        if(Time.time >= nextAttackTime){
+        mousePosition = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
+        RotateAttackPoint();
+        if (Time.time >= nextAttackTime){
 
             if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)){
 
@@ -38,5 +46,13 @@ public class PlayerAttack : MonoBehaviour
         if(attackPoint == null){ return; }
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
+    void RotateAttackPoint()
+    {
+        rotationPoint.transform.position = transform.position;
+        Vector2 aimDirection = mousePosition - rb.position;
+        float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+        rotationPoint.GetComponent<Rigidbody2D>().rotation = aimAngle;
     }
 }
