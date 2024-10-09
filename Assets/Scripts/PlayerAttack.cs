@@ -19,11 +19,12 @@ public class PlayerAttack : MonoBehaviour
     public Rigidbody2D rb;
     public GameObject rotationPoint;
     ParticleSystem parS;
+    public ParticleSystem parS2;
 
 
     private void Start()
     {
-        parS = attackPoint.GetComponent<ParticleSystem>();
+        parS = GetComponentInChildren<ParticleSystem>();
     }
     void Update()
     {
@@ -31,7 +32,7 @@ public class PlayerAttack : MonoBehaviour
         RotateAttackPoint();
         if (Time.time >= nextAttackTime){
 
-            if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)){
+            if(Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0)){
 
                 Attack();
                 nextAttackTime = Time.time + 1f / attackRate;

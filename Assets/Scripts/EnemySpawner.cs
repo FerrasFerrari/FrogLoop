@@ -5,11 +5,12 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
 
-    public GameObject enemyToSpawn;
 
     public float timeToSpawn = 2;
     private float spawnTimer;
 
+    public Camera sceneCamera;
+    public GameObject enemyToSpawn;
     public Transform minSpawn, maxSpawn;
 
     void Start()
@@ -26,7 +27,7 @@ public class EnemySpawner : MonoBehaviour
 
             Instantiate(enemyToSpawn, SelectSpawnPoint(), transform.rotation);
         }
-
+        transform.position = sceneCamera.transform.position;
     }
 
     public Vector3 SelectSpawnPoint()
