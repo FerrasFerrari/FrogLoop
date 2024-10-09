@@ -8,6 +8,7 @@ public class PlayerAttack : MonoBehaviour
 
     public Transform attackPoint;
     public float attackRange = 0.5f;
+    public float attackDamage = 1f;
     public LayerMask enemyMask;
 
     public float attackRate = 2f;
@@ -17,7 +18,13 @@ public class PlayerAttack : MonoBehaviour
     private Vector2 mousePosition;
     public Rigidbody2D rb;
     public GameObject rotationPoint;
+    ParticleSystem parS;
 
+
+    private void Start()
+    {
+        parS = attackPoint.GetComponent<ParticleSystem>();
+    }
     void Update()
     {
         mousePosition = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
@@ -36,9 +43,10 @@ public class PlayerAttack : MonoBehaviour
     void Attack(){
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyMask);
+        parS.Emit(1);
 
-        foreach(Collider2D enemy in hitEnemies){
-            //Apply damage to enemies
+        foreach (Collider2D enemy in hitEnemies){
+            enemy.gameObject.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
         }
 
     }
