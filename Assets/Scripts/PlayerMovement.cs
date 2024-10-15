@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.SearchService;
@@ -5,15 +6,15 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 7;
     public Rigidbody2D rb;
+    public Animator anim;
+    public float moveSpeed = 7;
     Vector2 moveDirection;
-
     private float activeMoveSpeed;
+
+
     public float dashSpeed;
-
     public float dashLength = .3f, dashCooldown = 1f;
-
     private float dashCounter;
     private float dashCoolCounter;
     void Start()
@@ -23,10 +24,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        
+        Inputs();
     }
     private void LateUpdate() {
-            Inputs();
+            
             Move();
 
         if(Input.GetKeyDown(KeyCode.LeftShift))
@@ -59,7 +60,17 @@ public class PlayerMovement : MonoBehaviour
         float moveY = Input.GetAxisRaw("Vertical");
 
         moveDirection = new Vector2(moveX, moveY).normalized;
+
+        SetAnimations(moveX, moveY, moveDirection);
     }
+
+    private void SetAnimations(float x, float y, Vector2 mDirection)
+    {
+        anim.SetFloat("Horizontal", x);
+        anim.SetFloat("Vertical", y);
+        anim.SetFloat("Speed", mDirection.sqrMagnitude);
+    }
+
     void Move(){
         rb.velocity = new Vector2(moveDirection.x * activeMoveSpeed, moveDirection.y * activeMoveSpeed);
     }
