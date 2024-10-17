@@ -131,9 +131,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1874864075
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 8729373258855254349}
   anim: {fileID: 6668338507429724546}
-  moveSpeed: 7
+  moveSpeed: 5
   dashSpeed: 17
   dashLength: 0.3
   dashCooldown: 1
@@ -320,6 +320,7 @@ MonoBehaviour:
   enemyMask:
     serializedVersion: 2
     m_Bits: 8
+  playerAnimator: {fileID: 0}
   attackRate: 3
   sceneCamera: {fileID: 0}
   rb: {fileID: 8729373258855254349}

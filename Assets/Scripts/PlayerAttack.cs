@@ -47,8 +47,7 @@ public class PlayerAttack : MonoBehaviour
         playerAnimator.SetBool("Attack", true);
 
         foreach (Collider2D enemy in hitEnemies){
-            enemy.gameObject.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
-            
+            enemy.gameObject.GetComponent<IDamageable>().Damage(attackDamage);            
         }
 
     }

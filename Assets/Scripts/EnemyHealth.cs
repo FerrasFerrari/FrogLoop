@@ -2,21 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class EnemyHealth : MonoBehaviour, IDamageable
 {
 
     public float hp = 2;
-
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 
     public void TakeDamage(float damage)
     {
@@ -30,5 +19,8 @@ public class EnemyHealth : MonoBehaviour
     public void Die()
     {
         Destroy(gameObject);
+    }
+    public void Damage(float damageAmount){
+        TakeDamage(damageAmount);
     }
 }

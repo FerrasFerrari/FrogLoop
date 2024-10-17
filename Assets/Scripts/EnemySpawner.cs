@@ -8,10 +8,12 @@ public class EnemySpawner : MonoBehaviour
 
     public float timeToSpawn = 2;
     private float spawnTimer;
+    [HideInInspector] public int enemyCount = 0;
 
     public Camera sceneCamera;
     public GameObject enemyToSpawn;
     public Transform minSpawn, maxSpawn;
+    public LayerMask groundMask;
 
     void Start()
     {
@@ -26,6 +28,7 @@ public class EnemySpawner : MonoBehaviour
             spawnTimer = timeToSpawn;
 
             Instantiate(enemyToSpawn, SelectSpawnPoint(), transform.rotation);
+            enemyCount++;
         }
         transform.position = sceneCamera.transform.position;
     }
@@ -61,6 +64,10 @@ public class EnemySpawner : MonoBehaviour
             }
         }
 
-        return spawnPoint;
+        if(Physics2D.OverlapPoint(spawnPoint, groundMask) != null){
+            return spawnPoint;
+        }else{
+            return SelectSpawnPoint();
+        }
     }
 }
