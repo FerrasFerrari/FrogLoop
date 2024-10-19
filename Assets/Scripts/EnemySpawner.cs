@@ -70,4 +70,8 @@ public class EnemySpawner : MonoBehaviour
             return SelectSpawnPoint();
         }
     }
+    private void OnDrawGizmosSelected() {
+        Gizmos.DrawWireSphere(minSpawn.position, 1);
+        Gizmos.DrawWireSphere(maxSpawn.position, 1);
+    }
 }

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MoscaWalk
+  m_Name: FlyWalk
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 1016954483, guid: 68154d0250a266945ad344bf79f60892, type: 3}
+      value: {fileID: -1117714022, guid: af666834b23d2f94b9cd1c3b0e6fa832, type: 3}
     - time: 0.083333336
-      value: {fileID: 863820962, guid: 68154d0250a266945ad344bf79f60892, type: 3}
+      value: {fileID: 1585779344, guid: af666834b23d2f94b9cd1c3b0e6fa832, type: 3}
     - time: 0.16666667
-      value: {fileID: -28541698, guid: 68154d0250a266945ad344bf79f60892, type: 3}
+      value: {fileID: -559504347, guid: af666834b23d2f94b9cd1c3b0e6fa832, type: 3}
     - time: 0.25
-      value: {fileID: 1848654578, guid: 68154d0250a266945ad344bf79f60892, type: 3}
+      value: {fileID: -244929907, guid: af666834b23d2f94b9cd1c3b0e6fa832, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -50,10 +50,10 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 1016954483, guid: 68154d0250a266945ad344bf79f60892, type: 3}
-    - {fileID: 863820962, guid: 68154d0250a266945ad344bf79f60892, type: 3}
-    - {fileID: -28541698, guid: 68154d0250a266945ad344bf79f60892, type: 3}
-    - {fileID: 1848654578, guid: 68154d0250a266945ad344bf79f60892, type: 3}
+    - {fileID: -1117714022, guid: af666834b23d2f94b9cd1c3b0e6fa832, type: 3}
+    - {fileID: 1585779344, guid: af666834b23d2f94b9cd1c3b0e6fa832, type: 3}
+    - {fileID: -559504347, guid: af666834b23d2f94b9cd1c3b0e6fa832, type: 3}
+    - {fileID: -244929907, guid: af666834b23d2f94b9cd1c3b0e6fa832, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

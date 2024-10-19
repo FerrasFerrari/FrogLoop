@@ -28,11 +28,11 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         mousePosition = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
-        RotateAttackPoint();
         if (Time.time >= nextAttackTime){
 
             if(Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0)){
 
+                RotateAttackPoint();
                 Attack();
                 nextAttackTime = Time.time + 1f / attackRate;
                 
@@ -63,7 +63,9 @@ public class PlayerAttack : MonoBehaviour
         Vector2 aimDirection = mousePosition - rb.position;
         float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
         rotationPoint.GetComponent<Rigidbody2D>().rotation = aimAngle;
-        playerAnimator.SetFloat("AimHorizontal", Mathf.Sin(aimAngle));
-        playerAnimator.SetFloat("AimVertical", Mathf.Cos(aimAngle));
+        // if(Time.time >= nextAttackTime){
+            playerAnimator.SetFloat("AimHorizontal", Mathf.Sin(aimAngle));
+            playerAnimator.SetFloat("AimVertical", Mathf.Cos(aimAngle));
+        // }    
     }
 }
