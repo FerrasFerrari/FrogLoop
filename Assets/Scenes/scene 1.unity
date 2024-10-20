@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -825, y: 399}
+  m_AnchoredPosition: {x: -834, y: 472}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &265501747
@@ -285,6 +285,7 @@ GameObject:
   - component: {fileID: 266794329}
   - component: {fileID: 266794328}
   - component: {fileID: 266794332}
+  - component: {fileID: 266794333}
   m_Layer: 3
   m_Name: Tower 3
   m_TagString: Enemy
@@ -430,6 +431,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BrokenTower3: 0
+--- !u!114 &266794333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266794327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1c3ee00f1b4aee47a1c127efcdd9ce3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenShakeForce: 0
 --- !u!1 &657489351
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,6 +595,7 @@ GameObject:
   - component: {fileID: 813120762}
   - component: {fileID: 813120761}
   - component: {fileID: 813120763}
+  - component: {fileID: 813120764}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -655,6 +670,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &813120764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813120760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ApplyAfter: 2
+  m_ChannelMask: 1
+  m_Gain: 1
+  m_Use2DDistance: 1
+  m_UseCameraSpace: 1
+  m_ReactionSettings:
+    m_SecondaryNoise: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_Duration: 1
+    m_NoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!4 &925486922 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1185280420047819839, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
@@ -673,6 +711,7 @@ GameObject:
   - component: {fileID: 1068605890}
   - component: {fileID: 1068605894}
   - component: {fileID: 1068605893}
+  - component: {fileID: 1068605895}
   m_Layer: 3
   m_Name: Tower
   m_TagString: Enemy
@@ -818,6 +857,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 5
+--- !u!114 &1068605895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068605889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1c3ee00f1b4aee47a1c127efcdd9ce3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenShakeForce: 0
 --- !u!1 &1117696660
 GameObject:
   m_ObjectHideFlags: 0
@@ -1289,10 +1341,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 32
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -13603,6 +13655,7 @@ GameObject:
   - component: {fileID: 2058515133}
   - component: {fileID: 2058515132}
   - component: {fileID: 2058515131}
+  - component: {fileID: 2058515136}
   m_Layer: 3
   m_Name: Tower 2
   m_TagString: Enemy
@@ -13748,6 +13801,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2058515136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058515130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1c3ee00f1b4aee47a1c127efcdd9ce3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenShakeForce: 0
 --- !u!1001 &5572575214333178545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13836,18 +13902,6 @@ PrefabInstance:
     - target: {fileID: 2523934454928234597, guid: b99ec44a54326da40b074de1118a9df1, type: 3}
       propertyPath: m_Name
       value: enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 4462950380863999330, guid: b99ec44a54326da40b074de1118a9df1, type: 3}
-      propertyPath: fireRate
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9111800615776871890, guid: b99ec44a54326da40b074de1118a9df1, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9111800615776871890, guid: b99ec44a54326da40b074de1118a9df1, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9111800615776871890, guid: b99ec44a54326da40b074de1118a9df1, type: 3}
       propertyPath: m_LocalPosition.x

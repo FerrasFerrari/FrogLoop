@@ -23,7 +23,7 @@ public class ShootingEnemy : MonoBehaviour
         float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
         if (distanceFromPlayer < lineOfSite && distanceFromPlayer > shootingRange)
         {
-            transform.position = Vector2.MoveTowards(this.transform.position, player.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
         }
         else if (distanceFromPlayer <= lineOfSite && nextFireTime < Time.time)
         {
@@ -43,7 +43,6 @@ public class ShootingEnemy : MonoBehaviour
         float angle = Vector2.Angle(Vector2.right, player.position);
         if(angle > -90 && angle < 90){
             transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
-            Debug.Log(angle);
         }else{
             transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
         }

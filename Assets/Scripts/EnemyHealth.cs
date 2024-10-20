@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour, IDamageable
 {
-
+    private ParticleSystem damageParticleSystem;
     public float hp = 2;
 
+
+    private void Awake() {
+        damageParticleSystem = GetComponentInChildren<ParticleSystem>();
+    }
     public void TakeDamage(float damage)
     {
         hp -= damage;
@@ -20,7 +24,10 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     {
         Destroy(gameObject);
     }
-    public void Damage(float damageAmount){
+    public void Damage(float damageAmount, float aimAngle, GameObject sender){
+        damageParticleSystem.gameObject.transform.rotation = Quaternion.Euler(0, 0, aimAngle - 45);
+        damageParticleSystem.Play();
+
         TakeDamage(damageAmount);
     }
 }
