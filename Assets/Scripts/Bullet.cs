@@ -20,6 +20,13 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
