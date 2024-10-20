@@ -8,6 +8,7 @@ public class EnemySpawner : MonoBehaviour
 
     public float timeToSpawn = 2;
     private float spawnTimer;
+    private int nTrys = 0;
     [HideInInspector] public int enemyCount = 0;
 
     public Camera sceneCamera;
@@ -65,8 +66,13 @@ public class EnemySpawner : MonoBehaviour
         }
 
         if(Physics2D.OverlapPoint(spawnPoint, groundMask) != null){
+            nTrys = 0;
             return spawnPoint;
         }else{
+            nTrys++;
+            if(nTrys >= 10){
+                return new Vector3(0, 0, 0);
+            }
             return SelectSpawnPoint();
         }
     }

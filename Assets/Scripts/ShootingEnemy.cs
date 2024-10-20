@@ -13,9 +13,11 @@ public class ShootingEnemy : MonoBehaviour
     public GameObject bullet;
     public GameObject bulletParent;
     private Transform player;
+    private Animator animator;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -23,10 +25,12 @@ public class ShootingEnemy : MonoBehaviour
         float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
         if (distanceFromPlayer < lineOfSite && distanceFromPlayer > shootingRange)
         {
+            animator.SetBool("isAttacking", false);
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
         }
         else if (distanceFromPlayer <= lineOfSite && nextFireTime < Time.time)
         {
+            animator.SetBool("isAttacking", true);
             Instantiate(bullet, bulletParent.transform.position, Quaternion.identity);
             nextFireTime = Time.time + 1f / fireRate;
         }

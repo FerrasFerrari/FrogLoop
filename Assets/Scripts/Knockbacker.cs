@@ -16,9 +16,11 @@ public class Knockbacker : MonoBehaviour
     {
         // rb.AddForce(new Vector2(Mathf.Cos(aimAngle * Mathf.Deg2Rad) * knockbackMultiplyer, 
         // Mathf.Sin(aimAngle * Mathf.Deg2Rad) * knockbackMultiplyer), ForceMode2D.Impulse);
-        Vector2 direction = (transform.position - sender.gameObject.transform.position).normalized;
-        rb.AddForce(direction * knockbackMultiplyer, ForceMode2D.Impulse);
-        StartCoroutine(Reset());
+        if(rb != null){
+            Vector2 direction = (transform.position - sender.gameObject.transform.position).normalized;
+            rb.AddForce(direction * knockbackMultiplyer, ForceMode2D.Impulse);
+            StartCoroutine(Reset());
+        }
     }
 
     private IEnumerator Reset(){
