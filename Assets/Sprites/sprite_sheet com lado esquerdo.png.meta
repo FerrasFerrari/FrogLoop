@@ -1,0 +1,614 @@
+fileFormatVersion: 2
+guid: 0352c2e46f8ea3e4a98fb3130925ff13
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sprite_sheet com lado esquerdo_10
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 236
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46aa099b4bec6b942a956519d04c85e2
+      internalID: 1245094807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_sheet com lado esquerdo_11
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 236
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83ca532f0ecf6e041b8c563298ecd3eb
+      internalID: -158255012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_sheet com lado esquerdo_12
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 236
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cf6da69562a77740a6ef2a01a71e94c
+      internalID: -1231797807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_sheet com lado esquerdo_13
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 236
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8165f816cdc3dfd48805fd32f5f24ad6
+      internalID: 290795571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_sheet com lado esquerdo_18
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 200
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb04de62cd037c149a7d08a261e81cff
+      internalID: 1835547891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_sheet com lado esquerdo_19
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 200
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02ca0fff47fae5c4699f37bb4a58859d
+      internalID: -1985143922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_sheet com lado esquerdo_20
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 200
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 663cc0d3fbded5e4f920d1d5e8a3ccdc
+      internalID: 1110127316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_sheet com lado esquerdo_21
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 200
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29ba666641d8316488deb15bc53006bf
+      internalID: 549046346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_sheet com lado esquerdo_42
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 81
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a17865e0564c924428abfe9df8479df8
+      internalID: -1775760070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_sheet com lado esquerdo_43
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 81
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc6f92159f24556449d8e66e09b9f391
+      internalID: -1656175900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_sheet com lado esquerdo_44
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 80
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4069f7c2b8683e243871a487c3cd52b1
+      internalID: -423764532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_sheet com lado esquerdo_45
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 81
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e202ec965d8625448b7d07a33ad2b422
+      internalID: 1157027376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_sheet com lado esquerdo_46
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 81
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c338ea50d835e4a4c8e2d286d6f993ee
+      internalID: 1868586592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_sheet com lado esquerdo_47
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 80
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a549cf249aa7bb4e93ba507dde78310
+      internalID: 1854282101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_sheet com lado esquerdo_54
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 45
+        width: 19
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d15ca5237e1554f4f971a17dc65c65d0
+      internalID: 171141801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_sheet com lado esquerdo_55
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 45
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaa6e90269eee694597ee7720d5252ca
+      internalID: 1167524397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_sheet com lado esquerdo_56
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 44
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d546ff1b376783f44be1e8fe30d23849
+      internalID: -427360771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_sheet com lado esquerdo_57
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 45
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26142f5faa3bae84ea0c199b2f294cbc
+      internalID: -1059835052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_sheet com lado esquerdo_58
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 45
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b681767ce312c5e4a917c09a186dfb8a
+      internalID: -311367462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite_sheet com lado esquerdo_59
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 44
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 119d25a034c64f54d9b63ea2982daf7e
+      internalID: -948146858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      sprite_sheet com lado esquerdo_0: 1358756158
+      sprite_sheet com lado esquerdo_1: -535343804
+      sprite_sheet com lado esquerdo_10: 1245094807
+      sprite_sheet com lado esquerdo_11: -158255012
+      sprite_sheet com lado esquerdo_12: -1231797807
+      sprite_sheet com lado esquerdo_13: 290795571
+      sprite_sheet com lado esquerdo_14: -1325117926
+      sprite_sheet com lado esquerdo_15: -503931784
+      sprite_sheet com lado esquerdo_16: 1585385810
+      sprite_sheet com lado esquerdo_17: 429620196
+      sprite_sheet com lado esquerdo_18: 1835547891
+      sprite_sheet com lado esquerdo_19: -1985143922
+      sprite_sheet com lado esquerdo_2: -1764210884
+      sprite_sheet com lado esquerdo_20: 1110127316
+      sprite_sheet com lado esquerdo_21: 549046346
+      sprite_sheet com lado esquerdo_22: -326956350
+      sprite_sheet com lado esquerdo_23: -2014957347
+      sprite_sheet com lado esquerdo_24: 671758482
+      sprite_sheet com lado esquerdo_25: -231160302
+      sprite_sheet com lado esquerdo_26: -283783349
+      sprite_sheet com lado esquerdo_27: 2136068686
+      sprite_sheet com lado esquerdo_28: 541151749
+      sprite_sheet com lado esquerdo_29: -2078191371
+      sprite_sheet com lado esquerdo_3: -1886865397
+      sprite_sheet com lado esquerdo_30: -1014289840
+      sprite_sheet com lado esquerdo_31: 1177478736
+      sprite_sheet com lado esquerdo_32: 132083353
+      sprite_sheet com lado esquerdo_33: 396789286
+      sprite_sheet com lado esquerdo_34: -630852279
+      sprite_sheet com lado esquerdo_35: 637880206
+      sprite_sheet com lado esquerdo_36: -1255044930
+      sprite_sheet com lado esquerdo_37: 1948746415
+      sprite_sheet com lado esquerdo_38: 718710312
+      sprite_sheet com lado esquerdo_39: 1447756160
+      sprite_sheet com lado esquerdo_4: 1353131455
+      sprite_sheet com lado esquerdo_40: 1241159078
+      sprite_sheet com lado esquerdo_41: 1684006314
+      sprite_sheet com lado esquerdo_42: -1775760070
+      sprite_sheet com lado esquerdo_43: -1656175900
+      sprite_sheet com lado esquerdo_44: -423764532
+      sprite_sheet com lado esquerdo_45: 1157027376
+      sprite_sheet com lado esquerdo_46: 1868586592
+      sprite_sheet com lado esquerdo_47: 1854282101
+      sprite_sheet com lado esquerdo_48: 267808947
+      sprite_sheet com lado esquerdo_49: -1956177574
+      sprite_sheet com lado esquerdo_5: 588331630
+      sprite_sheet com lado esquerdo_50: -716790340
+      sprite_sheet com lado esquerdo_51: 1578620943
+      sprite_sheet com lado esquerdo_52: -139758699
+      sprite_sheet com lado esquerdo_53: -1145559462
+      sprite_sheet com lado esquerdo_54: 171141801
+      sprite_sheet com lado esquerdo_55: 1167524397
+      sprite_sheet com lado esquerdo_56: -427360771
+      sprite_sheet com lado esquerdo_57: -1059835052
+      sprite_sheet com lado esquerdo_58: -311367462
+      sprite_sheet com lado esquerdo_59: -948146858
+      sprite_sheet com lado esquerdo_6: -1160921591
+      sprite_sheet com lado esquerdo_60: -1680579011
+      sprite_sheet com lado esquerdo_61: 1774440492
+      sprite_sheet com lado esquerdo_62: -1263416347
+      sprite_sheet com lado esquerdo_63: -1159116542
+      sprite_sheet com lado esquerdo_64: -1168101930
+      sprite_sheet com lado esquerdo_65: 1168875509
+      sprite_sheet com lado esquerdo_66: -1188708917
+      sprite_sheet com lado esquerdo_7: -2031774720
+      sprite_sheet com lado esquerdo_8: 1172655282
+      sprite_sheet com lado esquerdo_9: -740667773
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -7,10 +7,14 @@ public class PlayerAttack : MonoBehaviour
 {
 
     public Transform attackPoint;
+    public Animator attackPointAnimator;
     public float attackRange = 0.5f;
     public float attackDamage = 1f;
+    Vector2 aimDirection;
+    float aimAngle;
     public LayerMask enemyMask;
 
+    public Animator playerAnimator;
     public float attackRate = 2f;
     float nextAttackTime = 0f;
 
@@ -18,22 +22,19 @@ public class PlayerAttack : MonoBehaviour
     private Vector2 mousePosition;
     public Rigidbody2D rb;
     public GameObject rotationPoint;
-    ParticleSystem parS;
-    public ParticleSystem parS2;
 
-
-    private void Start()
-    {
-        parS = GetComponentInChildren<ParticleSystem>();
+    private void Start() {
+        playerAnimator = GetComponent<Animator>();
     }
+
     void Update()
     {
         mousePosition = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
-        RotateAttackPoint();
         if (Time.time >= nextAttackTime){
 
             if(Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0)){
 
+                RotateAttackPoint();
                 Attack();
                 nextAttackTime = Time.time + 1f / attackRate;
                 
@@ -44,10 +45,13 @@ public class PlayerAttack : MonoBehaviour
     void Attack(){
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyMask);
-        parS.Emit(1);
+        attackPointAnimator.SetBool("Attack", true);
+        playerAnimator.SetBool("Attack", true);
 
         foreach (Collider2D enemy in hitEnemies){
-            enemy.gameObject.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
+            enemy.gameObject.GetComponent<ScreenShaker>().Shake(aimDirection);
+            enemy.gameObject.GetComponent<IDamageable>().Damage(attackDamage, aimAngle, gameObject);
+            enemy.gameObject.GetComponent<Knockbacker>().Knockback(aimAngle, gameObject);
         }
 
     }
@@ -60,8 +64,13 @@ public class PlayerAttack : MonoBehaviour
     void RotateAttackPoint()
     {
         rotationPoint.transform.position = transform.position;
-        Vector2 aimDirection = mousePosition - rb.position;
-        float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+        aimDirection = mousePosition - rb.position;
+        aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
         rotationPoint.GetComponent<Rigidbody2D>().rotation = aimAngle;
+
+        // if(Time.time >= nextAttackTime){
+            playerAnimator.SetFloat("AimHorizontal", Mathf.Sin(aimAngle));
+            playerAnimator.SetFloat("AimVertical", Mathf.Cos(aimAngle));
+        // }    
     }
 }

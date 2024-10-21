@@ -8,10 +8,13 @@ public class EnemySpawner : MonoBehaviour
 
     public float timeToSpawn = 2;
     private float spawnTimer;
+    private int nTrys = 0;
+    [HideInInspector] public int enemyCount = 0;
 
     public Camera sceneCamera;
     public GameObject enemyToSpawn;
     public Transform minSpawn, maxSpawn;
+    public LayerMask groundMask;
 
     void Start()
     {
@@ -26,6 +29,7 @@ public class EnemySpawner : MonoBehaviour
             spawnTimer = timeToSpawn;
 
             Instantiate(enemyToSpawn, SelectSpawnPoint(), transform.rotation);
+            enemyCount++;
         }
         transform.position = sceneCamera.transform.position;
     }
@@ -61,6 +65,19 @@ public class EnemySpawner : MonoBehaviour
             }
         }
 
-        return spawnPoint;
+        if(Physics2D.OverlapPoint(spawnPoint, groundMask) != null){
+            nTrys = 0;
+            return spawnPoint;
+        }else{
+            nTrys++;
+            if(nTrys >= 10){
+                return new Vector3(0, 0, 0);
+            }
+            return SelectSpawnPoint();
+        }
+    }
+    private void OnDrawGizmosSelected() {
+        Gizmos.DrawWireSphere(minSpawn.position, 1);
+        Gizmos.DrawWireSphere(maxSpawn.position, 1);
     }
 }
