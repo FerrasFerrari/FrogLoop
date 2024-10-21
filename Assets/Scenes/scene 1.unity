@@ -288,6 +288,7 @@ GameObject:
   - component: {fileID: 266794334}
   - component: {fileID: 266794333}
   - component: {fileID: 266794335}
+  - component: {fileID: 266794336}
   m_Layer: 3
   m_Name: Tower 3
   m_TagString: Enemy
@@ -340,18 +341,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00060917437, y: 0.0052654445}
+  m_Offset: {x: 0.047760725, y: -0.5237751}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.4, y: 0.68}
+    oldSize: {x: 0.8125, y: 1.65625}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.26281634, y: 0.5319337}
+  m_Size: {x: 0.63652205, y: 0.50390244}
   m_EdgeRadius: 0
 --- !u!212 &266794330
 SpriteRenderer:
@@ -394,7 +395,7 @@ SpriteRenderer:
   m_SortingLayerID: 1874864075
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 6bc035c9e1999d84e8179a28b5852599, type: 3}
+  m_Sprite: {fileID: -2027925702, guid: 76a51254926caa6488cdae42757fe3a8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -414,8 +415,8 @@ Transform:
   m_GameObject: {fileID: 266794327}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.74, y: -33.49, z: 0}
-  m_LocalScale: {x: 6.838751, y: 6.838751, z: 6.838751}
+  m_LocalPosition: {x: 0.42, y: -33.33, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -445,7 +446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1c3ee00f1b4aee47a1c127efcdd9ce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screenShakeForce: 0
+  screenShakeForce: 0.1
 --- !u!114 &266794334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,6 +514,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockbackMultiplyer: 0
   delay: 0
+--- !u!95 &266794336
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266794327}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a4abd43ff2ac9c6499535de842070236, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &438971369
 GameObject:
   m_ObjectHideFlags: 0
@@ -8013,6 +8035,7 @@ GameObject:
   - component: {fileID: 1068605896}
   - component: {fileID: 1068605895}
   - component: {fileID: 1068605897}
+  - component: {fileID: 1068605898}
   m_Layer: 3
   m_Name: Tower
   m_TagString: Enemy
@@ -8052,18 +8075,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00050252676, y: 0.007567361}
+  m_Offset: {x: 0.04642296, y: -0.50352144}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.4, y: 0.68}
+    oldSize: {x: 1.25, y: 2.125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2654463, y: 0.5309888}
+  m_Size: {x: 0.6626854, y: 0.54212147}
   m_EdgeRadius: 0
 --- !u!212 &1068605891
 SpriteRenderer:
@@ -8127,7 +8150,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -40.2, y: -0.1, z: 0}
-  m_LocalScale: {x: 6.8387513, y: 6.8387513, z: 6.8387513}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -8170,7 +8193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1c3ee00f1b4aee47a1c127efcdd9ce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screenShakeForce: 0
+  screenShakeForce: 0.1
 --- !u!114 &1068605896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8238,6 +8261,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockbackMultiplyer: 0
   delay: 0
+--- !u!95 &1068605898
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068605889}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a4abd43ff2ac9c6499535de842070236, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1117696660
 GameObject:
   m_ObjectHideFlags: 0
@@ -8357,22 +8401,6 @@ PrefabInstance:
     - target: {fileID: 3548942525033517359, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4743043753205495229, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
-      propertyPath: m_Size.x
-      value: 0.47751868
-      objectReference: {fileID: 0}
-    - target: {fileID: 4743043753205495229, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
-      propertyPath: m_Size.y
-      value: 0.81240416
-      objectReference: {fileID: 0}
-    - target: {fileID: 4743043753205495229, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.0034574345
-      objectReference: {fileID: 0}
-    - target: {fileID: 4743043753205495229, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.017345667
       objectReference: {fileID: 0}
     - target: {fileID: 9158333293788628948, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
       propertyPath: sceneCamera
@@ -34863,6 +34891,7 @@ GameObject:
   - component: {fileID: 2058515137}
   - component: {fileID: 2058515136}
   - component: {fileID: 2058515138}
+  - component: {fileID: 2058515139}
   m_Layer: 3
   m_Name: Tower 2
   m_TagString: Enemy
@@ -34928,18 +34957,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00032688677, y: 0.0045560896}
+  m_Offset: {x: 0.045570374, y: -0.5070664}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.4, y: 0.68}
+    oldSize: {x: 1.25, y: 2.125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2626548, y: 0.5326056}
+  m_Size: {x: 0.640831, y: 0.51894605}
   m_EdgeRadius: 0
 --- !u!212 &2058515134
 SpriteRenderer:
@@ -35003,7 +35032,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 39.9, y: -0.1, z: 0}
-  m_LocalScale: {x: 6.838751, y: 6.838751, z: 6.838751}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -35020,7 +35049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1c3ee00f1b4aee47a1c127efcdd9ce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screenShakeForce: 0
+  screenShakeForce: 0.1
 --- !u!114 &2058515137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35088,6 +35117,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockbackMultiplyer: 0
   delay: 0
+--- !u!95 &2058515139
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058515130}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a4abd43ff2ac9c6499535de842070236, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &5572575214333178545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35096,22 +35146,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3923681188014883596, guid: e045cd885ef900a49873273020253f33, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -9.74
-      objectReference: {fileID: 0}
-    - target: {fileID: 3923681188014883596, guid: e045cd885ef900a49873273020253f33, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -5.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 5589778852670050845, guid: e045cd885ef900a49873273020253f33, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 9.78
-      objectReference: {fileID: 0}
-    - target: {fileID: 5589778852670050845, guid: e045cd885ef900a49873273020253f33, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.72
-      objectReference: {fileID: 0}
     - target: {fileID: 5768984700563449210, guid: e045cd885ef900a49873273020253f33, type: 3}
       propertyPath: m_Name
       value: Enemy Spawner

@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class OpenGate : MonoBehaviour
 {
+    private Animator animator;
     public bool Broken; 
-    // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
+        animator.SetBool("isBroken", false);
         Broken = false;
     }
 
@@ -18,6 +20,7 @@ public class OpenGate : MonoBehaviour
     }
     private void OnDestroy()
     {
+        animator.SetBool("isBroken", true);
         Broken = true;
     }
 }
