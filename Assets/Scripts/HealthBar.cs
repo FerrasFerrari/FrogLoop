@@ -1,25 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    int Life;
-    public SpriteRenderer Barradevida1;
-    public SpriteRenderer Barradevida2;
-    public SpriteRenderer Barradevida3;
-    public SpriteRenderer Barradevida4;
-    public SpriteRenderer Barradevidavazia;
-    public SpriteRenderer Barradevidacheia;
+    public int Life;
+    public Image Barradevida1;
+    public Image Barradevida2;
+    public Image Barradevida3;
+    public Image Barradevida4;
+    public Image Barradevidavazia;
+    public Image Barradevidacheia;
+    public Sprite[] Barradevida;
+    private Image imageComp;
     // Start is called before the first frame update
     void Start()
     {
+        imageComp = GetComponent<Image>();
         Life = 5;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        imageComp.sprite = Barradevida[Life];
+
+
+        /*if(b)
+        Barradevida[0].enabled = false; 
         if (Life == 0)
         {
             Barradevida1.enabled = false;
@@ -28,7 +38,6 @@ public class HealthBar : MonoBehaviour
             Barradevida4.enabled = false;
             Barradevidacheia.enabled = false;
             Barradevidavazia.enabled = true;
-            Destroy(gameObject);
         }
         if (Life == 1)
         {
@@ -77,13 +86,20 @@ public class HealthBar : MonoBehaviour
             Barradevidacheia.enabled = true;
             Barradevidavazia.enabled = false;
         }
+
+        switch (Life)
+        {
+            // case 0:
+
+        }*/
+        
     }
     //private void OnCollisionEnter2D(Collision2D collision)
-   // {
-       // if (collision.gameObject.tag.Equals("Enemy"))
-        //{
-         //   Life = Life - 1;
+    // {
+    // if (collision.gameObject.tag.Equals("Enemy"))
+    //{
+    //   Life = Life - 1;
 
-        //}
+    //}
     //}
 }
