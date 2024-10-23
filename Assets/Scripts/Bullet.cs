@@ -14,7 +14,7 @@ public class Bullet : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player");
         Vector2 moveDir = (target.transform.position - transform.position).normalized * speed;
         BulletRB.velocity = new Vector2(moveDir.x, moveDir.y);
-        Destroy(this.gameObject, 2);
+        Destroy(this.gameObject, 5);
     }
 
     // Update is called once per frame

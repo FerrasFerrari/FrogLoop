@@ -8,23 +8,25 @@ public class PlayerAttack : MonoBehaviour
 
     public Transform attackPoint;
     public Animator attackPointAnimator;
-    public float attackRange = 0.5f;
+    public Vector2 attackRange = new Vector2(0.7f, 1.4f);
     public float attackDamage = 1f;
+    [SerializeField]private Vector3 rangeOffset;
+    public LayerMask hittableMask;
     Vector2 aimDirection;
     float aimAngle;
-    public LayerMask hittableMask;
 
-    private Animator playerAnimator;
     public float attackRate = 2f;
     float nextAttackTime = 0f;
 
-    public Camera sceneCamera;
+    [SerializeField]private Camera sceneCamera;
+    private Animator playerAnimator;
     private Vector2 mousePosition;
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
     public GameObject rotationPoint;
 
     private void Start() {
         playerAnimator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -44,7 +46,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Attack(){
 
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, hittableMask);
+        Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(attackPoint.position + rangeOffset, attackRange, 0f, hittableMask);
         attackPointAnimator.SetBool("Attack", true);
         playerAnimator.SetBool("Attack", true);
 
@@ -60,7 +62,7 @@ public class PlayerAttack : MonoBehaviour
     void OnDrawGizmosSelected(){
         if(attackPoint == null){ return; }
 
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        Gizmos.DrawWireCube(attackPoint.position + rangeOffset, attackRange);
     }
 
     void RotateAttackPoint()

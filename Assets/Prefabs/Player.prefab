@@ -86,13 +86,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2634259656116305959}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.74, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.76604444, w: 0.64278764}
+  m_LocalPosition: {x: 0.961, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2332633411206567746}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 100}
 --- !u!212 &1615877642602601565
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -315,15 +315,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 6847967698829597611}
   attackPointAnimator: {fileID: 22610186825507777}
-  attackRange: 0.9
+  attackRange: {x: 0.85, y: 1}
   attackDamage: 1
+  rangeOffset: {x: -0.45, y: 0, z: 0}
   hittableMask:
     serializedVersion: 2
     m_Bits: 520
-  playerAnimator: {fileID: 0}
   attackRate: 2.5
   sceneCamera: {fileID: 0}
-  rb: {fileID: 8729373258855254349}
   rotationPoint: {fileID: 229383869990927638}
 --- !u!61 &4743043753205495229
 BoxCollider2D:
