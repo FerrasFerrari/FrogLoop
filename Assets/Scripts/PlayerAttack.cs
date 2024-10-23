@@ -12,9 +12,9 @@ public class PlayerAttack : MonoBehaviour
     public float attackDamage = 1f;
     Vector2 aimDirection;
     float aimAngle;
-    public LayerMask enemyMask;
+    public LayerMask hittableMask;
 
-    public Animator playerAnimator;
+    private Animator playerAnimator;
     public float attackRate = 2f;
     float nextAttackTime = 0f;
 
@@ -44,14 +44,16 @@ public class PlayerAttack : MonoBehaviour
 
     void Attack(){
 
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyMask);
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, hittableMask);
         attackPointAnimator.SetBool("Attack", true);
         playerAnimator.SetBool("Attack", true);
 
         foreach (Collider2D enemy in hitEnemies){
-            enemy.gameObject.GetComponent<ScreenShaker>().Shake(aimDirection);
             enemy.gameObject.GetComponent<IDamageable>().Damage(attackDamage, aimAngle, gameObject);
-            enemy.gameObject.GetComponent<Knockbacker>().Knockback(aimAngle, gameObject);
+            enemy.gameObject.GetComponent<ScreenShaker>().Shake(aimDirection);
+            if(enemy.gameObject.layer == LayerMask.NameToLayer("Enemy")){
+                enemy.gameObject.GetComponent<Knockbacker>().Knockback(aimAngle, gameObject);
+            }
         }
 
     }

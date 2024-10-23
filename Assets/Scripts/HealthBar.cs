@@ -6,12 +6,6 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     public int Life;
-    public Image Barradevida1;
-    public Image Barradevida2;
-    public Image Barradevida3;
-    public Image Barradevida4;
-    public Image Barradevidavazia;
-    public Image Barradevidacheia;
     public Sprite[] Barradevida;
     private Image imageComp;
     // Start is called before the first frame update

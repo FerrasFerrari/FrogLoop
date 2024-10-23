@@ -317,9 +317,9 @@ MonoBehaviour:
   attackPointAnimator: {fileID: 22610186825507777}
   attackRange: 0.9
   attackDamage: 1
-  enemyMask:
+  hittableMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 520
   playerAnimator: {fileID: 0}
   attackRate: 2.5
   sceneCamera: {fileID: 0}
