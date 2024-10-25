@@ -87,7 +87,7 @@ Transform:
   m_GameObject: {fileID: 2634259656116305959}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.76604444, w: 0.64278764}
-  m_LocalPosition: {x: 0.961, y: 0, z: 0}
+  m_LocalPosition: {x: 0.82, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -298,6 +298,7 @@ MonoBehaviour:
   rb: {fileID: 8729373258855254349}
   anim: {fileID: 6668338507429724546}
   moveSpeed: 5
+  activeMoveSpeed: 0
   dashSpeed: 17
   dashLength: 0.3
   dashCooldown: 0.75
@@ -315,12 +316,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 6847967698829597611}
   attackPointAnimator: {fileID: 22610186825507777}
-  attackRange: {x: 0.85, y: 1}
+  attackRange: 0.7
   attackDamage: 1
-  rangeOffset: {x: -0.45, y: 0, z: 0}
+  rangeOffset: {x: -0.23, y: 0, z: 0}
   hittableMask:
     serializedVersion: 2
     m_Bits: 520
+  attackingMovingSpeedMultiplier: 0.15
+  attackMovementSlowDuration: 0.33
   attackRate: 2.5
   sceneCamera: {fileID: 0}
   rotationPoint: {fileID: 229383869990927638}

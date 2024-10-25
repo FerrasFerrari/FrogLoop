@@ -9,13 +9,14 @@ public class PlayerMovement : MonoBehaviour
     public Animator anim;
     public float moveSpeed = 7;
     Vector2 moveDirection;
-    private float activeMoveSpeed;
+    public float activeMoveSpeed;
 
 
     public float dashSpeed;
     public float dashLength = .3f, dashCooldown = 1f;
     private float dashCounter;
     private float dashCoolCounter;
+    [HideInInspector]public bool isDashing = false;
     void Start()
     {
         activeMoveSpeed = moveSpeed;
@@ -33,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (dashCoolCounter <= 0 && dashCounter <= 0)
             {
+                isDashing = true;
                 activeMoveSpeed = dashSpeed;
                 dashCounter = dashLength;
             }
@@ -46,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 activeMoveSpeed = moveSpeed;
                 dashCoolCounter = dashCooldown;
+                isDashing = false;
             }
         }
 

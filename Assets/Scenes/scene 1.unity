@@ -7882,6 +7882,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 9158333293788628948, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
+      propertyPath: attackRange
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9158333293788628948, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
       propertyPath: sceneCamera
       value: 
       objectReference: {fileID: 1457147394}

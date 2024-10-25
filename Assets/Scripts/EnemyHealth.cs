@@ -26,7 +26,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     }
     public void Damage(float damageAmount, float aimAngle, GameObject sender){
         if(damageParticleSystem != null){
-            damageParticleSystem.gameObject.transform.rotation = Quaternion.Euler(0, 0, aimAngle - 45);
+            Vector2 direction = (transform.position - sender.gameObject.transform.position).normalized;
+            damageParticleSystem.gameObject.transform.rotation = Quaternion.Euler(0, 0, Vector2.Angle(Vector2.right, direction) - 45f);
             damageParticleSystem.Play();
         }
 
