@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 9158333293788628948}
   - component: {fileID: 4743043753205495229}
   - component: {fileID: 6668338507429724546}
+  - component: {fileID: 687261008318086066}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -302,6 +303,7 @@ MonoBehaviour:
   dashSpeed: 17
   dashLength: 0.3
   dashCooldown: 0.75
+  isDashing: 0
 --- !u!114 &9158333293788628948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,6 +324,7 @@ MonoBehaviour:
   hittableMask:
     serializedVersion: 2
     m_Bits: 520
+  aimDirection: {x: 0, y: 0}
   attackingMovingSpeedMultiplier: 0.15
   attackMovementSlowDuration: 0.33
   attackRate: 2.5
@@ -393,3 +396,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &687261008318086066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3548942525033517359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f61e117343099de4f964f61cbf613bb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parryRange: 1
+  bulletsMask:
+    serializedVersion: 2
+    m_Bits: 256
+  parryCooldown: 1
+  parriedBulletSpeedMultiplier: 1.5

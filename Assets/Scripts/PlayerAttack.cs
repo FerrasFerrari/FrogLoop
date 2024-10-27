@@ -12,7 +12,7 @@ public class PlayerAttack : MonoBehaviour
     public float attackDamage = 1f;
     [SerializeField]private Vector3 rangeOffset;
     public LayerMask hittableMask;
-    Vector2 aimDirection;
+    public Vector2 aimDirection;
     float aimAngle;
 
     public float attackingMovingSpeedMultiplier = 0.15f;
@@ -70,7 +70,7 @@ public class PlayerAttack : MonoBehaviour
     }
     void OnDrawGizmosSelected(){
         if(attackPoint == null){ return; }
-
+        Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPoint.position + rangeOffset, attackRange);
     }
 

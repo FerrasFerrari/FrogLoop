@@ -6,15 +6,16 @@ public class Bullet : MonoBehaviour
 {
     GameObject target;
     public float speed;
-    Rigidbody2D BulletRB;
+    public Rigidbody2D BulletRB;
+    public Vector2 moveDir;
     // Start is called before the first frame update
     void Start()
     {
         BulletRB = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player");
-        Vector2 moveDir = (target.transform.position - transform.position).normalized * speed;
+        moveDir = (target.transform.position - transform.position).normalized * speed;
         BulletRB.velocity = new Vector2(moveDir.x, moveDir.y);
-        Destroy(this.gameObject, 5);
+        Destroy(this.gameObject, 15);
     }
 
     // Update is called once per frame
