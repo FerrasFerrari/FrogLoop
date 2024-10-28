@@ -182,6 +182,7 @@ GameObject:
   - component: {fileID: 687261008318086066}
   - component: {fileID: 4743043753205495229}
   - component: {fileID: 6668338507429724546}
+  - component: {fileID: 2188506222742457736}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -342,11 +343,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f61e117343099de4f964f61cbf613bb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parryRange: 1.15
+  parryRange: 1.6
   bulletsMask:
     serializedVersion: 2
     m_Bits: 256
-  parryCooldown: 1
+  parryCooldown: 0.5
   parriedBulletSpeedMultiplier: 1.5
   parryDelay: 0.15
 --- !u!61 &4743043753205495229
@@ -364,7 +365,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -415,3 +416,38 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &2188506222742457736
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3548942525033517359}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.56552076, y: 0.96875}
+  m_Direction: 0

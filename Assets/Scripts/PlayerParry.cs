@@ -25,11 +25,12 @@ public class PlayerParry : MonoBehaviour
     }
     public IEnumerator Parry(){
         yield return new WaitForSeconds(parryDelay);
+        Debug.Log("Parry!");
         Collider2D[] bulletsInRange = Physics2D.OverlapCircleAll(transform.position, parryRange, bulletsMask);
         foreach(Collider2D bullet in bulletsInRange){
             Bullet bulletScript = bullet.GetComponent<Bullet>();
             //bullet.gameObject.GetComponent<SpriteRenderer>().color = new Color(62, 59, 102);
-            bulletScript.moveDir *= -parriedBulletSpeedMultiplier;
+            bulletScript.moveDir = (bulletScript.gameObject.transform.position - transform.position).normalized * bulletScript.speed * parriedBulletSpeedMultiplier;
             bulletScript.BulletRB.velocity = new Vector2(bulletScript.moveDir.x, bulletScript.moveDir.y);
         }
     }
