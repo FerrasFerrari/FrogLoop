@@ -55,8 +55,8 @@ public class PlayerAttack : MonoBehaviour
         playerAnimator.SetBool("Attack", true);
 
         foreach (Collider2D enemy in hitEnemies){
-            enemy.gameObject.GetComponent<IDamageable>().Damage(attackDamage, aimAngle, gameObject);
-            enemy.gameObject.GetComponent<ScreenShaker>().Shake(aimDirection);
+            enemy.gameObject.GetComponent<IDamageable>().Damage(attackDamage, gameObject);
+            enemy.gameObject.GetComponent<ScreenShaker>().ShakeDirectional(aimDirection);
             if(enemy.gameObject.layer == LayerMask.NameToLayer("Enemy")){
                 enemy.gameObject.GetComponent<Knockbacker>().Knockback(aimAngle, gameObject);
             }

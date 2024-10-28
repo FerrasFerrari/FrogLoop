@@ -9,19 +9,22 @@ public class PlayerParry : MonoBehaviour
     [SerializeField]
     private LayerMask bulletsMask;
     private float nextParryTime = 0f;
+    [Tooltip("Cooldown between parrys")]
     public float parryCooldown = 1f;
     public float parriedBulletSpeedMultiplier = 1.5f;
+    public float parryDelay = 0.15f;
 
     void Update()
     {
         if(Time.time >= nextParryTime){
             if(Input.GetKeyDown(KeyCode.Mouse1)){
-                Parry();
+                StartCoroutine(Parry());
                 nextParryTime = Time.time + parryCooldown;
             }
         }
     }
-    public void Parry(){
+    public IEnumerator Parry(){
+        yield return new WaitForSeconds(parryDelay);
         Collider2D[] bulletsInRange = Physics2D.OverlapCircleAll(transform.position, parryRange, bulletsMask);
         foreach(Collider2D bullet in bulletsInRange){
             Bullet bulletScript = bullet.GetComponent<Bullet>();

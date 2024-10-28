@@ -23,7 +23,7 @@ public class Tower : MonoBehaviour, IDamageable
     {
         
     }
-    public void Damage(float damageAmount, float aimAngle, GameObject sender)
+    public void Damage(float damageAmount, GameObject sender)
     {
         if(isBroken){ return; }
         towerHP--;
