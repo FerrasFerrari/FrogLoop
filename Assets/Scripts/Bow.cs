@@ -5,6 +5,9 @@ using UnityEngine;
 public class Bow : MonoBehaviour
 {
     public UnlockBow UnlockBowScrpit;
+    public GameObject ArrowPrefab;
+    public Transform ArrowPos;
+    public float ArrowForce = 20f;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +25,9 @@ public class Bow : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.C))
             {
-                print("Deu Certo");
-            }
+                GameObject Arrow = Instantiate(ArrowPrefab, ArrowPos.position, ArrowPos.rotation);
+                Arrow.GetComponent<Rigidbody2D>().AddForce(ArrowPos.position * ArrowForce, ForceMode2D.Impulse);
+            }   
         }
     }
 }

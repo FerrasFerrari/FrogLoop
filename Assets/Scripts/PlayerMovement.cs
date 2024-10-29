@@ -17,9 +17,12 @@ public class PlayerMovement : MonoBehaviour
     private float dashCounter;
     private float dashCoolCounter;
     [HideInInspector]public bool isDashing = false;
+
+    public UnlockDash UnlockDashScrpit;
     void Start()
     {
         activeMoveSpeed = moveSpeed;
+        UnlockDashScrpit.UnlockedSprint = false;
     }
 
     void Update()
@@ -30,13 +33,16 @@ public class PlayerMovement : MonoBehaviour
             
             Move();
 
-        if(Input.GetKeyDown(KeyCode.LeftShift))
+        if(UnlockDashScrpit.UnlockedSprint == true)
         {
-            if (dashCoolCounter <= 0 && dashCounter <= 0)
+            if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                isDashing = true;
-                activeMoveSpeed = dashSpeed;
-                dashCounter = dashLength;
+                if (dashCoolCounter <= 0 && dashCounter <= 0)
+                {
+                    isDashing = true;
+                    activeMoveSpeed = dashSpeed;
+                    dashCounter = dashLength;
+                }
             }
         }
 
