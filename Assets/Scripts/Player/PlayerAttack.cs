@@ -27,6 +27,8 @@ public class PlayerAttack : MonoBehaviour
     private Rigidbody2D rb;
     public GameObject rotationPoint;
 
+    RaycastHit2D[] hitEnemies = new RaycastHit2D[10];
+
     private void Start() {
         playerMovementScript = GetComponent<PlayerMovement>();
         playerAnimator = GetComponent<Animator>();
@@ -50,23 +52,31 @@ public class PlayerAttack : MonoBehaviour
 
     void Attack(){
 
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position + rangeOffset, attackRange, hittableMask);
+
+
+        //Physics2D.OverlapCircleNonAlloc(attackPoint.position + rangeOffset, attackRange, hitEnemies, hittableMask);
+
+        Physics2D.CircleCastNonAlloc(attackPoint.position + rangeOffset, attackRange, aimDirection, hitEnemies, hittableMask);
         List<GameObject> hitEnemiesGameObjects = new();
         attackPointAnimator.SetBool("Attack", true);
         playerAnimator.SetBool("Attack", true);
 
-        foreach (Collider2D enemyCollider in hitEnemies){
-            if(hitEnemiesGameObjects.Contains(enemyCollider.gameObject)){return;}
-            hitEnemiesGameObjects.Add(enemyCollider.gameObject);
+       
+        for(int i = 0; i < hitEnemies.Length; i++) {
+            if (hitEnemies[i])
+            {
+                if (hitEnemiesGameObjects.Contains(hitEnemies[i].collider.gameObject)) { return; }
+                hitEnemiesGameObjects.Add(hitEnemies[i].collider.gameObject);
 
-            enemyCollider.gameObject.GetComponent<IDamageable>().Damage(attackDamage, gameObject);
-            enemyCollider.gameObject.GetComponent<ScreenShaker>().ShakeDirectional(aimDirection);
+                hitEnemies[i].collider.gameObject.GetComponent<IDamageable>().Damage(attackDamage, gameObject);
+                hitEnemies[i].collider.gameObject.GetComponent<ScreenShaker>().ShakeDirectional(aimDirection);
 
-            if(enemyCollider.gameObject.layer == LayerMask.NameToLayer("Enemy")){
-                enemyCollider.gameObject.GetComponent<Knockbacker>().Knockback(aimAngle, gameObject);
+                if (hitEnemies[i].collider.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+                {
+                    hitEnemies[i].collider.gameObject.GetComponent<Knockbacker>().Knockback(aimAngle, gameObject);
+                }
             }
         }
-
     }
     private IEnumerator AttackMovementSlowdown(float duration){
         playerMovementScript.activeMoveSpeed *= attackingMovingSpeedMultiplier;
