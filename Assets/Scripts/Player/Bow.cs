@@ -8,10 +8,12 @@ public class Bow : MonoBehaviour
     public GameObject ArrowPrefab;
     public Transform ArrowPos;
     public float ArrowForce = 20f;
+    private PlayerAttack Rotate;
     // Start is called before the first frame update
     void Start()
     {
         UnlockBowScrpit.Unlocked = false;
+        Rotate = GetComponent<PlayerAttack>();
     }
 
     // Update is called once per frame
@@ -25,9 +27,10 @@ public class Bow : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.C))
             {
+                Rotate.RotateAttackPoint();
                 GameObject Arrow = Instantiate(ArrowPrefab, ArrowPos.position, ArrowPos.rotation);
-                Arrow.GetComponent<Rigidbody2D>().AddForce(ArrowPos.position * ArrowForce, ForceMode2D.Impulse);
-            }   
+                Arrow.GetComponent<Rigidbody2D>().AddForce(Rotate.aimDirection * ArrowForce, ForceMode2D.Impulse);
+            }
         }
     }
 }

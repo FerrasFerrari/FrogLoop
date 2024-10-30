@@ -13,7 +13,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField]private Vector3 rangeOffset;
     public LayerMask hittableMask;
     public Vector2 aimDirection;
-    float aimAngle;
+    public float aimAngle;
 
     public float attackingMovingSpeedMultiplier = 0.15f;
     public float attackMovementSlowDuration = 0.33f;
@@ -79,7 +79,7 @@ public class PlayerAttack : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position + rangeOffset, attackRange);
     }
 
-    void RotateAttackPoint()
+    public void RotateAttackPoint()
     {
         rotationPoint.transform.position = transform.position;
         aimDirection = mousePosition - rb.position;
