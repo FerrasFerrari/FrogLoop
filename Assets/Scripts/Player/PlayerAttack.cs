@@ -51,14 +51,19 @@ public class PlayerAttack : MonoBehaviour
     void Attack(){
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position + rangeOffset, attackRange, hittableMask);
+        List<GameObject> hitEnemiesGameObjects = new();
         attackPointAnimator.SetBool("Attack", true);
         playerAnimator.SetBool("Attack", true);
 
-        foreach (Collider2D enemy in hitEnemies){
-            enemy.gameObject.GetComponent<IDamageable>().Damage(attackDamage, gameObject);
-            enemy.gameObject.GetComponent<ScreenShaker>().ShakeDirectional(aimDirection);
-            if(enemy.gameObject.layer == LayerMask.NameToLayer("Enemy")){
-                enemy.gameObject.GetComponent<Knockbacker>().Knockback(aimAngle, gameObject);
+        foreach (Collider2D enemyCollider in hitEnemies){
+            if(hitEnemiesGameObjects.Contains(enemyCollider.gameObject)){return;}
+            hitEnemiesGameObjects.Add(enemyCollider.gameObject);
+
+            enemyCollider.gameObject.GetComponent<IDamageable>().Damage(attackDamage, gameObject);
+            enemyCollider.gameObject.GetComponent<ScreenShaker>().ShakeDirectional(aimDirection);
+
+            if(enemyCollider.gameObject.layer == LayerMask.NameToLayer("Enemy")){
+                enemyCollider.gameObject.GetComponent<Knockbacker>().Knockback(aimAngle, gameObject);
             }
         }
 

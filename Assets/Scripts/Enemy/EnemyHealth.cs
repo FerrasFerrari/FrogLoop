@@ -5,19 +5,23 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour, IDamageable
 {
     private ParticleSystem damageParticleSystem;
+    private Animator animator;
     public float hp = 2;
 
 
-    private void Awake() {
+    private void Start() {
         damageParticleSystem = GetComponentInChildren<ParticleSystem>();
+        animator = GetComponent<Animator>();
     }
     public void TakeDamage(float damage)
     {
+        animator.SetBool("isDamaged", true);
         hp -= damage;
         if(hp <= 0)
         {
             Die();
         }
+        animator.SetBool("isDamaged", false);
     }
 
     public void Die()
