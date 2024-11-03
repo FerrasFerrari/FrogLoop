@@ -27,7 +27,6 @@ public class PlayerAttack : MonoBehaviour
     private Rigidbody2D rb;
     public GameObject rotationPoint;
 
-    RaycastHit2D[] hitEnemies = new RaycastHit2D[10];
 
     private void Start() {
         playerMovementScript = GetComponent<PlayerMovement>();
@@ -51,29 +50,27 @@ public class PlayerAttack : MonoBehaviour
     }
 
     void Attack(){
-
-
-
         //Physics2D.OverlapCircleNonAlloc(attackPoint.position + rangeOffset, attackRange, hitEnemies, hittableMask);
 
-        Physics2D.CircleCastNonAlloc(attackPoint.position + rangeOffset, attackRange, aimDirection, hitEnemies, hittableMask);
-        List<GameObject> hitEnemiesGameObjects = new();
+        RaycastHit2D[] hitEnemies = Physics2D.CircleCastAll(transform.position, attackRange, aimDirection, 
+        Vector3.Distance(transform.position, attackPoint.position + rangeOffset), hittableMask);
+
+        List<int> hitEnemiesInstanceID = new();
+
         attackPointAnimator.SetBool("Attack", true);
         playerAnimator.SetBool("Attack", true);
 
-       
         for(int i = 0; i < hitEnemies.Length; i++) {
-            if (hitEnemies[i])
-            {
-                if (hitEnemiesGameObjects.Contains(hitEnemies[i].collider.gameObject)) { return; }
-                hitEnemiesGameObjects.Add(hitEnemies[i].collider.gameObject);
+            GameObject enemyGameObject = hitEnemies[i].collider.gameObject;
+            if(!hitEnemiesInstanceID.Contains(enemyGameObject.GetInstanceID())) { 
+                hitEnemiesInstanceID.Add(enemyGameObject.GetInstanceID());
 
-                hitEnemies[i].collider.gameObject.GetComponent<IDamageable>().Damage(attackDamage, gameObject);
-                hitEnemies[i].collider.gameObject.GetComponent<ScreenShaker>().ShakeDirectional(aimDirection);
+                enemyGameObject.GetComponent<IDamageable>().Damage(attackDamage, gameObject);
+                enemyGameObject.GetComponent<ScreenShaker>().ShakeDirectional(aimDirection);
 
-                if (hitEnemies[i].collider.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+                if (enemyGameObject.layer == LayerMask.NameToLayer("Enemy"))
                 {
-                    hitEnemies[i].collider.gameObject.GetComponent<Knockbacker>().Knockback(aimAngle, gameObject);
+                    enemyGameObject.GetComponent<Knockbacker>().Knockback(aimAngle, gameObject);
                 }
             }
         }

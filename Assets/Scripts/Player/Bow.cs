@@ -29,7 +29,7 @@ public class Bow : MonoBehaviour
             {
                 Rotate.RotateAttackPoint();
                 GameObject Arrow = Instantiate(ArrowPrefab, ArrowPos.position, ArrowPos.rotation);
-                Arrow.GetComponent<Rigidbody2D>().AddForce(Rotate.aimDirection * ArrowForce, ForceMode2D.Impulse);
+                Arrow.GetComponent<Rigidbody2D>().AddForce(Rotate.aimDirection.normalized * ArrowForce, ForceMode2D.Impulse);
             }
         }
     }
