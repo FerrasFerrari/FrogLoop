@@ -19,10 +19,12 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector]public bool isDashing = false;
 
     public UnlockDash UnlockDashScrpit;
+    public bool Intangivel;
     void Start()
     {
         activeMoveSpeed = moveSpeed;
         UnlockDashScrpit.UnlockedSprint = false;
+        Intangivel = false;
     }
 
     void Update()
@@ -42,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
                     isDashing = true;
                     activeMoveSpeed = dashSpeed;
                     dashCounter = dashLength;
+                    Intangivel = true;
                 }
             }
         }
@@ -55,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
                 activeMoveSpeed = moveSpeed;
                 dashCoolCounter = dashCooldown;
                 isDashing = false;
+                Intangivel = false;
             }
         }
 
