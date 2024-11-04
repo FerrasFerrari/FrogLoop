@@ -10,8 +10,7 @@ public class KeyDoor : MonoBehaviour
     void Start()
     {
         KeyScript.KeyOne = false;
-        KeyScript.KeyTwo = false;
-        KeyScript.KeyThree = false;
+       
     }
 
     // Update is called once per frame
@@ -24,14 +23,6 @@ public class KeyDoor : MonoBehaviour
         if (collision.gameObject.tag.Equals("Player"))
         {
             if(DoorNumber == 1 && KeyScript.KeyOne == true)
-            {
-                Destroy(gameObject);
-            }
-            if (DoorNumber == 2 && KeyScript.KeyTwo == true)
-            {
-                Destroy(gameObject);
-            }
-            if (DoorNumber == 3 && KeyScript.KeyThree == true)
             {
                 Destroy(gameObject);
             }
