@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class PlayerHealth : MonoBehaviour
+public class ExtraLife : MonoBehaviour
 {
     public HealthBar HealthBarScript;
     // Start is called before the first frame update
@@ -15,16 +14,17 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(HealthBarScript.Life <= 0)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
+        
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag.Equals("Bullet"))
+        if (collision.gameObject.tag.Equals("Player"))
         {
-            HealthBarScript.Life = HealthBarScript.Life - 1;
+            if(HealthBarScript.Life < 5)
+            {
+                HealthBarScript.Life = HealthBarScript.Life + 1;
+                Destroy(gameObject);
+            }
         }
     }
 }
