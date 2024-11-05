@@ -11,14 +11,14 @@ public class Volumesettings : MonoBehaviour
     private void Start()
     {
 
-        //if (PlayerPrefs.HasKey("VolumeGeneral"))
-       //{
-       //     VolumeLoad();
-       //}
-       // else
-       //{
+        if (PlayerPrefs.HasKey("VolumeGeneral"))
+       {
+            VolumeLoad();
+       }
+        else
+       {
             SetVolumeGeneral();
-       // }
+        }
 
     }
     public class AudioSettings
@@ -29,8 +29,8 @@ public class Volumesettings : MonoBehaviour
     {
         float volume = generalSlider.value;
         MyMixer.SetFloat("general", Mathf.Log10(volume) * 20);
-        //PlayerPrefs.SetFloat("VolumeGeneral", volume);
-        //PlayerPrefs.Save();
+        PlayerPrefs.SetFloat("VolumeGeneral", volume);
+        PlayerPrefs.Save();
     }
     private void VolumeLoad()
 
@@ -38,10 +38,5 @@ public class Volumesettings : MonoBehaviour
         generalSlider.value = PlayerPrefs.GetFloat("VolumeGeneral");
         SetVolumeGeneral();
     }
-    public AudioSettings LoadAudioSettings()
-    {
-        AudioSettings settings = new AudioSettings();
-        settings.VolumeGeneral = PlayerPrefs.GetFloat("VolumeGeneral", 1.0f); // 1.0 é o valor padrão
-        return settings;
-    }
+    
 }
