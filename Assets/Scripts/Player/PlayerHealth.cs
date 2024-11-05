@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public HealthBar HealthBarScript;
+    public PlayerMovement PlayerMovementScript;
     // Start is called before the first frame update
     void Start()
     {
         HealthBarScript.Life = 5;
+        PlayerMovementScript.Intangivel = false;
     }
 
     // Update is called once per frame
@@ -22,9 +24,12 @@ public class PlayerHealth : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag.Equals("Bullet"))
+        if (PlayerMovementScript.Intangivel == false)
         {
-            HealthBarScript.Life = HealthBarScript.Life - 1;
+            if (collision.gameObject.tag.Equals("Bullet"))
+            {
+                HealthBarScript.Life = HealthBarScript.Life - 1;
+            }
         }
     }
 }
