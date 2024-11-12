@@ -14,10 +14,17 @@ public class PlayerParry : MonoBehaviour
     public float parriedBulletSpeedMultiplier = 1.5f;
     public float parryDelay = 0.15f;
 
+    private Animator animator;
+
+    private void Start() {
+        animator = GetComponent<Animator>();
+    }
+
     void Update()
     {
         if(Time.time >= nextParryTime){
             if(Input.GetKeyDown(KeyCode.Mouse1)){
+                animator.SetBool("Parry", true);
                 StartCoroutine(Parry());
                 nextParryTime = Time.time + parryCooldown;
             }
@@ -25,7 +32,6 @@ public class PlayerParry : MonoBehaviour
     }
     public IEnumerator Parry(){
         yield return new WaitForSeconds(parryDelay);
-        Debug.Log("Parry!");
         Collider2D[] bulletsInRange = Physics2D.OverlapCircleAll(transform.position, parryRange, bulletsMask);
         foreach(Collider2D bullet in bulletsInRange){
             Bullet bulletScript = bullet.GetComponent<Bullet>();
@@ -33,6 +39,7 @@ public class PlayerParry : MonoBehaviour
             bulletScript.moveDir = (bulletScript.gameObject.transform.position - transform.position).normalized * bulletScript.speed * parriedBulletSpeedMultiplier;
             bulletScript.BulletRB.velocity = new Vector2(bulletScript.moveDir.x, bulletScript.moveDir.y);
         }
+        animator.SetBool("Parry", false);
     }
     private void OnDrawGizmosSelected() {
         Gizmos.color = Color.green;

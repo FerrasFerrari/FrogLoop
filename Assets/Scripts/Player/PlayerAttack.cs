@@ -94,8 +94,8 @@ public class PlayerAttack : MonoBehaviour
         rotationPoint.GetComponent<Rigidbody2D>().rotation = aimAngle;
 
         // if(Time.time >= nextAttackTime){
-            playerAnimator.SetFloat("AimHorizontal", Mathf.RoundToInt(Mathf.Sin(aimAngle)));
-            playerAnimator.SetFloat("AimVertical", Mathf.RoundToInt(Mathf.Cos(aimAngle)));
+        playerAnimator.SetFloat("AimHorizontal", Mathf.RoundToInt(Mathf.Sin(aimAngle)));
+        playerAnimator.SetFloat("AimVertical", Mathf.RoundToInt(Mathf.Cos(aimAngle)));
         // }    
     }
 }

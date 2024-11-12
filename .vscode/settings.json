@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "FinalProject-2ndSemester.sln"
+    "dotnet.defaultSolution": "FrogLoop.sln"
 }
