@@ -2035,13 +2035,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 706fad18275b040408baf4fa2abd0890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeBombScript: {fileID: 1846267024103392571, guid: a5c3fd24f4d75ff42aa5d26245b6d503, type: 3}
+  TimeBombScript: {fileID: 380219605}
   delay: 3
 --- !u!4 &380219604 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7165557391698124142, guid: a5c3fd24f4d75ff42aa5d26245b6d503, type: 3}
   m_PrefabInstance: {fileID: 2250239970130996582}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &380219605 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1846267024103392571, guid: a5c3fd24f4d75ff42aa5d26245b6d503, type: 3}
+  m_PrefabInstance: {fileID: 2250239970130996582}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639fa78cf60a93b459d052aa7fe664d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &438498855 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5135695155109306591, guid: 53cb4c88f70348b4d99f8139f2851797, type: 3}
@@ -29702,6 +29713,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1811621319}
     m_Modifications:
+    - target: {fileID: 1846267024103392571, guid: a5c3fd24f4d75ff42aa5d26245b6d503, type: 3}
+      propertyPath: explosionRadius
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7165557391698124142, guid: a5c3fd24f4d75ff42aa5d26245b6d503, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.6374285

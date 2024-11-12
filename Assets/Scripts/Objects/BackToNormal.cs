@@ -5,7 +5,7 @@ using UnityEngine;
 public class BackToNormal : MonoBehaviour
 {
     public TimeBomb TimeBombScript;
-    public float delay = 3;
+    public float delay = 1.5f;
     float timer = 0;
     // Start is called before the first frame update
     void Start()
@@ -18,13 +18,13 @@ public class BackToNormal : MonoBehaviour
     {
         if(TimeBombScript.NSM == true) 
         {
-            Debug.Log("viado");
-            //timer += Time.deltaTime;
-            //if (timer > delay)
-           // {
-                //Time.timeScale = 1f;
-                //Time.fixedDeltaTime = Time.timeScale * .02f;
-            //}
+            
+            timer += Time.deltaTime;
+            if (timer > delay)
+            {
+                Time.timeScale = 1f;
+                Time.fixedDeltaTime = Time.timeScale * .02f;
+            }
         }
     }
 }

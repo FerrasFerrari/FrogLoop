@@ -33,7 +33,7 @@ public class TimeBomb : MonoBehaviour, IDamageable
             //iDamageableScript?.Damage(explosionDamage, gameObject);
             hitObject.gameObject.GetComponent<IDamageable>()?.Damage(explosionDamage, gameObject);
         }
-        Time.timeScale = 0.1f;
+        Time.timeScale = 0.5f;
         Time.fixedDeltaTime = Time.timeScale * .02f;
         NSM = true;
         Destroy(gameObject);
