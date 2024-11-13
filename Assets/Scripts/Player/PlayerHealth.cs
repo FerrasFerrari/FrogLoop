@@ -28,7 +28,7 @@ public class PlayerHealth : MonoBehaviour
         {
             if (collision.gameObject.tag.Equals("Bullet"))
             {
-                HealthBarScript.Life = HealthBarScript.Life - 1;
+                //HealthBarScript.Life = HealthBarScript.Life - 1;
             }
         }
     }

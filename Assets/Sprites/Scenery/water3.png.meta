@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1f641890d18902248802b10d914e251a
+guid: 0b35f1338cffcbf4c8a39da03de795ab
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -94,19 +94,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Server
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -132,116 +119,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: water2_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b336d6f815e32c54bb4702743e698ce9
-      internalID: 39181418
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: water2_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d9d2ff60e0bb4014f884e84003069834
-      internalID: -830683900
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: water2_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f876c7bd332b2f848bdbdd4d200f494e
-      internalID: -1388285462
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: water2_3
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 01cef6b17a3f5ca4ab246ba66fc8b183
-      internalID: 1399145483
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: water2_4
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 00b702d0ad6937a4f92007a8d374b3f1
-      internalID: 1295236244
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: water2_5
+      name: water3_0
       rect:
         serializedVersion: 2
         x: 0
@@ -249,20 +144,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27ad5565190117d4994db0c671b367b0
-      internalID: -1184240167
+      spriteID: 07daa1b5c120ec94a83bc6fd85b98abd
+      internalID: -704997402
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water2_6
+      name: water3_1
       rect:
         serializedVersion: 2
         x: 32
@@ -270,98 +165,56 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22d46844969c9d44fa4b82929c3eb1ba
-      internalID: -1503232655
+      spriteID: 9c195e963de660742aa90636ad2f7fa1
+      internalID: 1292790214
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water2_7
+      name: water3_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ccc88b01082ccf741a12a97db623678c
-      internalID: -392160574
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: water2_8
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 26a50e4de4e7a904e90f931b652bc607
-      internalID: 1489492004
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: water2_9
-      rect:
-        serializedVersion: 2
-        x: 128
+        x: 0
         y: 0
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90ca5b2512ba69b47a4d01e6a93323da
-      internalID: -595524579
+      spriteID: 52051c7348902fb4a9c2f4c32199f13c
+      internalID: -259686931
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: water2_10
+      name: water3_3
       rect:
         serializedVersion: 2
-        x: 160
+        x: 32
         y: 0
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3623bb4054e55b4419d41cbb3488af8e
-      internalID: -1749511156
+      spriteID: ad0e5be1e0363ac498f3e4c189c6831b
+      internalID: -1664777543
       vertices: []
       indices: 
       edges: []
@@ -377,17 +230,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      water2_0: 39181418
-      water2_1: -830683900
-      water2_10: -1749511156
-      water2_2: -1388285462
-      water2_3: 1399145483
-      water2_4: 1295236244
-      water2_5: -1184240167
-      water2_6: -1503232655
-      water2_7: -392160574
-      water2_8: 1489492004
-      water2_9: -595524579
+      water3_0: -704997402
+      water3_1: 1292790214
+      water3_2: -259686931
+      water3_3: -1664777543
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
