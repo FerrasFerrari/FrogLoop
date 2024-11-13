@@ -15,13 +15,12 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     }
     public void TakeDamage(float damage)
     {
-        animator.SetBool("isDamaged", true);
+        animator.SetTrigger("Damaged");
         hp -= damage;
         if(hp <= 0)
         {
             Die();
         }
-        animator.SetBool("isDamaged", false);
     }
 
     public void Die()

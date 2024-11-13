@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
 
     public UnlockDash UnlockDashScrpit;
     public bool Intangivel;
+    private Vector3 lastPositionBeforeDash;
+    [SerializeField]private LayerMask collidingSceneObjectsLayerMask;
     void Start()
     {
         activeMoveSpeed = moveSpeed;
@@ -41,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (dashCoolCounter <= 0 && dashCounter <= 0)
                 {
+                    lastPositionBeforeDash = transform.position;
                     isDashing = true;
                     activeMoveSpeed = dashSpeed;
                     dashCounter = dashLength;
@@ -59,6 +62,9 @@ public class PlayerMovement : MonoBehaviour
                 dashCoolCounter = dashCooldown;
                 isDashing = false;
                 Intangivel = false;
+                if (Physics2D.OverlapPoint(new Vector2(transform.position.x, transform.position.y - 0.4f), collidingSceneObjectsLayerMask)){
+                    transform.position = lastPositionBeforeDash;
+                }
             }
         }
 
