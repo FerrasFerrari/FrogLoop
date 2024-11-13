@@ -332,7 +332,7 @@ MonoBehaviour:
   rangeOffset: {x: -0.23, y: 0, z: 0}
   hittableMask:
     serializedVersion: 2
-    m_Bits: 2568
+    m_Bits: 10760
   aimDirection: {x: 0, y: 0}
   aimAngle: 0
   attackingMovingSpeedMultiplier: 0.15
@@ -470,7 +470,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 8320
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5787626319465625384}
   - component: {fileID: 1158251434909379496}
   - component: {fileID: 4965303893359323223}
+  - component: {fileID: 2440527151373345997}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -26,9 +27,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4952991685514988083}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13.1094, y: 17.2946, z: 0}
-  m_LocalScale: {x: 2.0856876, y: 1.787812, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 1874864075
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6a0b7e1465a13d04886105f14c01c43f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,4 +101,27 @@ MonoBehaviour:
   EnemyPrefab: {fileID: 2523934454928234597, guid: b99ec44a54326da40b074de1118a9df1, type: 3}
   Intervalo: 5
   TowerScript: {fileID: 0}
-  SpawnNumber: 0
+  SpawnNumber: 1
+--- !u!136 &2440527151373345997
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4952991685514988083}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.61564875
+  m_Height: 2.144888
+  m_Direction: 0
+  m_Center: {x: -0.016077995, y: 0.0026888847, z: 0}
