@@ -25,7 +25,7 @@ public class Bow : MonoBehaviour
     {
         if (UnlockBowScrpit.Unlocked == true)
         {
-            if (Input.GetKeyDown(KeyCode.C))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 Rotate.RotateAttackPoint();
                 GameObject Arrow = Instantiate(ArrowPrefab, ArrowPos.position, ArrowPos.rotation);

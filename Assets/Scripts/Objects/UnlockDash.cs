@@ -7,16 +7,14 @@ using TMPro;
 public class UnlockDash : MonoBehaviour
 {
     public bool UnlockedSprint;
-    public TMP_Text DashTXT;
-    public TMP_Text DashBtnTXT;
+    public GameObject telaDash;
     public Button DashBtn;
 
     // Start is called before the first frame update
     void Start()
     {
         UnlockedSprint = false;
-        DashTXT.enabled = false;
-        DashBtnTXT.enabled = false;
+        telaDash.active = false;
         DashBtn.enabled = false;
 
     }
@@ -31,9 +29,9 @@ public class UnlockDash : MonoBehaviour
         if (collision.gameObject.tag.Equals("Player"))
         {
             UnlockedSprint = true;
-            DashTXT.enabled = true;
-            DashBtnTXT.enabled = true;
+            telaDash.active = true;
             DashBtn.enabled = true;
+            Time.timeScale = 0;
             Destroy(gameObject);
         }
     }

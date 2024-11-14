@@ -7,16 +7,15 @@ using TMPro;
 public class UnlockBow : MonoBehaviour
 {
     public bool Unlocked;
-    public TMP_Text BowText;
-    public TMP_Text BowBtnText;
+    
     public Button BowBtn;
+    public GameObject telaArco;
     // Start is called before the first frame update
     void Start()
     {
         Unlocked = false;
-       BowText.enabled = false;
-       BowBtnText.enabled = false;
-       BowBtn.enabled = false;
+        telaArco.active = false;
+        BowBtn.enabled = false;
     }
 
     // Update is called once per frame
@@ -30,9 +29,8 @@ public class UnlockBow : MonoBehaviour
         {
             Unlocked = true;
             BowBtn.enabled = true;
-            BowBtnText.enabled = true;
-            BowText.enabled = true;
-            
+           telaArco.active = true;
+            Time.timeScale = 0;
             Destroy(gameObject);
         }
     }

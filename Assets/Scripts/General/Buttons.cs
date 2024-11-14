@@ -9,12 +9,10 @@ public class Buttons : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UnlockBowScrpit.BowText.enabled = false;
-        UnlockBowScrpit.BowBtnText.enabled = false;
+        UnlockBowScrpit.telaArco.active = false;
         UnlockBowScrpit.BowBtn.enabled = false;
 
-        UnlockDashScript.DashTXT.enabled = false;
-        UnlockDashScript.DashBtnTXT.enabled = false;
+        UnlockDashScript.telaDash.active = false;
         UnlockDashScript.DashBtn.enabled = false;
     }
 
@@ -25,21 +23,21 @@ public class Buttons : MonoBehaviour
     }
     public void BtnClickedBow ()
     {
-        if(UnlockBowScrpit.BowText.enabled == true && UnlockBowScrpit.BowBtnText.enabled == true && UnlockBowScrpit.BowBtn.enabled == true)
+        if(UnlockBowScrpit.BowBtn.enabled == true && UnlockBowScrpit.telaArco.active == true)
         {
-            UnlockBowScrpit.BowText.enabled = false;
-            UnlockBowScrpit.BowBtnText.enabled = false;
-            UnlockBowScrpit.BowBtn.enabled = false;
+            UnlockBowScrpit.telaArco.active = false;
+             UnlockBowScrpit.BowBtn.enabled = false;
+            Time.timeScale = 1;
         }
     }
 
     public void BtnClickedDash()
     {
-        if(UnlockDashScript.DashTXT.enabled == true && UnlockDashScript.DashBtnTXT.enabled == true && UnlockDashScript.DashBtn.enabled == true)
+        if(UnlockDashScript.DashBtn.enabled == true && UnlockDashScript.telaDash.active == true)
         {
-            UnlockDashScript.DashTXT.enabled = false;
-            UnlockDashScript.DashBtnTXT.enabled = false;
+            UnlockDashScript.telaDash.active = false;
             UnlockDashScript.DashBtn.enabled = false;
+            Time.timeScale = 1;
         }
     }
 }
