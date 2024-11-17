@@ -9,10 +9,10 @@ public class Buttons : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UnlockBowScrpit.telaArco.active = false;
+        UnlockBowScrpit.telaArco.SetActive(false);
         UnlockBowScrpit.BowBtn.enabled = false;
 
-        UnlockDashScript.telaDash.active = false;
+        UnlockDashScript.telaDash.SetActive(false);
         UnlockDashScript.DashBtn.enabled = false;
     }
 
@@ -23,9 +23,9 @@ public class Buttons : MonoBehaviour
     }
     public void BtnClickedBow ()
     {
-        if(UnlockBowScrpit.BowBtn.enabled == true && UnlockBowScrpit.telaArco.active == true)
+        if(UnlockBowScrpit.BowBtn.enabled == true && UnlockBowScrpit.telaArco.activeSelf == true)
         {
-            UnlockBowScrpit.telaArco.active = false;
+            UnlockBowScrpit.telaArco.SetActive(false);
              UnlockBowScrpit.BowBtn.enabled = false;
             Time.timeScale = 1;
         }
@@ -33,9 +33,9 @@ public class Buttons : MonoBehaviour
 
     public void BtnClickedDash()
     {
-        if(UnlockDashScript.DashBtn.enabled == true && UnlockDashScript.telaDash.active == true)
+        if(UnlockDashScript.DashBtn.enabled == true && UnlockDashScript.telaDash.activeSelf == true)
         {
-            UnlockDashScript.telaDash.active = false;
+            UnlockDashScript.telaDash.SetActive(false);
             UnlockDashScript.DashBtn.enabled = false;
             Time.timeScale = 1;
         }

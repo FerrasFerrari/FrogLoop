@@ -327,7 +327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 6847967698829597611}
   attackPointAnimator: {fileID: 22610186825507777}
-  attackRange: 0.6
+  attackRange: 0.48
   attackDamage: 1
   rangeOffset: {x: -0.23, y: 0, z: 0}
   hittableMask:

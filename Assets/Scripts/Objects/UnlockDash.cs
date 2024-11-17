@@ -14,7 +14,7 @@ public class UnlockDash : MonoBehaviour
     void Start()
     {
         UnlockedSprint = false;
-        telaDash.active = false;
+        telaDash.SetActive(false);
         DashBtn.enabled = false;
 
     }
@@ -29,7 +29,7 @@ public class UnlockDash : MonoBehaviour
         if (collision.gameObject.tag.Equals("Player"))
         {
             UnlockedSprint = true;
-            telaDash.active = true;
+            telaDash.SetActive(true);
             DashBtn.enabled = true;
             Time.timeScale = 0;
             Destroy(gameObject);

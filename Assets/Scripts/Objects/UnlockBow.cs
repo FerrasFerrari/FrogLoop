@@ -14,7 +14,7 @@ public class UnlockBow : MonoBehaviour
     void Start()
     {
         Unlocked = false;
-        telaArco.active = false;
+        telaArco.SetActive(false);
         BowBtn.enabled = false;
     }
 
@@ -29,7 +29,7 @@ public class UnlockBow : MonoBehaviour
         {
             Unlocked = true;
             BowBtn.enabled = true;
-           telaArco.active = true;
+           telaArco.SetActive(true);
             Time.timeScale = 0;
             Destroy(gameObject);
         }
