@@ -26,67 +26,83 @@ public class HealthBar : MonoBehaviour
         Barradevida[0].enabled = false; 
         if (Life == 0)
         {
-            Barradevida1.enabled = false;
-            Barradevida2.enabled = false;
-            Barradevida3.enabled = false;
-            Barradevida4.enabled = false;
-            Barradevidacheia.enabled = false;
-            Barradevidavazia.enabled = true;
+            BarraVidaSapo_1.enabled = false;
+            BarraVidaSapo_2.enabled = false;
+            BarraVidaSapo_3.enabled = false;
+            BarraVidaSapo_4.enabled = false;
+            BarraVidaSapo_5.enabled = false
+            BarraVidaSapo_0.enabled = false;
+             BarraVidaSapo_6.enabled = true;
         }
         if (Life == 1)
         {
-            Barradevida1.enabled = true;
-            Barradevida2.enabled = false;
-            Barradevida3.enabled = false;
-            Barradevida4.enabled = false;
-            Barradevidacheia.enabled = false;
-            Barradevidavazia.enabled = false;
+            BarraVidaSapo_1.enabled = true;
+            BarraVidaSapo_2.enabled = false;
+            BarraVidaSapo_3.enabled = false;
+            BarraVidaSapo_4.enabled = false;
+            BarraVidaSapo_5.enabled = false
+            BarraVidaSapo_0.enabled = false;
+            BarraVidaSapo_6.enabled = false;
 
         }
         if (Life == 2)
         {
-            Barradevida1.enabled = false;
-            Barradevida2.enabled = true;
-            Barradevida3.enabled = false;
-            Barradevida4.enabled = false;
-            Barradevidacheia.enabled = false;
-            Barradevidavazia.enabled = false;
+            BarraVidaSapo_1.enabled = false;
+            BarraVidaSapo_2.enabled = true;
+            BarraVidaSapo_3.enabled = false;
+            BarraVidaSapo_4.enabled = false;
+            BarraVidaSapo_5.enabled = false
+            BarraVidaSapo_0.enabled = false;
+            BarraVidaSapo_6.enabled = false;
 
         }
         if (Life == 3)
         {
-            Barradevida1.enabled = false;
-            Barradevida2.enabled = false;
-            Barradevida3.enabled = true;
-            Barradevida4.enabled = false;
-            Barradevidacheia.enabled = false;
-            Barradevidavazia.enabled = false;
+            BarraVidaSapo_1.enabled = false;
+            BarraVidaSapo_2.enabled = false;
+            BarraVidaSapo_3.enabled = true;
+            BarraVidaSapo_4.enabled = false;
+            BarraVidaSapo_5.enabled = false
+            BarraVidaSapo_0.enabled = false;
+            BarraVidaSapo_6.enabled = false;
         }
         if (Life == 4)
         {
-            Barradevida1.enabled = false;
-            Barradevida2.enabled = false;
-            Barradevida3.enabled = false;
-            Barradevida4.enabled = true;
-            Barradevidacheia.enabled = false;
-            Barradevidavazia.enabled = false;
+            BarraVidaSapo_1.enabled = false;
+            BarraVidaSapo_2.enabled = false;
+            BarraVidaSapo_3.enabled = false;
+            BarraVidaSapo_4.enabled = true;
+            BarraVidaSapo_5.enabled = false
+            BarraVidaSapo_0.enabled = false;
+            BarraVidaSapo_6.enabled = false;
         }
         if (Life == 5)
         {
-            Barradevida1.enabled = false;
-            Barradevida2.enabled = false;
-            Barradevida3.enabled = false;
-            Barradevida4.enabled = false;
-            Barradevidacheia.enabled = true;
-            Barradevidavazia.enabled = false;
+            BarraVidaSapo_1.enabled = false;
+            BarraVidaSapo_2.enabled = false;
+            BarraVidaSapo_3.enabled = false;
+            BarraVidaSapo_4.enabled = false;
+            BarraVidaSapo_5.enabled = true;
+            BarraVidaSapo_0.enabled = false;
+            BarraVidaSapo_6.enabled = false;
         }
+        if (Life == 6)
+        {
 
+            BarraVidaSapo_1.enabled = false;
+            BarraVidaSapo_2.enabled = false;
+            BarraVidaSapo_3.enabled = false;
+            BarraVidaSapo_4.enabled = false;
+            BarraVidaSapo_5.enabled = false;
+            BarraVidaSapo_0.enabled = true;
+            BarraVidaSapo_6.enabled = false;
+        }
         switch (Life)
         {
             // case 0:
 
         }*/
-        
+
     }
     //private void OnCollisionEnter2D(Collision2D collision)
     // {
