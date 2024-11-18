@@ -7,17 +7,19 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     private ParticleSystem damageParticleSystem;
     private Animator animator;
     public float hp = 2;
+    
 
 
     private void Start() {
         damageParticleSystem = GetComponentInChildren<ParticleSystem>();
         animator = GetComponent<Animator>();
+        
     }
     public void TakeDamage(float damage)
     {
         animator.SetTrigger("Damaged");
         hp -= damage;
-        if(hp <= 0)
+        if (hp <= 0)
         {
             Die();
         }
@@ -26,6 +28,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     public void Die()
     {
         Destroy(gameObject);
+        
     }
     public void Damage(float damageAmount, GameObject sender){
         if(damageParticleSystem != null){
@@ -35,5 +38,12 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         }
 
         TakeDamage(damageAmount);
+    }
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Arrow"))
+        {
+            Die(); 
+        }
     }
 }

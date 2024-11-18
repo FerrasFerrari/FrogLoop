@@ -12,7 +12,7 @@ public class HealthBar : MonoBehaviour
     void Start()
     {
         imageComp = GetComponent<Image>();
-        Life = 5;
+        Life = 6;
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class HealthBar : MonoBehaviour
             BarraVidaSapo_2.enabled = false;
             BarraVidaSapo_3.enabled = false;
             BarraVidaSapo_4.enabled = false;
-            BarraVidaSapo_5.enabled = false
+            BarraVidaSapo_5.enabled = false;
             BarraVidaSapo_0.enabled = false;
              BarraVidaSapo_6.enabled = true;
         }
@@ -40,7 +40,7 @@ public class HealthBar : MonoBehaviour
             BarraVidaSapo_2.enabled = false;
             BarraVidaSapo_3.enabled = false;
             BarraVidaSapo_4.enabled = false;
-            BarraVidaSapo_5.enabled = false
+            BarraVidaSapo_5.enabled = false;
             BarraVidaSapo_0.enabled = false;
             BarraVidaSapo_6.enabled = false;
 
@@ -51,7 +51,7 @@ public class HealthBar : MonoBehaviour
             BarraVidaSapo_2.enabled = true;
             BarraVidaSapo_3.enabled = false;
             BarraVidaSapo_4.enabled = false;
-            BarraVidaSapo_5.enabled = false
+            BarraVidaSapo_5.enabled = false;
             BarraVidaSapo_0.enabled = false;
             BarraVidaSapo_6.enabled = false;
 
@@ -62,7 +62,7 @@ public class HealthBar : MonoBehaviour
             BarraVidaSapo_2.enabled = false;
             BarraVidaSapo_3.enabled = true;
             BarraVidaSapo_4.enabled = false;
-            BarraVidaSapo_5.enabled = false
+            BarraVidaSapo_5.enabled = false;
             BarraVidaSapo_0.enabled = false;
             BarraVidaSapo_6.enabled = false;
         }

@@ -8,6 +8,7 @@ TagManager:
   - Tower
   - Gate
   - Bullet
+  - Arrow
   layers:
   - Default
   - TransparentFX

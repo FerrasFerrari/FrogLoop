@@ -1,0 +1,31 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Trigger : MonoBehaviour
+{
+    public int TriggerNumber;
+    public bool PodeSpawnar1 = false;
+    public bool PodeSpawnar2 = false;
+    public bool PodeSpawnar3 = false;
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(TriggerNumber == 1)
+        {
+            print("o 1 foi");
+            PodeSpawnar1 = true;
+        }
+        if (TriggerNumber == 2)
+        {
+            print("o 2 foi");
+            PodeSpawnar2 = true;
+        }
+        if (TriggerNumber == 3)
+        {
+            print("o 3 foi");
+            PodeSpawnar3 = true;
+        }
+    }
+
+}

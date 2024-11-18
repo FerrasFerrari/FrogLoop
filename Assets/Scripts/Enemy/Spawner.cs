@@ -9,6 +9,8 @@ public class Spawner : MonoBehaviour
     private Transform spawnPoint;
     public Tower TowerScript;
     public int SpawnNumber;
+    public Trigger TriggerScript;
+
     // Start is called before the first frame update
     private void Start()
 
@@ -21,6 +23,9 @@ public class Spawner : MonoBehaviour
         TowerScript.Spawn1 = true; 
         TowerScript.Spawn2 = true;
         TowerScript.Spawn3 = true;
+        TriggerScript.PodeSpawnar1 = false;
+        TriggerScript.PodeSpawnar2 = false;
+        TriggerScript.PodeSpawnar3 = false;
 
     }
 
@@ -45,20 +50,17 @@ public class Spawner : MonoBehaviour
     void SpawnEnemy()
 
     {
-
-        //if (spawnPoints.Length == 0) return; // No spawn points available
-
-
-
-        // Choose a random spawn point
-
-        
-
-
-
-        // Instantiate the enemy prefab at the spawn point
-
-        Instantiate(EnemyPrefab, spawnPoint.position, Quaternion.identity);
-
+        if(TriggerScript.PodeSpawnar1 == true && SpawnNumber == 1)
+        {
+            Instantiate(EnemyPrefab, spawnPoint.position, Quaternion.identity);
+        }
+        if (TriggerScript.PodeSpawnar2 == true && SpawnNumber == 2)
+        {
+            Instantiate(EnemyPrefab, spawnPoint.position, Quaternion.identity);
+        }
+        if (TriggerScript.PodeSpawnar3 == true && SpawnNumber == 3)
+        {
+            Instantiate(EnemyPrefab, spawnPoint.position, Quaternion.identity);
+        }
     }
 }

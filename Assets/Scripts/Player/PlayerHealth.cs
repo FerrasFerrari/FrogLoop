@@ -10,7 +10,7 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        HealthBarScript.Life = 5;
+        HealthBarScript.Life = 6;
         PlayerMovementScript.Intangivel = false;
     }
 
@@ -28,7 +28,7 @@ public class PlayerHealth : MonoBehaviour
         {
             if (collision.gameObject.tag.Equals("Bullet"))
             {
-                //HealthBarScript.Life = HealthBarScript.Life - 1;
+                HealthBarScript.Life = HealthBarScript.Life - 1;
             }
         }
     }

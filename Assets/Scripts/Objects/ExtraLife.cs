@@ -16,11 +16,10 @@ public class ExtraLife : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals("Player"))
         {
-            if(HealthBarScript.Life < 5)
+            if(HealthBarScript.Life < 6)
             {
                 HealthBarScript.Life = HealthBarScript.Life + 1;
                 Destroy(gameObject);
