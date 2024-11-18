@@ -5,11 +5,11 @@ using UnityEngine;
 public class Trigger : MonoBehaviour
 {
     public int TriggerNumber;
-    public bool PodeSpawnar1 = false;
-    public bool PodeSpawnar2 = false;
-    public bool PodeSpawnar3 = false;
+    [HideInInspector] public bool PodeSpawnar1 = false;
+    [HideInInspector] public bool PodeSpawnar2 = false;
+    [HideInInspector] public bool PodeSpawnar3 = false;
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if(TriggerNumber == 1)
         {
@@ -27,5 +27,9 @@ public class Trigger : MonoBehaviour
             PodeSpawnar3 = true;
         }
     }
-
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(transform.position, GetComponent<BoxCollider2D>().size);
+    }
 }

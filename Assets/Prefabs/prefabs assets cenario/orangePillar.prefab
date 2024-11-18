@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 461219637899021446}
   - component: {fileID: 1308869094816183583}
   - component: {fileID: 8967704876165775590}
-  m_Layer: 13
+  m_Layer: 14
   m_Name: orangePillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}

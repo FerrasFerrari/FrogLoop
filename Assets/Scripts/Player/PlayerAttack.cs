@@ -67,11 +67,7 @@ public class PlayerAttack : MonoBehaviour
 
                 enemyGameObject.GetComponent<IDamageable>().Damage(attackDamage, gameObject);
                 enemyGameObject.GetComponent<ScreenShaker>().ShakeDirectional(aimDirection);
-
-                if (enemyGameObject.layer == LayerMask.NameToLayer("Enemy"))
-                {
-                    enemyGameObject.GetComponent<Knockbacker>().Knockback(aimAngle, gameObject);
-                }
+                enemyGameObject.GetComponent<Knockbacker>()?.Knockback(aimAngle, gameObject);
             }
         }
     }

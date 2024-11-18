@@ -13,6 +13,7 @@ public class DashingEnemy : MonoBehaviour
     [SerializeField]private float dashSpeed;
     [SerializeField]private float dashDuration;
     [SerializeField]private float dashDelay;
+    private Collider2D[] colliders = new Collider2D[1];
     private Transform player;
     private Animator animator;
     private Rigidbody2D rb;
@@ -21,8 +22,9 @@ public class DashingEnemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-    }
+        colliders = GetComponents<Collider2D>();
 
+    }
     void Update()
     {
         float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
@@ -60,13 +62,30 @@ public class DashingEnemy : MonoBehaviour
     private IEnumerator Reset(){
         yield return new WaitForSeconds(dashDuration);
         rb.velocity = Vector2.zero;
+        SwitchCollisionWithOtherEnemies(true);
         speed *= .2f;
         yield return new WaitForSeconds(.8f);
         speed /= .2f;
     }
     private IEnumerator Attack(){
-        Vector2 direction = -(transform.position - player.gameObject.transform.position).normalized;
+        Vector2 direction = (player.gameObject.transform.position - transform.position).normalized;
         yield return new WaitForSeconds(dashDelay);
         rb.velocity = direction * dashSpeed;
+        SwitchCollisionWithOtherEnemies(false);
+    }
+    private void SwitchCollisionWithOtherEnemies(bool b)
+    {
+        foreach (Collider2D collider in colliders)
+        {
+            if (!collider.isTrigger) {
+                if(!b)
+                {
+                    collider.excludeLayers += LayerMask.GetMask("Enemy");
+                }else
+                {
+                    collider.excludeLayers -= LayerMask.GetMask("Enemy");
+                }
+            }
+        }
     }
 }

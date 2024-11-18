@@ -18,14 +18,14 @@ public class Knockbacker : MonoBehaviour
         if(rb != null){
             Vector2 direction = (transform.position - sender.gameObject.transform.position).normalized;
             rb.AddForce(direction * knockbackMultiplyer, ForceMode2D.Impulse);
-            rb.excludeLayers += LayerMask.NameToLayer("Enemy");
+            rb.excludeLayers += LayerMask.GetMask("Enemy");
             StartCoroutine(Reset());
         }
     }
 
     private IEnumerator Reset(){
         yield return new WaitForSeconds(delay);
-        rb.excludeLayers -= LayerMask.NameToLayer("Enemy");
+        rb.excludeLayers -= LayerMask.GetMask("Enemy");
         rb.velocity = Vector2.zero;
 
     }
