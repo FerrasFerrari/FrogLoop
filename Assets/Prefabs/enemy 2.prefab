@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebe6379da10dd4943bc44cad92b9f487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 3
+  hp: 2
 --- !u!114 &1682098986850769712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d930c583a745e93479627d353faf1dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4.36
+  speed: 3.85
   dashRate: 0.52
   lineOfSite: 4.52
   dashingRange: 2.21
@@ -5181,8 +5181,8 @@ Transform:
   m_GameObject: {fileID: 7233953616081733342}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.471, z: 0}
-  m_LocalScale: {x: 0.5271372, y: 0.2814377, z: 0.3573812}
+  m_LocalPosition: {x: -0.028, y: -0.497, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9111800615776871890}
@@ -5228,8 +5228,8 @@ SpriteRenderer:
   m_SortingLayerID: 1370790413
   m_SortingLayer: 1
   m_SortingOrder: 3
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.33333334}
+  m_Sprite: {fileID: 21300000, guid: 81efee21915dc924eba61f9372aef3dd, type: 3}
+  m_Color: {r: 1, g: 0.40784314, b: 0.18431373, a: 0.33333334}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
