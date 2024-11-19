@@ -390,6 +390,7 @@ MonoBehaviour:
   UnlockBowScrpit: {fileID: 0}
   ArrowPrefab: {fileID: 545741113807592324, guid: a8f81d1d4eface64c99abc2dda0e9c7f, type: 3}
   ArrowPos: {fileID: 6847967698829597611}
+  ArrowRotationObject: {fileID: 2332633411206567746}
 --- !u!61 &4743043753205495229
 BoxCollider2D:
   m_ObjectHideFlags: 0

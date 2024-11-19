@@ -39,11 +39,5 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
         TakeDamage(damageAmount);
     }
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag.Equals("Arrow"))
-        {
-            Die(); 
-        }
-    }
+    
 }

@@ -9,7 +9,8 @@ public class Bow : MonoBehaviour
     private float arrowSpawnOffsetX = -0.3f;
     public UnlockBow UnlockBowScrpit;
     public GameObject ArrowPrefab;
-    public Transform ArrowPos;
+    [SerializeField] private Transform ArrowPos;
+    [SerializeField] private Transform ArrowRotationObject;
     private PlayerAttack Rotate;
     
     // Start is called before the first frame update
@@ -33,7 +34,7 @@ public class Bow : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Q))
                 {
                     Rotate.RotateAttackPoint();
-                    GameObject Arrow = Instantiate(ArrowPrefab, ArrowPos.position + new Vector3(arrowSpawnOffsetX,0,0), ArrowPos.rotation);
+                    GameObject Arrow = Instantiate(ArrowPrefab, ArrowPos.position + new Vector3(arrowSpawnOffsetX,0,0), ArrowRotationObject.rotation);
                     Arrow.GetComponent<Rigidbody2D>().AddForce(Rotate.aimDirection.normalized * ArrowForce, ForceMode2D.Impulse);
                     
                 }
