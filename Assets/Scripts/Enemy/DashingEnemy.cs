@@ -38,7 +38,6 @@ public class DashingEnemy : MonoBehaviour
             rb.velocity = Vector2.zero;
             animator.SetBool("isAttacking", true);
             StartCoroutine(Attack());
-            Debug.Log("Dash");
             StartCoroutine(Reset());
             nextDashTime = Time.time + 1f / dashRate;
         }

@@ -4901,7 +4901,7 @@ GameObject:
   - component: {fileID: 6029928772801102526}
   - component: {fileID: 8408798238214260}
   - component: {fileID: 7531413407458011816}
-  - component: {fileID: 8520438737563910890}
+  - component: {fileID: 4222780617089311722}
   m_Layer: 11
   m_Name: ExplosiveBarril
   m_TagString: Untagged
@@ -5027,6 +5027,7 @@ MonoBehaviour:
   explosionRadius: 3.69
   explosionDamage: 3
   hp: 1
+  explosionEffectGameObject: {fileID: 7321881190550561497, guid: 387a30c94ca5ef8468690c14c7a29338, type: 3}
   hittableObjectsMask:
     serializedVersion: 2
     m_Bits: 1544
@@ -5083,7 +5084,7 @@ MonoBehaviour:
     m_DissipationDistance: 100
     m_PropagationSpeed: 343
   m_DefaultVelocity: {x: 0, y: -1, z: 0}
---- !u!114 &8520438737563910890
+--- !u!114 &4222780617089311722
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

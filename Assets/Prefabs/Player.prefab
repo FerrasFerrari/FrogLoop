@@ -385,10 +385,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60eeef0bcf009414da21f439d2161e25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ArrowForce: 2
+  arrowSpawnOffsetX: -0.35
   UnlockBowScrpit: {fileID: 0}
   ArrowPrefab: {fileID: 545741113807592324, guid: a8f81d1d4eface64c99abc2dda0e9c7f, type: 3}
   ArrowPos: {fileID: 6847967698829597611}
-  ArrowForce: 2
 --- !u!61 &4743043753205495229
 BoxCollider2D:
   m_ObjectHideFlags: 0

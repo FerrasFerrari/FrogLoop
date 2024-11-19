@@ -11,6 +11,8 @@ public class Barril : MonoBehaviour, IDamageable
     [SerializeField]
     private float hp = 1;
     [SerializeField]
+    private GameObject explosionEffectGameObject;
+    [SerializeField]
     [Tooltip("Layer Mask of the objects that can be hit by the explosion")]
     private LayerMask hittableObjectsMask;
     void Start()
@@ -33,6 +35,7 @@ public class Barril : MonoBehaviour, IDamageable
             //iDamageableScript?.Damage(explosionDamage, gameObject);
             hitObject.gameObject.GetComponent<IDamageable>()?.Damage(explosionDamage, gameObject);
         }
+        Instantiate(explosionEffectGameObject, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
