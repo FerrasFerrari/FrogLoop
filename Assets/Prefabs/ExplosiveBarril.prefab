@@ -4965,7 +4965,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1874864075
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 5f0802d93156cca4c8521750e3e876af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5024,9 +5024,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65cb7188e5253c4a90bd183bb86544c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionRadius: 3.69
-  explosionDamage: 3
+  explosionRadius: 1.59
+  explosionDamage: 2
   hp: 1
+  explosionDelay: 0.15
   explosionEffectGameObject: {fileID: 7321881190550561497, guid: 387a30c94ca5ef8468690c14c7a29338, type: 3}
   hittableObjectsMask:
     serializedVersion: 2

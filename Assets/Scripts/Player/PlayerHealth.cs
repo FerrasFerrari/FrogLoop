@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour, IDamageable
 {
     public HealthBar HealthBarScript;
     public PlayerMovement PlayerMovementScript;
@@ -24,12 +24,20 @@ public class PlayerHealth : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (PlayerMovementScript.Intangivel == false)
+        /*if (PlayerMovementScript.Intangivel == false)
         {
             if (collision.gameObject.tag.Equals("Bullet"))
             {
                 HealthBarScript.Life = HealthBarScript.Life - 1;
             }
+        }*/
+    }
+
+    public void Damage(float damageAmount, GameObject sender)
+    {
+        if (PlayerMovementScript.Intangivel == false)
+        {
+            HealthBarScript.Life = HealthBarScript.Life - Mathf.FloorToInt(damageAmount);
         }
     }
 }

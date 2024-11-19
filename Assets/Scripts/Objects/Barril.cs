@@ -11,6 +11,8 @@ public class Barril : MonoBehaviour, IDamageable
     [SerializeField]
     private float hp = 1;
     [SerializeField]
+    private float explosionDelay;
+    [SerializeField]
     private GameObject explosionEffectGameObject;
     [SerializeField]
     [Tooltip("Layer Mask of the objects that can be hit by the explosion")]
@@ -28,7 +30,8 @@ public class Barril : MonoBehaviour, IDamageable
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, explosionRadius);
     }
-    private void Explode(){
+    private IEnumerator Explode(){
+        yield return new WaitForSeconds(explosionDelay);
         Collider2D[] hitObjects = Physics2D.OverlapCircleAll(transform.position, explosionRadius, hittableObjectsMask);
         foreach (Collider2D hitObject in hitObjects){
             //IDamageable iDamageableScript = hitObject.gameObject.GetComponent<IDamageable>();

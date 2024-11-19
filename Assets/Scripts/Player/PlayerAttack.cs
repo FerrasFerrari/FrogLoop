@@ -12,8 +12,8 @@ public class PlayerAttack : MonoBehaviour
     public float attackDamage = 1f;
     [SerializeField]private Vector3 rangeOffset;
     public LayerMask hittableMask;
-    public Vector2 aimDirection;
-    public float aimAngle;
+    [HideInInspector] public Vector2 aimDirection;
+    [HideInInspector] public float aimAngle;
 
     public float attackingMovingSpeedMultiplier = 0.15f;
     public float attackMovementSlowDuration = 0.33f;

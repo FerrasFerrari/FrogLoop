@@ -37,6 +37,8 @@ public class PlayerParry : MonoBehaviour
             Bullet bulletScript = bullet.GetComponent<Bullet>();
             //bullet.gameObject.GetComponent<SpriteRenderer>().color = new Color(62, 59, 102);
             bulletScript.moveDir = (bulletScript.gameObject.transform.position - transform.position).normalized * bulletScript.speed * parriedBulletSpeedMultiplier;
+            bullet.gameObject.GetComponent<Collider2D>().includeLayers += LayerMask.GetMask("Enemy");
+            bullet.gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
             bulletScript.BulletRB.velocity = new Vector2(bulletScript.moveDir.x, bulletScript.moveDir.y);
         }
         animator.SetBool("Parry", false);
