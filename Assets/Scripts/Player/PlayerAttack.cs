@@ -10,6 +10,7 @@ public class PlayerAttack : MonoBehaviour
     public Animator attackPointAnimator;
     public float attackRange = 0.75f;
     public float attackDamage = 1f;
+    [SerializeField]private float attackKnockbackMultiplier = 10f;
     [SerializeField]private Vector3 rangeOffset;
     public LayerMask hittableMask;
     [HideInInspector] public Vector2 aimDirection;
@@ -67,7 +68,7 @@ public class PlayerAttack : MonoBehaviour
 
                 enemyGameObject.GetComponent<IDamageable>().Damage(attackDamage, gameObject);
                 enemyGameObject.GetComponent<ScreenShaker>().ShakeDirectional(aimDirection);
-                enemyGameObject.GetComponent<Knockbacker>()?.Knockback(aimAngle, gameObject);
+                enemyGameObject.GetComponent<Knockbacker>()?.Knockback(attackKnockbackMultiplier, gameObject);
             }
         }
     }

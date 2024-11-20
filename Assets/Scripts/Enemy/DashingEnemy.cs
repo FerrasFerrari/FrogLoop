@@ -30,13 +30,13 @@ public class DashingEnemy : MonoBehaviour
         float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
         if (distanceFromPlayer < lineOfSite && distanceFromPlayer > dashingRange)
         {
-            animator.SetBool("isAttacking", false);
+            animator.SetBool("Dash", false);
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
         }
         else if (distanceFromPlayer <= lineOfSite && nextDashTime < Time.time)
         {
             rb.velocity = Vector2.zero;
-            animator.SetBool("isAttacking", true);
+            animator.SetBool("Dash", true);
             StartCoroutine(Attack());
             StartCoroutine(Reset());
             nextDashTime = Time.time + 1f / dashRate;

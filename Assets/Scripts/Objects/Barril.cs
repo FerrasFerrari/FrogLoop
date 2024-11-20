@@ -9,6 +9,8 @@ public class Barril : MonoBehaviour, IDamageable
     [SerializeField]
     private int explosionDamage = 3;
     [SerializeField]
+    private float explosionKnockbackMultiplier = 13f;
+    [SerializeField]
     private float hp = 1;
     [SerializeField]
     private float explosionDelay;
@@ -31,12 +33,17 @@ public class Barril : MonoBehaviour, IDamageable
         Gizmos.DrawWireSphere(transform.position, explosionRadius);
     }
     private IEnumerator Explode(){
+        List<int> hittedInstanceID = new();
         yield return new WaitForSeconds(explosionDelay);
         Collider2D[] hitObjects = Physics2D.OverlapCircleAll(transform.position, explosionRadius, hittableObjectsMask);
         foreach (Collider2D hitObject in hitObjects){
-            //IDamageable iDamageableScript = hitObject.gameObject.GetComponent<IDamageable>();
-            //iDamageableScript?.Damage(explosionDamage, gameObject);
-            hitObject.gameObject.GetComponent<IDamageable>()?.Damage(explosionDamage, gameObject);
+            if(!hittedInstanceID.Contains(hitObject.gameObject.GetInstanceID())) { 
+                hittedInstanceID.Add(hitObject.gameObject.GetInstanceID());
+                //IDamageable iDamageableScript = hitObject.gameObject.GetComponent<IDamageable>();
+                //iDamageableScript?.Damage(explosionDamage, gameObject);
+                hitObject.gameObject.GetComponent<IDamageable>()?.Damage(explosionDamage, gameObject);
+                hitObject.gameObject.GetComponent<Knockbacker>()?.Knockback(explosionKnockbackMultiplier, gameObject);
+            }
         }
         Instantiate(explosionEffectGameObject, transform.position, Quaternion.identity);
         Destroy(gameObject);
@@ -46,7 +53,7 @@ public class Barril : MonoBehaviour, IDamageable
     {
         hp -= damageAmount;
         if(hp <= 0){
-            Explode();
+            StartCoroutine(Explode());
         }
     }
 }
