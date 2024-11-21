@@ -13,6 +13,8 @@ public class TimeBomb : MonoBehaviour, IDamageable
     [SerializeField]
     [Tooltip("Layer Mask of the objects that can be hit by the explosion")]
     private LayerMask hittableObjectsMask;
+    public AudioSource audioSource;
+    public AudioClip explosao;
 
     public bool NSM;
     void Start()
@@ -36,12 +38,14 @@ public class TimeBomb : MonoBehaviour, IDamageable
         Time.timeScale = 0.5f;
         Time.fixedDeltaTime = Time.timeScale * .02f;
         NSM = true;
+        
         Destroy(gameObject);
     }
     
     public void Damage(float damageAmount, GameObject sender)
     {
         hp -= damageAmount;
+        
         if (hp <= 0)
         {
            SlowMotion();

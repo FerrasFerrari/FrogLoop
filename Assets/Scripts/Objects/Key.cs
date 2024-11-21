@@ -6,7 +6,9 @@ public class Key : MonoBehaviour
 {
     public int KeyNumber;
     public bool KeyOne;
-    
+    public AudioSource audioSource;
+    public AudioClip chaveColetada;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,8 @@ public class Key : MonoBehaviour
             if(KeyNumber == 1)
             {
                 KeyOne = true;
+               audioSource.clip = chaveColetada;
+                audioSource.Play();
                 Destroy(gameObject);
             }
           

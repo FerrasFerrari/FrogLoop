@@ -10,6 +10,8 @@ public class UnlockBow : MonoBehaviour
     
     public Button BowBtn;
     public GameObject telaArco;
+    public AudioSource audioSource;
+    public AudioClip BowSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,8 @@ public class UnlockBow : MonoBehaviour
             BowBtn.enabled = true;
             telaArco.SetActive(true);
             Time.timeScale = 0;
+            audioSource.clip = BowSound;
+            audioSource.Play();
             Destroy(gameObject);
         }
     }

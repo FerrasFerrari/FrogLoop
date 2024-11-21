@@ -19,6 +19,8 @@ public class Barril : MonoBehaviour, IDamageable
     [SerializeField]
     [Tooltip("Layer Mask of the objects that can be hit by the explosion")]
     private LayerMask hittableObjectsMask;
+    public AudioSource audioSource;
+    public AudioClip explosao;
     void Start()
     {
         
@@ -46,6 +48,8 @@ public class Barril : MonoBehaviour, IDamageable
             }
         }
         Instantiate(explosionEffectGameObject, transform.position, Quaternion.identity);
+        audioSource.clip = explosao;
+        audioSource.Play();
         Destroy(gameObject);
     }
 

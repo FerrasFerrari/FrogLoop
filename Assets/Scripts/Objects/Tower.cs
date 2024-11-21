@@ -15,6 +15,8 @@ public class Tower : MonoBehaviour, IDamageable
     public bool Spawn2;
     public bool Spawn3;
     public int TowerSpawn;
+    public AudioSource audioSource;
+    public AudioClip dano, morte;
 
 
     void Start()
@@ -34,6 +36,8 @@ public class Tower : MonoBehaviour, IDamageable
     {
         if(isBroken){ return; }
         towerHP--;
+        audioSource.clip = dano;
+        audioSource.Play();
         if(towerHP <= 0){
             Die();
         }
@@ -43,6 +47,8 @@ public class Tower : MonoBehaviour, IDamageable
     {
         anim.SetBool("isBroken", true);
         isBroken = true;
+        audioSource.clip = morte;
+        audioSource.Play();
         gateDestroier.UpdateBrokenStatus(towerNumber - 1);
         if(TowerSpawn == 1)
         {

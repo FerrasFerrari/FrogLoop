@@ -6,6 +6,8 @@ public class KeyDoor : MonoBehaviour
 {
     public int DoorNumber;
     public Key KeyScript;
+    public AudioSource audioSource;
+    public AudioClip tancanda, abrindo;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,10 +24,20 @@ public class KeyDoor : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Player"))
         {
-            if(DoorNumber == 1 && KeyScript.KeyOne == true)
+            if (DoorNumber == 1 && KeyScript.KeyOne == true)
             {
+                audioSource.clip = abrindo;
+                audioSource.Play();
                 Destroy(gameObject);
             }
+            if(DoorNumber == 1 && KeyScript.KeyOne == false)
+            {
+                audioSource.clip = tancanda;
+                audioSource.Play();
+            }
         }
+        
+
+
     }
 }

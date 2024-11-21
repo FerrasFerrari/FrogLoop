@@ -9,6 +9,8 @@ public class UnlockDash : MonoBehaviour
     public bool UnlockedSprint;
     public GameObject telaDash;
     public Button DashBtn;
+    public AudioSource audioSource;
+    public AudioClip dashShound;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +34,8 @@ public class UnlockDash : MonoBehaviour
             telaDash.SetActive(true);
             DashBtn.enabled = true;
             Time.timeScale = 0;
+            audioSource.clip = dashShound;
+            audioSource.Play();
             Destroy(gameObject);
         }
     }

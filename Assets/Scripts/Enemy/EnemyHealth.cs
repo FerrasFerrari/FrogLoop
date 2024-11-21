@@ -10,6 +10,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     
 
 
+
     private void Start() {
         damageParticleSystem = GetComponentInChildren<ParticleSystem>();
         animator = GetComponent<Animator>();
@@ -19,6 +20,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     {
         animator.SetTrigger("Damaged");
         hp -= damage;
+        
         if (hp <= 0)
         {
             Die();
