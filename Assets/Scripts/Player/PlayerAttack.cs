@@ -28,6 +28,9 @@ public class PlayerAttack : MonoBehaviour
     private Rigidbody2D rb;
     public GameObject rotationPoint;
 
+    public AudioSource audioSource;
+    public AudioClip attackSFX;
+
 
     private void Start() {
         playerMovementScript = GetComponent<PlayerMovement>();
@@ -60,6 +63,9 @@ public class PlayerAttack : MonoBehaviour
 
         attackPointAnimator.SetBool("Attack", true);
         playerAnimator.SetBool("Attack", true);
+
+        audioSource.clip = attackSFX;
+        audioSource.Play(); 
 
         for(int i = 0; i < hitEnemies.Length; i++) {
             GameObject enemyGameObject = hitEnemies[i].collider.gameObject;

@@ -12,7 +12,9 @@ public class Bow : MonoBehaviour
     [SerializeField] private Transform ArrowPos;
     [SerializeField] private Transform ArrowRotationObject;
     private PlayerAttack Rotate;
-    
+    public AudioSource audioSource;
+    public AudioClip arco;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +38,8 @@ public class Bow : MonoBehaviour
                     Rotate.RotateAttackPoint();
                     GameObject Arrow = Instantiate(ArrowPrefab, ArrowPos.position + new Vector3(arrowSpawnOffsetX,0,0), ArrowRotationObject.rotation);
                     Arrow.GetComponent<Rigidbody2D>().AddForce(Rotate.aimDirection.normalized * ArrowForce, ForceMode2D.Impulse);
-                    
+                audioSource.clip = arco;
+                audioSource.Play();
                 }
             
         }

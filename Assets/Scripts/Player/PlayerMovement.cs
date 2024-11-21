@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     public bool Intangivel;
     private Vector3 lastPositionBeforeDash;
     [SerializeField]private LayerMask collidingSceneObjectsLayerMask;
+    public AudioSource audioSource;
+    public AudioClip dash, passos;
     void Start()
     {
         activeMoveSpeed = moveSpeed;
@@ -37,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
             
             Move();
 
+
         if(UnlockDashScrpit.UnlockedSprint == true)
         {
             if (Input.GetKeyDown(KeyCode.LeftShift))
@@ -48,6 +51,8 @@ public class PlayerMovement : MonoBehaviour
                     activeMoveSpeed = dashSpeed;
                     dashCounter = dashLength;
                     Intangivel = true;
+                    audioSource.clip = dash;
+                    audioSource.Play();
                 }
             }
         }
@@ -80,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
         moveDirection = new Vector2(moveX, moveY).normalized;
 
         SetAnimations(moveX, moveY, moveDirection);
+        
     }
 
     private void SetAnimations(float x, float y, Vector2 mDirection)
@@ -87,10 +93,12 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("Horizontal", x);
         anim.SetFloat("Vertical", y);
         anim.SetFloat("Speed", mDirection.sqrMagnitude);
+        
     }
 
     void Move(){
         rb.velocity = new Vector2(moveDirection.x * activeMoveSpeed, moveDirection.y * activeMoveSpeed);
+       
     }
     
 }

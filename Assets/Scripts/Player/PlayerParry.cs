@@ -16,6 +16,9 @@ public class PlayerParry : MonoBehaviour
 
     private Animator animator;
 
+    public AudioSource audioSource;
+    public AudioClip parry;
+
     private void Start() {
         animator = GetComponent<Animator>();
     }
@@ -40,6 +43,8 @@ public class PlayerParry : MonoBehaviour
             bullet.gameObject.GetComponent<Collider2D>().includeLayers += LayerMask.GetMask("Enemy");
             bullet.gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
             bulletScript.BulletRB.velocity = new Vector2(bulletScript.moveDir.x, bulletScript.moveDir.y);
+            audioSource.clip = parry;
+            audioSource.Play();
         }
         animator.SetBool("Parry", false);
     }

@@ -7,6 +7,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 {
     public HealthBar HealthBarScript;
     public PlayerMovement PlayerMovementScript;
+    public AudioSource audioSource;
+    public AudioClip dano, morte;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +21,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     {
         if(HealthBarScript.Life <= 0)
         {
+            audioSource.clip = morte;
+            audioSource.Play(); 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
@@ -38,6 +42,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         if (PlayerMovementScript.Intangivel == false)
         {
             HealthBarScript.Life = HealthBarScript.Life - Mathf.FloorToInt(damageAmount);
+            audioSource.clip = dano;
+            audioSource.Play();
         }
     }
 }
