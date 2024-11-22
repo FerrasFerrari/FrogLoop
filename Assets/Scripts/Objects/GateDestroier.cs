@@ -5,6 +5,8 @@ using UnityEngine;
 public class GateDestroier : MonoBehaviour
 {
     private bool[] towers = new bool[3];
+    public AudioSource audioSource;
+    public AudioClip openGate;
 
     private void Start() {
         for(int i = 0; i < towers.Length; i++){
@@ -27,6 +29,8 @@ public class GateDestroier : MonoBehaviour
         }
     }
      private void DestroyGate(){
+        audioSource.clip = openGate;
+        audioSource.Play();
         Destroy(gameObject);
     }
 }

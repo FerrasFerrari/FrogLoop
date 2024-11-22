@@ -38,7 +38,8 @@ public class TimeBomb : MonoBehaviour, IDamageable
         Time.timeScale = 0.5f;
         Time.fixedDeltaTime = Time.timeScale * .02f;
         NSM = true;
-        
+        audioSource.clip = explosao;
+        audioSource.Play();
         Destroy(gameObject);
     }
     

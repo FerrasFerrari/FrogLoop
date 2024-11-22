@@ -16,6 +16,8 @@ public class ShootingEnemy : MonoBehaviour
     private Transform player;
     private Animator animator;
     private Rigidbody2D rb;
+    public AudioSource audioSource;
+    public AudioClip tiro;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -36,6 +38,8 @@ public class ShootingEnemy : MonoBehaviour
         {
             if(!hasEnteredLOA){ rb.velocity = Vector2.zero; hasEnteredLOA = true; }
             animator.SetBool("isAttacking", true);
+            audioSource.clip = tiro;
+            audioSource.Play();
             Instantiate(bullet, bulletParent.transform.position, Quaternion.identity);
             nextFireTime = Time.time + 1f / fireRate;
         }

@@ -7,6 +7,9 @@ public class BreakObject : MonoBehaviour, IDamageable
     public float hp = 1f;
     [SerializeField]private GameObject breakParticlesPrefab;
 
+    public AudioSource audioSource;
+    public AudioClip quebrar;
+
     public void Damage(float damageAmount, GameObject sender)
     {
         hp -= damageAmount;
@@ -19,6 +22,8 @@ public class BreakObject : MonoBehaviour, IDamageable
     private void Die()
     {
         GameObject particleSystem = Instantiate(breakParticlesPrefab, transform.position, Quaternion.identity);
+        audioSource.clip = quebrar;
+        audioSource.Play(); 
         Destroy(gameObject);
         Destroy(particleSystem, 1);
     } 
