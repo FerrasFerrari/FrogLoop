@@ -24,6 +24,7 @@ public class BackToNormal : MonoBehaviour
             {
                 Time.timeScale = 1f;
                 Time.fixedDeltaTime = Time.timeScale * .02f;
+                TimeBombScript.NSM = false;
             }
         }
     }
