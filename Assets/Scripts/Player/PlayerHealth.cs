@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour, IDamageable
 {
+    [SerializeField]private float immunityDuration;
+    [HideInInspector]public bool isOnImmunity = false;
     public HealthBar HealthBarScript;
     public PlayerMovement PlayerMovementScript;
     public AudioSource audioSource;
@@ -41,9 +43,19 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     {
         if (PlayerMovementScript.Intangivel == false)
         {
-            HealthBarScript.Life = HealthBarScript.Life - Mathf.FloorToInt(damageAmount);
-            audioSource.clip = dano;
-            audioSource.Play();
+            StartCoroutine(TakeDamage(damageAmount));
         }
+    }
+
+    private IEnumerator TakeDamage(float damageAmount)
+    {
+        HealthBarScript.Life = HealthBarScript.Life - Mathf.FloorToInt(damageAmount);
+        audioSource.clip = dano;
+        audioSource.Play();
+        GetComponent<CapsuleCollider2D>().enabled = false;
+        isOnImmunity = true;
+        yield return new WaitForSeconds(immunityDuration);
+        GetComponent<CapsuleCollider2D>().enabled = true;
+        isOnImmunity = false;
     }
 }

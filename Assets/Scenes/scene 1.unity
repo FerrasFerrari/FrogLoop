@@ -3678,7 +3678,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 49.2, y: -39.799988}
+  m_AnchoredPosition: {x: 49.2, y: -39.80005}
   m_SizeDelta: {x: 154.73, y: 59.37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &265501747
@@ -18974,10 +18974,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -444926508360994160, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
-      propertyPath: arco
-      value: 
-      objectReference: {fileID: 8300000, guid: 6319891a4123d8d468b356fcb2851b39, type: 3}
-    - target: {fileID: -444926508360994160, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 985930300}
@@ -19030,14 +19026,6 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4749756933946694701, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
-      propertyPath: dash
-      value: 
-      objectReference: {fileID: 8300000, guid: 38995ab4a60870745844b94c937d4c36, type: 3}
-    - target: {fileID: 4749756933946694701, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
-      propertyPath: passos
-      value: 
-      objectReference: {fileID: 8300000, guid: 984a526bd214be1488b0786f32c9be54, type: 3}
-    - target: {fileID: 4749756933946694701, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 985930300}
@@ -19046,14 +19034,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 317936573}
     - target: {fileID: 7269595481478577325, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
-      propertyPath: dano
-      value: 
-      objectReference: {fileID: 8300000, guid: e1e0966dcaba7f441ae21355d3306e69, type: 3}
-    - target: {fileID: 7269595481478577325, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
-      propertyPath: morte
-      value: 
-      objectReference: {fileID: 8300000, guid: 932e4ad50bf18a44f996861e6cbe867b, type: 3}
-    - target: {fileID: 7269595481478577325, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 985930300}
@@ -19061,10 +19041,6 @@ PrefabInstance:
       propertyPath: HealthBarScript
       value: 
       objectReference: {fileID: 1685617997}
-    - target: {fileID: 9158333293788628948, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
-      propertyPath: attackSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: 39b2275d39b951041bdcb19065f14088, type: 3}
     - target: {fileID: 9158333293788628948, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
       propertyPath: audioSource
       value: 
@@ -19713,7 +19689,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1351186996
 Transform:
   m_ObjectHideFlags: 0
@@ -23396,7 +23372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1773460258
 Transform:
   m_ObjectHideFlags: 0
@@ -43685,14 +43661,6 @@ PrefabInstance:
     - target: {fileID: 2523934454928234597, guid: b99ec44a54326da40b074de1118a9df1, type: 3}
       propertyPath: m_Name
       value: enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 6293144365399089597, guid: b99ec44a54326da40b074de1118a9df1, type: 3}
-      propertyPath: audioSource
-      value: 
-      objectReference: {fileID: 985930300}
-    - target: {fileID: 7233953616081733342, guid: b99ec44a54326da40b074de1118a9df1, type: 3}
-      propertyPath: m_Name
-      value: Shadow
       objectReference: {fileID: 0}
     - target: {fileID: 9111800615776871890, guid: b99ec44a54326da40b074de1118a9df1, type: 3}
       propertyPath: m_LocalPosition.x

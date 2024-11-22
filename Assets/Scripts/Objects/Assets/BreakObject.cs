@@ -5,6 +5,7 @@ using UnityEngine;
 public class BreakObject : MonoBehaviour, IDamageable
 {
     public float hp = 1f;
+    [SerializeField]private GameObject breakParticlesPrefab;
 
     public void Damage(float damageAmount, GameObject sender)
     {
@@ -17,7 +18,9 @@ public class BreakObject : MonoBehaviour, IDamageable
 
     private void Die()
     {
+        GameObject particleSystem = Instantiate(breakParticlesPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
+        Destroy(particleSystem, 1);
     } 
 
     // Start is called before the first frame update

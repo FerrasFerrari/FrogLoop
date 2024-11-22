@@ -36,20 +36,21 @@ public class Barril : MonoBehaviour, IDamageable
     }
     private IEnumerator Explode(){
         List<int> hittedInstanceID = new();
+        Instantiate(explosionEffectGameObject, transform.position, Quaternion.identity);
+        audioSource.clip = explosao;
+        audioSource.Play();
         yield return new WaitForSeconds(explosionDelay);
         Collider2D[] hitObjects = Physics2D.OverlapCircleAll(transform.position, explosionRadius, hittableObjectsMask);
         foreach (Collider2D hitObject in hitObjects){
             if(!hittedInstanceID.Contains(hitObject.gameObject.GetInstanceID())) { 
                 hittedInstanceID.Add(hitObject.gameObject.GetInstanceID());
-                //IDamageable iDamageableScript = hitObject.gameObject.GetComponent<IDamageable>();
-                //iDamageableScript?.Damage(explosionDamage, gameObject);
-                hitObject.gameObject.GetComponent<IDamageable>()?.Damage(explosionDamage, gameObject);
-                hitObject.gameObject.GetComponent<Knockbacker>()?.Knockback(explosionKnockbackMultiplier, gameObject);
+                GameObject hitGameObject = hitObject.gameObject;
+                    //if(!hitObject.gameObject.GetComponent<PlayerHealth>().isOnImmunity){
+                        hitGameObject.GetComponent<IDamageable>()?.Damage(explosionDamage, gameObject);
+                        hitGameObject.GetComponent<Knockbacker>()?.Knockback(explosionKnockbackMultiplier, gameObject);
+                    //}
             }
         }
-        Instantiate(explosionEffectGameObject, transform.position, Quaternion.identity);
-        audioSource.clip = explosao;
-        audioSource.Play();
         Destroy(gameObject);
     }
 
