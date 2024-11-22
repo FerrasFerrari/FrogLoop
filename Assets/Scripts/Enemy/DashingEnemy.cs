@@ -17,6 +17,8 @@ public class DashingEnemy : MonoBehaviour
     private Transform player;
     private Animator animator;
     private Rigidbody2D rb;
+    public AudioSource audioSource;
+    public AudioClip dashAudio;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -37,6 +39,8 @@ public class DashingEnemy : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
             animator.SetBool("Dash", true);
+            audioSource.clip = dashAudio;
+            audioSource.Play();
             StartCoroutine(Attack());
             StartCoroutine(Reset());
             nextDashTime = Time.time + 1f / dashRate;

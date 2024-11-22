@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 2
-  audioSource: {fileID: 5861850272461495906, guid: 637dea4e74e53e24e955bcf02f938787, type: 3}
+  audioSource: {fileID: 4016773901918741099, guid: 82044e0d87ac741418599f447891fe12, type: 3}
   dano: {fileID: 8300000, guid: 975c1eab8de6c0f49af8d1679cffc8b4, type: 3}
   morte: {fileID: 8300000, guid: 54cd305a7a578d04e9d30fd9b4e5de7b, type: 3}
 --- !u!114 &1682098986850769712
@@ -327,6 +327,8 @@ MonoBehaviour:
   dashSpeed: 7.4
   dashDuration: 1
   dashDelay: 0.3
+  audioSource: {fileID: 4016773901918741099, guid: 82044e0d87ac741418599f447891fe12, type: 3}
+  dashAudio: {fileID: 8300000, guid: e11f59ea14873f2418de3e9a6d7d61e1, type: 3}
 --- !u!1 &5074580288652618489
 GameObject:
   m_ObjectHideFlags: 0
