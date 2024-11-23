@@ -143,7 +143,7 @@ MonoBehaviour:
   explosionEffectGameObject: {fileID: 7321881190550561497, guid: 387a30c94ca5ef8468690c14c7a29338, type: 3}
   hittableObjectsMask:
     serializedVersion: 2
-    m_Bits: 1544
+    m_Bits: 11784
   audioSource: {fileID: 0}
   explosao: {fileID: 0}
 --- !u!114 &7531413407458011816

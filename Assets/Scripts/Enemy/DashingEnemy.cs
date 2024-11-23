@@ -21,6 +21,7 @@ public class DashingEnemy : MonoBehaviour
     public AudioClip dashAudio;
     void Start()
     {
+        audioSource = GameObject.FindGameObjectWithTag("AudioSourceMosca").GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -39,8 +40,6 @@ public class DashingEnemy : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
             animator.SetBool("Dash", true);
-            audioSource.clip = dashAudio;
-            audioSource.Play();
             StartCoroutine(Attack());
             StartCoroutine(Reset());
             nextDashTime = Time.time + 1f / dashRate;
@@ -73,6 +72,8 @@ public class DashingEnemy : MonoBehaviour
     private IEnumerator Attack(){
         Vector2 direction = (player.gameObject.transform.position - transform.position).normalized;
         yield return new WaitForSeconds(dashDelay);
+        audioSource.clip = dashAudio;
+        audioSource.Play();
         rb.velocity = direction * dashSpeed;
         SwitchCollisionWithOtherEnemies(false);
     }

@@ -301,6 +301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   immunityDuration: 1.2
+  isOnImmunity: 0
   HealthBarScript: {fileID: 0}
   PlayerMovementScript: {fileID: 4749756933946694701}
   audioSource: {fileID: 0}
@@ -384,7 +385,7 @@ MonoBehaviour:
   parriedBulletSpeedMultiplier: 1.5
   parryDelay: 0.15
   audioSource: {fileID: 0}
-  parry: {fileID: 0}
+  parry: {fileID: 8300000, guid: c70f5113aee58724bb3fe008566d442a, type: 3}
 --- !u!114 &-444926508360994160
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 372792761993671337}
   - component: {fileID: 464536043071113656}
   - component: {fileID: -3063558375776127666}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: ExtraLife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,6 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthBarScript: {fileID: 0}
+  audioSource: {fileID: 0}
+  vidaColetada: {fileID: 8300000, guid: 919c5deaecfda5f40a5190b8859b4cc4, type: 3}
 --- !u!61 &-3063558375776127666
 BoxCollider2D:
   m_ObjectHideFlags: 0

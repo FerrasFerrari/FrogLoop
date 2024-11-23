@@ -20,6 +20,7 @@ public class ShootingEnemy : MonoBehaviour
     public AudioClip tiro;
     void Start()
     {
+        audioSource = GameObject.FindGameObjectWithTag("AudioSourceMosca").GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
