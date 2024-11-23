@@ -8,6 +8,7 @@ public class Trigger : MonoBehaviour
     [HideInInspector] public bool PodeSpawnar1 = false;
     [HideInInspector] public bool PodeSpawnar2 = false;
     [HideInInspector] public bool PodeSpawnar3 = false;
+    [HideInInspector] public bool BarraBoss = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -25,6 +26,11 @@ public class Trigger : MonoBehaviour
         {
             print("o 3 foi");
             PodeSpawnar3 = true;
+        }
+        if(TriggerNumber == 4)
+        {
+           
+            BarraBoss = true;
         }
     }
     private void OnDrawGizmosSelected()
