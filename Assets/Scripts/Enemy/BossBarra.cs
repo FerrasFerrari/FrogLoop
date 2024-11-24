@@ -7,16 +7,19 @@ using TMPro;
 public class BossBarra : MonoBehaviour
 {
     public Trigger TriggerScript;
-    public GameObject BarraVidaBG;
-    public GameObject BarraVidaFG;
+    public Image BarraVidaBG;
+    public Image BarraVidaFG;
     public TMP_Text NomeBoss;
+    public float healthAmount = 100f;
+    
     // Start is called before the first frame update
     void Start()
     {
         TriggerScript.BarraBoss = false;
-       BarraVidaBG.SetActive(false);
-        BarraVidaFG.SetActive(false);
+       BarraVidaBG.enabled = false;
+        BarraVidaFG.enabled = false;
         NomeBoss.enabled = false;
+        
     }
 
     // Update is called once per frame
@@ -24,10 +27,19 @@ public class BossBarra : MonoBehaviour
     {
         if(TriggerScript.BarraBoss == true)
         {
-            
-           BarraVidaBG.SetActive(true);
-            BarraVidaFG.SetActive(true);
+            BarraVidaFG.enabled = true;
+            BarraVidaBG.enabled = true;
             NomeBoss.enabled = true;
         }
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            TakeDamage(20);
+        }
     }
+    public void TakeDamage(float damage)
+    {
+        healthAmount -= damage;
+        BarraVidaFG.fillAmount = healthAmount / 100f;
+    }
+   
 }

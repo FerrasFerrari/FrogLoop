@@ -34,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Inputs();
+        
+        
     }
     private void LateUpdate() {
             
