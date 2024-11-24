@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour
     private Transform spawnPoint;
     public Tower TowerScript;
     public int SpawnNumber;
-    public Trigger TriggerScript;
+    public TowerRoomTrigger TriggerScript;
 
     // Start is called before the first frame update
     private void Start()

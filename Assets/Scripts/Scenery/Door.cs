@@ -22,4 +22,9 @@ public class Door : MonoBehaviour
         animator.SetTrigger("Open");
         doorCollider.enabled = false;
     }
+    private void OnDrawGizmosSelected() {
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireCube(transform.position + new Vector3(GetComponent<BoxCollider2D>().offset.x, 
+        GetComponent<BoxCollider2D>().offset.y, 0), GetComponent<BoxCollider2D>().size);
+    }
 }

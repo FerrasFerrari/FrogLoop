@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Trigger : MonoBehaviour
+public class TowerRoomTrigger : MonoBehaviour
 {
     public int TriggerNumber;
     [HideInInspector] public bool PodeSpawnar1 = false;
@@ -33,9 +33,9 @@ public class Trigger : MonoBehaviour
             BarraBoss = true;
         }
     }
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(transform.position, GetComponent<BoxCollider2D>().size);
+    private void OnDrawGizmosSelected() {
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawWireCube(transform.position + new Vector3(GetComponent<BoxCollider2D>().offset.x, 
+        GetComponent<BoxCollider2D>().offset.y, 0), GetComponent<BoxCollider2D>().size);
     }
 }

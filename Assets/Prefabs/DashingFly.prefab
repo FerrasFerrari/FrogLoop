@@ -154,9 +154,9 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0028970838, y: 0.028971314}
-  m_Size: {x: 0.5242058, y: 0.7233074}
-  m_Direction: 0
+  m_Offset: {x: -0.06431981, y: -0.09899197}
+  m_Size: {x: 0.5431413, y: 0.3650262}
+  m_Direction: 1
 --- !u!70 &6354132481778070177
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -189,9 +189,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0014491081, y: 0.040559858}
-  m_Size: {x: 0.48427677, y: 0.6885418}
-  m_Direction: 0
+  m_Offset: {x: -0.080446236, y: -0.1119717}
+  m_Size: {x: 0.5575128, y: 0.39576837}
+  m_Direction: 1
 --- !u!95 &4660709856933467409
 Animator:
   serializedVersion: 5

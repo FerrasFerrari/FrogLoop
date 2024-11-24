@@ -6,7 +6,7 @@ using TMPro;
 
 public class BossBarra : MonoBehaviour
 {
-    public Trigger TriggerScript;
+    public TowerRoomTrigger TriggerScript;
     public Image BarraVidaBG;
     public Image BarraVidaFG;
     public TMP_Text NomeBoss;
