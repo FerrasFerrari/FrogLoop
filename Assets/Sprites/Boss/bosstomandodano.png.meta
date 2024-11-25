@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9ad81b5b9dd43ef4db70ad402ac5b2ff
+guid: fe3b84c3d86141d45b5de132cab321fc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -108,7 +108,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: bosstomandodano_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 111.5
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8d24d0e7b2c9ca43b3ecd8382f2f9f5
+      internalID: 1047994930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosstomandodano_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 0
+        width: 111.5
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9ef3092e4871ad479e568f983da4a20
+      internalID: -2096455046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosstomandodano_2
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 0
+        width: 111.5
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b125d6272aed1ca40b308cc309e8dc5c
+      internalID: 2069297477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bosstomandodano_3
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 0
+        width: 111.5
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43407f6841cd8bd45986bb6180eacc37
+      internalID: 2037404329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +203,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bosstomandodano_0: 1047994930
+      bosstomandodano_1: -2096455046
+      bosstomandodano_2: 2069297477
+      bosstomandodano_3: 2037404329
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

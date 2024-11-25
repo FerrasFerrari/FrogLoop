@@ -13,19 +13,16 @@ public class bossvida : MonoBehaviour, IDamageable
         BossBarraScript.healthAmount = 100f;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Damage(float damageAmount, GameObject sender)
     {
+        BossBarraScript.healthAmount -= damageAmount;
         if(BossBarraScript.healthAmount <= 0)
         {
             audioSource.clip = morte;
             audioSource.Play();
             Destroy(gameObject);
         }
-    }
-    public void Damage(float damageAmount, GameObject sender)
-    {
-        BossBarraScript.healthAmount -= damageAmount;
+        GetComponent<Animator>().SetTrigger("Damage");
         audioSource.clip = dano;
         audioSource.Play();
         BossBarraScript.BarraVidaFG.fillAmount = BossBarraScript.healthAmount / 100f;

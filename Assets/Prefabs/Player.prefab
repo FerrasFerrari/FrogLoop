@@ -355,7 +355,7 @@ MonoBehaviour:
   rangeOffset: {x: 0.08, y: 0, z: 0}
   hittableMask:
     serializedVersion: 2
-    m_Bits: 10760
+    m_Bits: 141832
   aimDirection: {x: 0, y: 0}
   aimAngle: 0
   attackingMovingSpeedMultiplier: 0.15
@@ -381,9 +381,9 @@ MonoBehaviour:
   bulletsMask:
     serializedVersion: 2
     m_Bits: 256
-  parryCooldown: 0.5
+  parryCooldown: 0.8
   parriedBulletSpeedMultiplier: 1.5
-  parryDelay: 0.15
+  parryDelay: 0.08
   audioSource: {fileID: 0}
   parry: {fileID: 8300000, guid: c70f5113aee58724bb3fe008566d442a, type: 3}
 --- !u!114 &-444926508360994160

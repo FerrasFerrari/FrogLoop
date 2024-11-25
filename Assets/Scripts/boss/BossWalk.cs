@@ -18,7 +18,7 @@ public class BossWalk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
+        transform.Translate(speed * Time.deltaTime * Vector2.right);
         RaycastHit2D wallcheckR = Physics2D.Raycast(wallDetect.position, Vector2.down, rayDist);
         if(wallcheckR.collider == false)
         {
