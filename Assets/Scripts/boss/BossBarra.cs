@@ -31,15 +31,8 @@ public class BossBarra : MonoBehaviour
             BarraVidaBG.enabled = true;
             NomeBoss.enabled = true;
         }
-        if(Input.GetKeyDown(KeyCode.P))
-        {
-            TakeDamage(20);
-        }
+        
     }
-    public void TakeDamage(float damage)
-    {
-        healthAmount -= damage;
-        BarraVidaFG.fillAmount = healthAmount / 100f;
-    }
+    
    
 }
