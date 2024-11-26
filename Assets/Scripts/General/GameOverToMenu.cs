@@ -14,10 +14,14 @@ public class GameOverToMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void GoBack()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+    }
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
