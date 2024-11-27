@@ -32,12 +32,15 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     public void Die()
     {
+        HitStop.Instance.Stop(0.25f);
         audioSource.clip = morte;
         audioSource.Play();
-        Destroy(gameObject);
+        StartCoroutine(WaitForTimescale());
         
     }
     public void Damage(float damageAmount, GameObject sender){
+        GetComponent<DamageFlash>().CallDamageFlasher();
+        HitStop.Instance.Stop(0.15f);
         //if(damageParticleSystem != null){
             Vector2 direction = (transform.position - sender.gameObject.transform.position).normalized;
             //damageParticleSystem.gameObject.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 45f);
@@ -53,6 +56,12 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         if(other.gameObject.CompareTag("Player")){
             other.gameObject.GetComponent<IDamageable>().Damage(1, gameObject);
         }
+    }
+
+    IEnumerator WaitForTimescale(){
+        while(Time.timeScale != 1f)
+            yield return null;
+        Destroy(gameObject);
     }
     
 }

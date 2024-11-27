@@ -49,12 +49,20 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private IEnumerator TakeDamage(float damageAmount)
     {
+
+        GetComponent<DamageFlash>().CallDamageFlasher();
+        HitStop.Instance.Stop(0.3f);
+
         HealthBarScript.Life = HealthBarScript.Life - Mathf.FloorToInt(damageAmount);
+
         audioSource.clip = dano;
         audioSource.Play();
+
         GetComponent<CapsuleCollider2D>().enabled = false;
         isOnImmunity = true;
+
         yield return new WaitForSeconds(immunityDuration);
+        
         GetComponent<CapsuleCollider2D>().enabled = true;
         isOnImmunity = false;
     }

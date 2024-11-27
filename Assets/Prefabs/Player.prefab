@@ -185,6 +185,7 @@ GameObject:
   - component: {fileID: 4743043753205495229}
   - component: {fileID: 6668338507429724546}
   - component: {fileID: 2188506222742457736}
+  - component: {fileID: 747879532617766906}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -229,7 +230,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9ab0bd146414cc0408abdf11f3165e17, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -360,6 +361,7 @@ MonoBehaviour:
   aimAngle: 0
   attackingMovingSpeedMultiplier: 0.15
   attackMovementSlowDuration: 0.33
+  attackDelay: 0.1
   attackRate: 2.5
   sceneCamera: {fileID: 0}
   rotationPoint: {fileID: 229383869990927638}
@@ -507,6 +509,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.56552076, y: 0.96875}
   m_Direction: 0
+--- !u!114 &747879532617766906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3548942525033517359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6ef817d6f0caba43918055284e4676a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashColor: {r: 1, g: 1, b: 1, a: 0}
+  flashTime: 0.4
 --- !u!1 &7471707648354930943
 GameObject:
   m_ObjectHideFlags: 0

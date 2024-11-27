@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 3027744815137096147}
   - component: {fileID: 8718220322119661640}
   - component: {fileID: 8392839312156937535}
+  - component: {fileID: 1871675769131175876}
   m_Layer: 3
   m_Name: DashingFly
   m_TagString: Enemy
@@ -63,7 +64,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9ab0bd146414cc0408abdf11f3165e17, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -330,6 +331,20 @@ MonoBehaviour:
   dashDelay: 0.3
   audioSource: {fileID: 0}
   dashAudio: {fileID: 8300000, guid: e11f59ea14873f2418de3e9a6d7d61e1, type: 3}
+--- !u!114 &1871675769131175876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2523934454928234597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6ef817d6f0caba43918055284e4676a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashColor: {r: 1, g: 1, b: 1, a: 0}
+  flashTime: 0.25
 --- !u!1 &5074580288652618489
 GameObject:
   m_ObjectHideFlags: 0

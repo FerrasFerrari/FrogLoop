@@ -18,8 +18,10 @@ public class PlayerAttack : MonoBehaviour
 
     public float attackingMovingSpeedMultiplier = 0.15f;
     public float attackMovementSlowDuration = 0.33f;
+    [SerializeField]private float attackDelay;
     public float attackRate = 2f;
     private float nextAttackTime = 0f;
+
 
     private PlayerMovement playerMovementScript;
     [SerializeField]private Camera sceneCamera;
@@ -46,26 +48,28 @@ public class PlayerAttack : MonoBehaviour
             if(Input.GetKey(KeyCode.Space) && !playerMovementScript.isDashing || Input.GetMouseButton(0) && !playerMovementScript.isDashing){
                 StartCoroutine(AttackMovementSlowdown(attackMovementSlowDuration));
                 RotateAttackPoint();
-                Attack();
+                StartCoroutine(Attack());
                 nextAttackTime = Time.time + 1f / attackRate;
                 
             }
         }  
     }
 
-    void Attack(){
+    IEnumerator Attack(){
         //Physics2D.OverlapCircleNonAlloc(attackPoint.position + rangeOffset, attackRange, hitEnemies, hittableMask);
+        attackPointAnimator.SetBool("Attack", true);
+        playerAnimator.SetBool("Attack", true);
+
+        audioSource.clip = attackSFX;
+        audioSource.Play(); 
+
+        yield return new WaitForSeconds(attackDelay);
 
         RaycastHit2D[] hitEnemies = Physics2D.CircleCastAll(transform.position, attackRange, aimDirection, 
         Vector3.Distance(transform.position, attackPoint.position + rangeOffset), hittableMask);
 
         List<int> hitEnemiesInstanceID = new();
 
-        attackPointAnimator.SetBool("Attack", true);
-        playerAnimator.SetBool("Attack", true);
-
-        audioSource.clip = attackSFX;
-        audioSource.Play(); 
 
         for(int i = 0; i < hitEnemies.Length; i++) {
             GameObject enemyGameObject = hitEnemies[i].collider.gameObject;
