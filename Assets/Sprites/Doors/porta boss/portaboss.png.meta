@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 86c187ea199c62a4ba53b3e986620d4c
+guid: 3b59a6b70f5319d48903e87e0eec6d21
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: porta_azul_fechando_0
+      name: portaboss_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94033c1288fbf614ebf557a79ababb6d
-      internalID: 1272614226
+      spriteID: 8a9679f707593e94e838b5a014de5586
+      internalID: -2090002337
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: porta_azul_fechando_1
+      name: portaboss_1
       rect:
         serializedVersion: 2
         x: 64
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a84a2cc15c2c9024d9f46296a462287d
-      internalID: 1071220228
+      spriteID: 6ce59604183dad64988bac0f3a055d92
+      internalID: 1953226081
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: porta_azul_fechando_2
+      name: portaboss_2
       rect:
         serializedVersion: 2
         x: 128
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc831f20177e1f14a9dc533cbfa2e7c7
-      internalID: 1447211499
+      spriteID: 0aaa282d1461e9d4796f9b7bde76d844
+      internalID: 1151045727
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: porta_azul_fechando_3
+      name: portaboss_3
       rect:
         serializedVersion: 2
         x: 192
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a84cb2caa3492f448ddfb670146b884
-      internalID: 64777632
+      spriteID: 64537685c3a5e8145afb7fbdae0aaf1b
+      internalID: 984776585
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: porta_azul_fechando_4
+      name: portaboss_4
       rect:
         serializedVersion: 2
         x: 256
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac160bb55c5cf9440ba6c747bf2f4c80
-      internalID: -270531436
+      spriteID: 9be0c5b6542bca64b94d0f55884de653
+      internalID: 278380407
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: porta_azul_fechando_5
+      name: portaboss_5
       rect:
         serializedVersion: 2
         x: 320
@@ -229,8 +229,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 476aceb4485327c4ebcdcd80d5217bf5
-      internalID: 856823707
+      spriteID: 56bc2935c347ccb49a3c0b0223938129
+      internalID: -378996062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portaboss_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2f4f9e25a236d641a17b18a8a8bedd9
+      internalID: -105275921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: portaboss_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab2db1f4465f10041a7252f160a1b3da
+      internalID: 443770933
       vertices: []
       indices: 
       edges: []
@@ -246,12 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      porta_azul_fechando_0: 1272614226
-      porta_azul_fechando_1: 1071220228
-      porta_azul_fechando_2: 1447211499
-      porta_azul_fechando_3: 64777632
-      porta_azul_fechando_4: -270531436
-      porta_azul_fechando_5: 856823707
+      portaboss_0: -2090002337
+      portaboss_1: 1953226081
+      portaboss_2: 1151045727
+      portaboss_3: 984776585
+      portaboss_4: 278380407
+      portaboss_5: -378996062
+      portaboss_6: -105275921
+      portaboss_7: 443770933
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

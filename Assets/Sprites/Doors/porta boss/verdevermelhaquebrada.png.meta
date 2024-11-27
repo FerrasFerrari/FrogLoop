@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 86c187ea199c62a4ba53b3e986620d4c
+guid: 8202f6f5c4a46c543940b809f84d0f18
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,12 +110,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: porta_azul_fechando_0
+      name: verdevermelhaquebrada_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
+        width: 63
         height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,19 +124,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94033c1288fbf614ebf557a79ababb6d
-      internalID: 1272614226
+      spriteID: 616d815c22390e1459535f5a2f1c2762
+      internalID: 917674935
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: porta_azul_fechando_1
+      name: verdevermelhaquebrada_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 63
         y: 0
-        width: 64
+        width: 63
         height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -145,19 +145,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a84a2cc15c2c9024d9f46296a462287d
-      internalID: 1071220228
+      spriteID: 773a9c87930f9cf4d9365f6dee2b2e95
+      internalID: -1887257403
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: porta_azul_fechando_2
+      name: verdevermelhaquebrada_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 126
         y: 0
-        width: 64
+        width: 63
         height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -166,19 +166,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc831f20177e1f14a9dc533cbfa2e7c7
-      internalID: 1447211499
+      spriteID: 18297044cbfc47446b890524d8c7589f
+      internalID: -916689598
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: porta_azul_fechando_3
+      name: verdevermelhaquebrada_3
       rect:
         serializedVersion: 2
-        x: 192
+        x: 189
         y: 0
-        width: 64
+        width: 63
         height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -187,19 +187,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a84cb2caa3492f448ddfb670146b884
-      internalID: 64777632
+      spriteID: d0f4c7ee9dbfc5840a5926223bd9f23e
+      internalID: 1945771491
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: porta_azul_fechando_4
+      name: verdevermelhaquebrada_4
       rect:
         serializedVersion: 2
-        x: 256
+        x: 252
         y: 0
-        width: 64
+        width: 63
         height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -208,19 +208,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac160bb55c5cf9440ba6c747bf2f4c80
-      internalID: -270531436
+      spriteID: 55f20532325ff88489c38c055c8460ad
+      internalID: 2055808879
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: porta_azul_fechando_5
+      name: verdevermelhaquebrada_5
       rect:
         serializedVersion: 2
-        x: 320
+        x: 315
         y: 0
-        width: 64
+        width: 63
         height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -229,8 +229,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 476aceb4485327c4ebcdcd80d5217bf5
-      internalID: 856823707
+      spriteID: 6f5f99a2988fbc2488b026b4a158fa94
+      internalID: 898919485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: verdevermelhaquebrada_6
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 0
+        width: 63
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b03fb21695cbce34188008b059f6ae0f
+      internalID: -1952200378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: verdevermelhaquebrada_7
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 0
+        width: 63
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81da74c78ee078a4f8c0ac44ca44ad74
+      internalID: 977912511
       vertices: []
       indices: 
       edges: []
@@ -246,12 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      porta_azul_fechando_0: 1272614226
-      porta_azul_fechando_1: 1071220228
-      porta_azul_fechando_2: 1447211499
-      porta_azul_fechando_3: 64777632
-      porta_azul_fechando_4: -270531436
-      porta_azul_fechando_5: 856823707
+      verdevermelhaquebrada_0: 917674935
+      verdevermelhaquebrada_1: -1887257403
+      verdevermelhaquebrada_2: -916689598
+      verdevermelhaquebrada_3: 1945771491
+      verdevermelhaquebrada_4: 2055808879
+      verdevermelhaquebrada_5: 898919485
+      verdevermelhaquebrada_6: -1952200378
+      verdevermelhaquebrada_7: 977912511
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

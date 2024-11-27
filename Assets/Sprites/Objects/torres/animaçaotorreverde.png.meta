@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 86c187ea199c62a4ba53b3e986620d4c
+guid: 847d05dbbbeade149820d5505d966e35
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: porta_azul_fechando_0
+      name: "anima\xE7aotorreverde_0"
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 56
+        width: 48
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94033c1288fbf614ebf557a79ababb6d
-      internalID: 1272614226
+      spriteID: 3d1086f331396254f839d9c87b5caef6
+      internalID: -832823384
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: porta_azul_fechando_1
+      name: "anima\xE7aotorreverde_1"
       rect:
         serializedVersion: 2
-        x: 64
+        x: 48
         y: 0
-        width: 64
-        height: 56
+        width: 48
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a84a2cc15c2c9024d9f46296a462287d
-      internalID: 1071220228
+      spriteID: 8b2102d2751b4d6419f61b7c4c89e1c8
+      internalID: -700469394
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: porta_azul_fechando_2
+      name: "anima\xE7aotorreverde_2"
       rect:
         serializedVersion: 2
-        x: 128
+        x: 96
         y: 0
-        width: 64
-        height: 56
+        width: 48
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc831f20177e1f14a9dc533cbfa2e7c7
-      internalID: 1447211499
+      spriteID: 0f17ac4d886a33b44b64880018a333a0
+      internalID: 1378982269
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: porta_azul_fechando_3
+      name: "anima\xE7aotorreverde_3"
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed19099f9e697ee4e834d5191294e099
+      internalID: -1269708376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "anima\xE7aotorreverde_4"
       rect:
         serializedVersion: 2
         x: 192
         y: 0
-        width: 64
-        height: 56
+        width: 48
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a84cb2caa3492f448ddfb670146b884
-      internalID: 64777632
+      spriteID: 3ba63769aa76b4747bf05c6465285ee5
+      internalID: -309987840
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: porta_azul_fechando_4
+      name: "anima\xE7aotorreverde_5"
       rect:
         serializedVersion: 2
-        x: 256
+        x: 240
         y: 0
-        width: 64
-        height: 56
+        width: 48
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac160bb55c5cf9440ba6c747bf2f4c80
-      internalID: -270531436
+      spriteID: 4e54f48334e77fd46b617e4e4e65ba6d
+      internalID: 782036829
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: porta_azul_fechando_5
+      name: "anima\xE7aotorreverde_6"
       rect:
         serializedVersion: 2
-        x: 320
+        x: 288
         y: 0
-        width: 64
-        height: 56
+        width: 48
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,8 +250,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 476aceb4485327c4ebcdcd80d5217bf5
-      internalID: 856823707
+      spriteID: ef287ede1810e5a4c8d72d521c072ea6
+      internalID: -221685366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "anima\xE7aotorreverde_7"
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 48
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e4354e84985a824c8744daf082cc219
+      internalID: 364239846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "anima\xE7aotorreverde_8"
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 48
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ff248cffd3ead1438696ce4329facb7
+      internalID: 497941147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "anima\xE7aotorreverde_9"
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 48
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bed7861061c3e02438b8e203dafee87e
+      internalID: 1219315267
       vertices: []
       indices: 
       edges: []
@@ -246,12 +330,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      porta_azul_fechando_0: 1272614226
-      porta_azul_fechando_1: 1071220228
-      porta_azul_fechando_2: 1447211499
-      porta_azul_fechando_3: 64777632
-      porta_azul_fechando_4: -270531436
-      porta_azul_fechando_5: 856823707
+      "anima\xE7aotorreverde_0": -832823384
+      "anima\xE7aotorreverde_1": -700469394
+      "anima\xE7aotorreverde_2": 1378982269
+      "anima\xE7aotorreverde_3": -1269708376
+      "anima\xE7aotorreverde_4": -309987840
+      "anima\xE7aotorreverde_5": 782036829
+      "anima\xE7aotorreverde_6": -221685366
+      "anima\xE7aotorreverde_7": 364239846
+      "anima\xE7aotorreverde_8": 497941147
+      "anima\xE7aotorreverde_9": 1219315267
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -86,7 +86,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HorizontalDoorAnimatorController
+  m_Name: redlDoorAnimatorController
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Open
@@ -168,7 +168,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HorizontalDoorClosing
+  m_Name: 'portavermelhofechando '
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -182,7 +182,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: cff84ba4c18b716428c8ff8400f3b4a4, type: 2}
+  m_Motion: {fileID: 7400000, guid: a55ce46dea7cfc64fbbffbe6e545e045, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -195,7 +195,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HorizontalDoorOpening
+  m_Name: 'portavermelhoabrindo '
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -209,7 +209,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6367a2f0e4de0fc419eb812f7c0f5208, type: 2}
+  m_Motion: {fileID: 7400000, guid: 5ccf42d22ff8e7543951c730d2a1dc85, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
