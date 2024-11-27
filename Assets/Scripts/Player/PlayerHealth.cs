@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour, IDamageable
 {
     [SerializeField]private float immunityDuration;
+    [SerializeField]private float hitStopDuration = 0.35f;
     [HideInInspector]public bool isOnImmunity = false;
     public HealthBar HealthBarScript;
     public PlayerMovement PlayerMovementScript;
@@ -51,7 +52,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     {
 
         GetComponent<DamageFlash>().CallDamageFlasher();
-        HitStop.Instance.Stop(0.3f);
+        HitStop.Instance.Stop(hitStopDuration);
 
         HealthBarScript.Life = HealthBarScript.Life - Mathf.FloorToInt(damageAmount);
 

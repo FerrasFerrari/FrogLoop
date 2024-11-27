@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     public float hp = 2;
     private Animator animator;
     [SerializeField]private GameObject hitParticleEffectGameObject;
+    [SerializeField]private float hitStopDuration = 0.25f;
     public AudioSource audioSource;
     public AudioClip dano, morte;
 
@@ -32,7 +33,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     public void Die()
     {
-        HitStop.Instance.Stop(0.25f);
+        HitStop.Instance.Stop(hitStopDuration);
         audioSource.clip = morte;
         audioSource.Play();
         StartCoroutine(WaitForTimescale());
@@ -40,7 +41,6 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     }
     public void Damage(float damageAmount, GameObject sender){
         GetComponent<DamageFlash>().CallDamageFlasher();
-        HitStop.Instance.Stop(0.15f);
         //if(damageParticleSystem != null){
             Vector2 direction = (transform.position - sender.gameObject.transform.position).normalized;
             //damageParticleSystem.gameObject.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 45f);

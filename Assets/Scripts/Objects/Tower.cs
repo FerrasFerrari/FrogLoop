@@ -8,6 +8,8 @@ public class Tower : MonoBehaviour, IDamageable
 
     [SerializeField]private int towerNumber;
     [SerializeField]private int towerHP = 5;
+    [SerializeField] private float hitStopDuration = 0.2f;
+    [SerializeField] private float deathStopDuration = 0.6f;
     private Animator anim;
     private bool isBroken = false;
     private GateDestroier gateDestroier;
@@ -34,21 +36,24 @@ public class Tower : MonoBehaviour, IDamageable
     }
     public void Damage(float damageAmount, GameObject sender)
     {
-        if(isBroken){ return; }
+        if(isBroken || sender.gameObject.layer == LayerMask.NameToLayer("Bullet")){ return; }
+        GetComponent<DamageFlash>().CallDamageFlasher();
         towerHP--;
-        audioSource.clip = dano;
-        audioSource.Play();
         if(towerHP <= 0){
             Die();
         }
+        audioSource.clip = dano;
+        audioSource.Play();
+        HitStop.Instance.Stop(hitStopDuration);
     }
 
     private void Die()
     {
-        anim.SetBool("isBroken", true);
-        isBroken = true;
         audioSource.clip = morte;
         audioSource.Play();
+        HitStop.Instance.Stop(deathStopDuration);
+        anim.SetBool("isBroken", true);
+        isBroken = true;
         gateDestroier.UpdateBrokenStatus(towerNumber - 1);
         if(TowerSpawn == 1)
         {

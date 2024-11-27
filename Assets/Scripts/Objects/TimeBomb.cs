@@ -15,8 +15,11 @@ public class TimeBomb : MonoBehaviour, IDamageable
     private LayerMask hittableObjectsMask;
     public AudioSource audioSource;
     public AudioClip explosao;
+    [SerializeField] private Material backgroundMaterial;
+    [SerializeField] private Color backgroundColor;
+    [SerializeField] private BackToNormal backToNormalScript;
 
-    public bool NSM;
+    [HideInInspector]public bool NSM;
     void Start()
     {
         NSM = false;
@@ -28,16 +31,12 @@ public class TimeBomb : MonoBehaviour, IDamageable
     }
     private void SlowMotion()
     {
-        Collider2D[] hitObjects = Physics2D.OverlapCircleAll(transform.position, explosionRadius, hittableObjectsMask);
-        foreach (Collider2D hitObject in hitObjects)
-        {
-            //IDamageable iDamageableScript = hitObject.gameObject.GetComponent<IDamageable>();
-            //iDamageableScript?.Damage(explosionDamage, gameObject);
-            hitObject.gameObject.GetComponent<IDamageable>()?.Damage(explosionDamage, gameObject);
-        }
+        Color backgroundPreviousColor = backgroundMaterial.color;
+        backgroundMaterial.color = backgroundColor;
         Time.timeScale = 0.5f;
         Time.fixedDeltaTime = Time.timeScale * .02f;
         NSM = true;
+        backToNormalScript.timescaleNormalize(backgroundMaterial, backgroundPreviousColor);
         audioSource.clip = explosao;
         audioSource.Play();
         Destroy(gameObject);

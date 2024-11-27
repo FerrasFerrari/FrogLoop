@@ -77,7 +77,7 @@ public class PlayerAttack : MonoBehaviour
                 hitEnemiesInstanceID.Add(enemyGameObject.GetInstanceID());
 
                 enemyGameObject.GetComponent<IDamageable>().Damage(attackDamage, gameObject);
-                enemyGameObject.GetComponent<ScreenShaker>().ShakeDirectional(aimDirection);
+                enemyGameObject.GetComponent<ScreenShaker>()?.ShakeDirectional(aimDirection);
                 enemyGameObject.GetComponent<Knockbacker>()?.Knockback(attackKnockbackMultiplier, gameObject);
             }
         }
