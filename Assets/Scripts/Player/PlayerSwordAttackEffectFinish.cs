@@ -20,6 +20,7 @@ public class PlayerSwordAttackEffectFinish : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
        animator.SetBool("Attack", false);
+       animator.GetComponent<SpriteRenderer>().flipX = false;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

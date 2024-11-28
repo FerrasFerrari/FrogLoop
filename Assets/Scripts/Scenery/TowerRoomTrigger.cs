@@ -14,17 +14,14 @@ public class TowerRoomTrigger : MonoBehaviour
     {
         if(TriggerNumber == 1)
         {
-            print("o 1 foi");
             PodeSpawnar1 = true;
         }
         if (TriggerNumber == 2)
         {
-            print("o 2 foi");
             PodeSpawnar2 = true;
         }
         if (TriggerNumber == 3)
         {
-            print("o 3 foi");
             PodeSpawnar3 = true;
         }
         if(TriggerNumber == 4)

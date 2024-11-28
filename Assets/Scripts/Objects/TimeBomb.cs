@@ -5,19 +5,11 @@ using UnityEngine;
 public class TimeBomb : MonoBehaviour, IDamageable
 {
     [SerializeField]
-    private float explosionRadius = 1.6f;
-    [SerializeField]
-    private int explosionDamage = 3;
-    [SerializeField]
     private float hp = 1;
-    [SerializeField]
-    [Tooltip("Layer Mask of the objects that can be hit by the explosion")]
-    private LayerMask hittableObjectsMask;
     public AudioSource audioSource;
     public AudioClip explosao;
     [SerializeField] private Material backgroundMaterial;
     [SerializeField] private Color backgroundColor;
-    [SerializeField] private BackToNormal backToNormalScript;
 
     [HideInInspector]public bool NSM;
     void Start()
@@ -33,10 +25,11 @@ public class TimeBomb : MonoBehaviour, IDamageable
     {
         Color backgroundPreviousColor = backgroundMaterial.color;
         backgroundMaterial.color = backgroundColor;
-        Time.timeScale = 0.5f;
-        Time.fixedDeltaTime = Time.timeScale * .02f;
+        HitStop.Instance.Stop(2f, 0.5f);
+        // Time.timeScale = 0.5f;
+        // Time.fixedDeltaTime = Time.timeScale * .02f;
         NSM = true;
-        backToNormalScript.timescaleNormalize(backgroundMaterial, backgroundPreviousColor);
+        StartCoroutine(WaitForTimescale(backgroundPreviousColor));
         audioSource.clip = explosao;
         audioSource.Play();
         Destroy(gameObject);
@@ -51,5 +44,12 @@ public class TimeBomb : MonoBehaviour, IDamageable
            SlowMotion();
             
         }
+    }
+    private IEnumerator WaitForTimescale(Color color){
+        Debug.Log("TryChangeColor");
+        while(Time.timeScale != 1f)
+            yield return null;
+        Debug.Log("ChangeColor");
+        backgroundMaterial.color = color;
     }
 }

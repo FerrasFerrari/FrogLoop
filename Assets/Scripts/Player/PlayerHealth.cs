@@ -7,26 +7,28 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 {
     [SerializeField]private float immunityDuration;
     [SerializeField]private float hitStopDuration = 0.35f;
+    [SerializeField]private float deathStopDuration = 1.2f;
+    [SerializeField]private float delayBeforeGameOver;
     [HideInInspector]public bool isOnImmunity = false;
+    [HideInInspector]public bool dead = false;
     public HealthBar HealthBarScript;
     public PlayerMovement PlayerMovementScript;
     public AudioSource audioSource;
     public AudioClip dano, morte;
-    // Start is called before the first frame update
     void Start()
     {
         HealthBarScript.Life = 6;
         PlayerMovementScript.Intangivel = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(HealthBarScript.Life <= 0)
+        if(HealthBarScript.Life <= 0 && !dead)
         {
+            dead = true;
             audioSource.clip = morte;
-            audioSource.Play(); 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            audioSource.Play();
+            StartCoroutine(WaitForTimescale());
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -50,11 +52,17 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private IEnumerator TakeDamage(float damageAmount)
     {
-
         GetComponent<DamageFlash>().CallDamageFlasher();
-        HitStop.Instance.Stop(hitStopDuration);
+        int damageTaken = Mathf.FloorToInt(damageAmount);
+        if(HealthBarScript.Life - damageTaken <= 0){
+            damageTaken = HealthBarScript.Life;
+            HitStop.Instance.Stop(deathStopDuration);
+        }else{
+            HitStop.Instance.Stop(hitStopDuration);
+        }
 
-        HealthBarScript.Life = HealthBarScript.Life - Mathf.FloorToInt(damageAmount);
+
+        HealthBarScript.Life -= damageTaken;
 
         audioSource.clip = dano;
         audioSource.Play();
@@ -66,5 +74,17 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         
         GetComponent<CapsuleCollider2D>().enabled = true;
         isOnImmunity = false;
+    }
+    IEnumerator WaitForTimescale(){
+        Collider2D[] colliders = GetComponents<Collider2D>();
+        foreach(Collider2D collider in colliders)
+        {
+            collider.enabled = false;
+        }
+        while(Time.timeScale != 1f){
+            yield return null;
+        }
+        //yield return new WaitForSecondsRealtime(delayBeforeGameOver);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
