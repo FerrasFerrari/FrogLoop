@@ -302,8 +302,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   immunityDuration: 1.2
+  numberOfFlicks: 4
   hitStopDuration: 0.35
-  delayBeforeGameOver: 1.2
+  deathFlashColor: {r: 1, g: 0.70803815, b: 0.15831912, a: 1}
+  deathStopDuration: 1.2
   isOnImmunity: 0
   dead: 0
   HealthBarScript: {fileID: 0}
@@ -509,8 +511,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.56552076, y: 0.96875}
+  m_Offset: {x: 0, y: -0.013835311}
+  m_Size: {x: 0.46851408, y: 0.88507724}
   m_Direction: 0
 --- !u!114 &747879532617766906
 MonoBehaviour:

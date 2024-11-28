@@ -50,9 +50,8 @@ public class PlayerAttack : MonoBehaviour
                 RotateAttackPoint2();
                 StartCoroutine(Attack());
                 nextAttackTime = Time.time + 1f / attackRate;
-                
             }
-        }  
+        }
     }
 
     IEnumerator Attack(){
@@ -119,10 +118,10 @@ public class PlayerAttack : MonoBehaviour
         float dotProductRight = Vector3.Dot(Vector3.right, mouseDirection);
         float dotProductUp = Vector3.Dot(Vector3.up, mouseDirection);
 
-        Debug.Log(dotProductUp);
         if(dotProductRight > 0){
             GetComponent<SpriteRenderer>().flipX = false;
         }else{
+            Debug.Log("Flip");
             GetComponent<SpriteRenderer>().flipX = true;
         }
         if (dotProductUp > 0.33)
@@ -137,7 +136,6 @@ public class PlayerAttack : MonoBehaviour
         }
         else if (dotProductUp < -0.7)
         {
-            Debug.Log("Down");
             playerAnimator.SetFloat("AimVertical", -1);
             playerAnimator.SetFloat("AimHorizontal", 0);
 
@@ -146,7 +144,6 @@ public class PlayerAttack : MonoBehaviour
         {
             playerAnimator.SetFloat("AimVertical", 0);
             playerAnimator.SetFloat("AimHorizontal", 1);
-           // Debug.Log("Up");
         }
         else if (dotProductUp > -0.6)
         {

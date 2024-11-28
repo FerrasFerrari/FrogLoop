@@ -69,7 +69,9 @@ public class PlayerMovement : MonoBehaviour
                 dashCoolCounter = dashCooldown;
                 isDashing = false;
                 Intangivel = false;
-                if (Physics2D.OverlapPoint(new Vector2(transform.position.x, transform.position.y - 0.4f), collidingSceneObjectsLayerMask)){
+                //if(Physics2D.OverlapPoint(new Vector2(transform.position.x, transform.position.y - 0.4f), collidingSceneObjectsLayerMask)){
+                if(GetComponent<BoxCollider2D>().IsTouchingLayers(collidingSceneObjectsLayerMask)){
+                    Debug.Log("Stuck");
                     transform.position = lastPositionBeforeDash;
                 }
             }
