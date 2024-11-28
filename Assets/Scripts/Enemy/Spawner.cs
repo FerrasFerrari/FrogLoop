@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject EnemyPrefab;
+    
     public float Intervalo = 2f;
     private Transform spawnPoint;
     public Tower TowerScript;
@@ -53,14 +54,17 @@ public class Spawner : MonoBehaviour
         if(TriggerScript.PodeSpawnar1 == true && SpawnNumber == 1)
         {
             Instantiate(EnemyPrefab, spawnPoint.position, Quaternion.identity);
+            
         }
         if (TriggerScript.PodeSpawnar2 == true && SpawnNumber == 2)
         {
             Instantiate(EnemyPrefab, spawnPoint.position, Quaternion.identity);
+           
         }
         if (TriggerScript.PodeSpawnar3 == true && SpawnNumber == 3)
         {
             Instantiate(EnemyPrefab, spawnPoint.position, Quaternion.identity);
+           
         }
     }
 }
