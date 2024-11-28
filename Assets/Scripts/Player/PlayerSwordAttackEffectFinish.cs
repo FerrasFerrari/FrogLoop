@@ -19,9 +19,7 @@ public class PlayerSwordAttackEffectFinish : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Debug.Log("Cancel");
         animator.SetBool("Attack", false);
-        animator.GetComponent<SpriteRenderer>().flipX = false;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

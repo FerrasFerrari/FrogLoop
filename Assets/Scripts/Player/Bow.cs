@@ -35,7 +35,7 @@ public class Bow : MonoBehaviour
         {
                 if (Input.GetKeyDown(KeyCode.Q))
                 {
-                    Rotate.RotateAttackPoint();
+                    Rotate.RotateAttackPoint2();
                     GameObject Arrow = Instantiate(ArrowPrefab, ArrowPos.position + new Vector3(arrowSpawnOffsetX,0,0), ArrowRotationObject.rotation);
                     Arrow.GetComponent<Rigidbody2D>().AddForce(Rotate.aimDirection.normalized * ArrowForce, ForceMode2D.Impulse);
                 audioSource.clip = arco;

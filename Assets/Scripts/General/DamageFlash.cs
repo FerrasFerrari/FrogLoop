@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DamageFlash : MonoBehaviour
 {
+    [ColorUsage(true, true)]
     public Color flashColor;
     [SerializeField]private float flashTime = 0.25f;
     private SpriteRenderer spritesRenderer;
@@ -36,6 +37,7 @@ public class DamageFlash : MonoBehaviour
             yield return null;
         }
         yield return new WaitForSeconds(flashTime);
+
     }
 
 }

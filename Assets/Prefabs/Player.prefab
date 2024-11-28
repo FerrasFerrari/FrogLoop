@@ -182,10 +182,10 @@ GameObject:
   - component: {fileID: 9158333293788628948}
   - component: {fileID: 687261008318086066}
   - component: {fileID: -444926508360994160}
+  - component: {fileID: 747879532617766906}
   - component: {fileID: 4743043753205495229}
   - component: {fileID: 6668338507429724546}
   - component: {fileID: 2188506222742457736}
-  - component: {fileID: 747879532617766906}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -413,6 +413,20 @@ MonoBehaviour:
   ArrowRotationObject: {fileID: 2332633411206567746}
   audioSource: {fileID: 0}
   arco: {fileID: 8300000, guid: 6319891a4123d8d468b356fcb2851b39, type: 3}
+--- !u!114 &747879532617766906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3548942525033517359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6ef817d6f0caba43918055284e4676a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashColor: {r: 1, g: 0, b: 0.6288419, a: 0}
+  flashTime: 0.4
 --- !u!61 &4743043753205495229
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -468,7 +482,7 @@ Animator:
   m_GameObject: {fileID: 3548942525033517359}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1d5253d48facc3e47bd2539960e63f3e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 40b0168d728b3f2479e383436b528b19, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -514,20 +528,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.013835311}
   m_Size: {x: 0.46851408, y: 0.88507724}
   m_Direction: 0
---- !u!114 &747879532617766906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3548942525033517359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6ef817d6f0caba43918055284e4676a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flashColor: {r: 1, g: 1, b: 1, a: 0}
-  flashTime: 0.4
 --- !u!1 &7471707648354930943
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,6 +14,9 @@ public class PlayerMovement : MonoBehaviour
 
     public float dashSpeed;
     public float dashLength = .3f, dashCooldown = 1f;
+    [SerializeField]private float timeStopDurationDash = .5f;
+    [ColorUsage(true, true)]
+    [SerializeField]private Color dashFlashColor;
     private float dashCounter;
     private float dashCoolCounter;
     [HideInInspector]public bool isDashing = false;
@@ -24,8 +27,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]private LayerMask collidingSceneObjectsLayerMask;
     public AudioSource audioSource;
     public AudioClip dash, passos;
+    private DamageFlash damageFlash;
     void Start()
     {
+        damageFlash = GetComponent<DamageFlash>();
         activeMoveSpeed = moveSpeed;
         UnlockDashScrpit.UnlockedSprint = false;
         Intangivel = false;
@@ -48,7 +53,13 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (dashCoolCounter <= 0 && dashCounter <= 0)
                 {
+                    anim.SetBool("Dash", true);
+                    Color ogColor = damageFlash.flashColor;
+                    damageFlash.flashColor = dashFlashColor;
+                    damageFlash.CallDamageFlasher();
+                    damageFlash.flashColor = ogColor;
                     lastPositionBeforeDash = transform.position;
+                    HitStop.Instance.Stop(timeStopDurationDash);
                     isDashing = true;
                     activeMoveSpeed = dashSpeed;
                     dashCounter = dashLength;
@@ -65,15 +76,16 @@ public class PlayerMovement : MonoBehaviour
 
             if(dashCounter <= 0)
             {
+                anim.SetBool("Dash", false);
                 activeMoveSpeed = moveSpeed;
                 dashCoolCounter = dashCooldown;
                 isDashing = false;
                 Intangivel = false;
                 //if(Physics2D.OverlapPoint(new Vector2(transform.position.x, transform.position.y - 0.4f), collidingSceneObjectsLayerMask)){
-                if(GetComponent<BoxCollider2D>().IsTouchingLayers(collidingSceneObjectsLayerMask)){
-                    Debug.Log("Stuck");
-                    transform.position = lastPositionBeforeDash;
-                }
+                // if(GetComponent<BoxCollider2D>().OverlapCollider(collidingSceneObjectsLayerMask)){
+                //     Debug.Log("Stuck");
+                //     transform.position = lastPositionBeforeDash;
+                // }
             }
         }
 

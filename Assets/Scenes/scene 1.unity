@@ -18329,7 +18329,7 @@ Transform:
   m_GameObject: {fileID: 813120760}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.08, y: -22.18, z: -10}
+  m_LocalPosition: {x: -18.11, y: 11.63, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22130,11 +22130,11 @@ PrefabInstance:
       objectReference: {fileID: 1291161226}
     - target: {fileID: 1185280420047819839, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.08
+      value: -18.11
       objectReference: {fileID: 0}
     - target: {fileID: 1185280420047819839, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -22.18
+      value: 11.63
       objectReference: {fileID: 0}
     - target: {fileID: 1185280420047819839, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22180,6 +22180,18 @@ PrefabInstance:
       propertyPath: UnlockDashScrpit
       value: 
       objectReference: {fileID: 317936573}
+    - target: {fileID: 4749756933946694701, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
+      propertyPath: dashFlashColor.b
+      value: 0.22322798
+      objectReference: {fileID: 0}
+    - target: {fileID: 4749756933946694701, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
+      propertyPath: dashFlashColor.g
+      value: 0.4341537
+      objectReference: {fileID: 0}
+    - target: {fileID: 4749756933946694701, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
+      propertyPath: dashFlashColor.r
+      value: 0.12743773
+      objectReference: {fileID: 0}
     - target: {fileID: 7269595481478577325, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
       propertyPath: audioSource
       value: 
@@ -23190,14 +23202,6 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 984484377}
-    - target: {fileID: 8392839312156937535, guid: a812a049df4abd144b2be0aa4eaa9273, type: 3}
-      propertyPath: speed
-      value: 3.85
-      objectReference: {fileID: 0}
-    - target: {fileID: 8392839312156937535, guid: a812a049df4abd144b2be0aa4eaa9273, type: 3}
-      propertyPath: dashAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: e11f59ea14873f2418de3e9a6d7d61e1, type: 3}
     - target: {fileID: 8392839312156937535, guid: a812a049df4abd144b2be0aa4eaa9273, type: 3}
       propertyPath: audioSource
       value: 
@@ -24548,7 +24552,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.08, y: -22.18}
+  m_AnchoredPosition: {x: -18.11, y: 11.63}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1457147396

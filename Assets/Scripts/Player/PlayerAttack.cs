@@ -92,19 +92,19 @@ public class PlayerAttack : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position + rangeOffset, attackRange);
     }
 
-    public void RotateAttackPoint()
-    {
-        rotationPoint.transform.position = transform.position;
-        aimDirection = mousePosition - rb.position;
-        aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
-        rotationPoint.GetComponent<Rigidbody2D>().rotation = aimAngle;
+    // public void RotateAttackPoint()
+    // {
+    //     rotationPoint.transform.position = transform.position;
+    //     aimDirection = mousePosition - rb.position;
+    //     aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+    //     rotationPoint.GetComponent<Rigidbody2D>().rotation = aimAngle;
 
 
-        // if(Time.time >= nextAttackTime){
-        playerAnimator.SetFloat("AimHorizontal", Mathf.RoundToInt(Mathf.Cos(aimAngle)));
-        playerAnimator.SetFloat("AimVertical", Mathf.RoundToInt(Mathf.Sin(aimAngle)));
-        // }    
-    }
+    //     // if(Time.time >= nextAttackTime){
+    //     playerAnimator.SetFloat("AimHorizontal", Mathf.RoundToInt(Mathf.Cos(aimAngle)));
+    //     playerAnimator.SetFloat("AimVertical", Mathf.RoundToInt(Mathf.Sin(aimAngle)));
+    //     // }    
+    // }
 
     public void RotateAttackPoint2(){
 
@@ -118,38 +118,51 @@ public class PlayerAttack : MonoBehaviour
         float dotProductRight = Vector3.Dot(Vector3.right, mouseDirection);
         float dotProductUp = Vector3.Dot(Vector3.up, mouseDirection);
 
-        if(dotProductRight > 0){
-            GetComponent<SpriteRenderer>().flipX = false;
-        }else{
-            Debug.Log("Flip");
-            GetComponent<SpriteRenderer>().flipX = true;
-        }
-        if (dotProductUp > 0.33)
-        {
-            if (dotProductUp > 0.66){
-                playerAnimator.SetFloat("AimVertical", 1);
-                playerAnimator.SetFloat("AimHorizontal", 0);
-            }else{
-                playerAnimator.SetFloat("AimVertical", 1);
-                playerAnimator.SetFloat("AimHorizontal", 1);
-            }
-        }
-        else if (dotProductUp < -0.7)
-        {
-            playerAnimator.SetFloat("AimVertical", -1);
-            playerAnimator.SetFloat("AimHorizontal", 0);
+        playerAnimator.SetFloat("AimVertical", Mathf.Round(dotProductUp));
+        playerAnimator.SetFloat("AimHorizontal", Mathf.Round(dotProductRight));
 
-        }
-        else if (dotProductUp < 0.6)
-        {
-            playerAnimator.SetFloat("AimVertical", 0);
-            playerAnimator.SetFloat("AimHorizontal", 1);
-        }
-        else if (dotProductUp > -0.6)
-        {
-            playerAnimator.SetFloat("AimVertical", 0);
-            playerAnimator.SetFloat("AimHorizontal", 1);
-        }
+        // if(dotProductRight > 0){
+        //     GetComponent<SpriteRenderer>().flipX = false;
+        // }else{
+        //     Debug.Log("Flip");
+        //     GetComponent<SpriteRenderer>().flipX = true;
+        // }
+        // if (dotProductUp > 0.33)
+        // {
+        //     if(dotProductRight > 0){
+        //         if (dotProductUp > 0.66){
+        //             playerAnimator.SetFloat("AimVertical", 1);
+        //             playerAnimator.SetFloat("AimHorizontal", 0);
+        //         }else{
+        //             playerAnimator.SetFloat("AimVertical", 1);
+        //             playerAnimator.SetFloat("AimHorizontal", 1);
+        //         }
+        //     }else{
+        //         if (dotProductUp > 0.66){
+        //             playerAnimator.SetFloat("AimVertical", 1);
+        //             playerAnimator.SetFloat("AimHorizontal", 0);
+        //         }else{
+        //             playerAnimator.SetFloat("AimVertical", 1);
+        //             playerAnimator.SetFloat("AimHorizontal", -1);
+        //         }
+        //     }
+        // }
+        // else if (dotProductUp < -0.7)
+        // {
+        //     playerAnimator.SetFloat("AimVertical", -1);
+        //     playerAnimator.SetFloat("AimHorizontal", 0);
+
+        // }
+        // else if (dotProductUp < 0.6)
+        // {
+        //     playerAnimator.SetFloat("AimVertical", 0);
+        //     playerAnimator.SetFloat("AimHorizontal", 1);
+        // }
+        // else if (dotProductUp > -0.6)
+        // {
+        //     playerAnimator.SetFloat("AimVertical", 0);
+        //     playerAnimator.SetFloat("AimHorizontal", 1);
+        // }
 
     }
 }
