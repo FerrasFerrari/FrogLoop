@@ -56,7 +56,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -147,6 +147,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 2
   breakParticlesPrefab: {fileID: 7321881190550561497, guid: 118c101aab52cb04dab2a3a9d826f518, type: 3}
+  audioSource: {fileID: 0}
+  quebrar: {fileID: 0}
 --- !u!114 &5550658073454496584
 MonoBehaviour:
   m_ObjectHideFlags: 0

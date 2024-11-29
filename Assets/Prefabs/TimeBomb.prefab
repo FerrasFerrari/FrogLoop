@@ -118,7 +118,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -165,8 +165,6 @@ MonoBehaviour:
   hp: 1
   audioSource: {fileID: 0}
   explosao: {fileID: 8300000, guid: 5a47da3aff9d52046b07183a9b71f7dd, type: 3}
-  backgroundMaterial: {fileID: 2100000, guid: eeb4c64e8d2d2684297888357d500983, type: 2}
-  backgroundColor: {r: 0.33161268, g: 0.7935057, b: 0.8679245, a: 0}
   NSM: 0
 --- !u!70 &8944297889033876440
 CapsuleCollider2D:
