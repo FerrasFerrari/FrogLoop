@@ -113,7 +113,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: dc62f4755e208e54186403f444716ae9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -357,18 +357,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 6847967698829597611}
   attackPointAnimator: {fileID: 22610186825507777}
-  attackRange: 0.48
+  attackRange: 0.54
   attackDamage: 1
+  fowardForceMultiplier: 0
   attackKnockbackMultiplier: 6
-  rangeOffset: {x: 0.08, y: 0, z: 0}
+  rangeOffset: {x: 0.01, y: 0, z: 0}
   hittableMask:
     serializedVersion: 2
     m_Bits: 141832
   aimDirection: {x: 0, y: 0}
   aimAngle: 0
-  attackingMovingSpeedMultiplier: 0.15
-  attackMovementSlowDuration: 0.33
-  attackDelay: 0.1
+  attack: 0
+  attackingMovingSpeedMultiplier: 0.1
+  attackMovementSlowDuration: 0.4
+  attackDelay: 0.15
   attackRate: 2.5
   sceneCamera: {fileID: 0}
   rotationPoint: {fileID: 229383869990927638}
@@ -429,7 +431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6ef817d6f0caba43918055284e4676a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashColor: {r: 1, g: 0, b: 0, a: 1}
+  flashColor: {r: 2.828427, g: 0, b: 0, a: 1}
   flashTime: 0.4
 --- !u!61 &4743043753205495229
 BoxCollider2D:
@@ -584,7 +586,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

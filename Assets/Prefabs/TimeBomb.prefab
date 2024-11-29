@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 1
+  explosionEffectPrefab: {fileID: 7321881190550561497, guid: a23448223b96fec4aaa4fc429d479e13, type: 3}
   audioSource: {fileID: 0}
   explosao: {fileID: 8300000, guid: 5a47da3aff9d52046b07183a9b71f7dd, type: 3}
   NSM: 0

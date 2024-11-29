@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -10,11 +11,13 @@ public class PlayerAttack : MonoBehaviour
     public Animator attackPointAnimator;
     public float attackRange = 0.75f;
     public float attackDamage = 1f;
+    [SerializeField]private float fowardForceMultiplier = 3f;
     [SerializeField]private float attackKnockbackMultiplier = 10f;
     [SerializeField]private Vector3 rangeOffset;
     public LayerMask hittableMask;
     [HideInInspector] public Vector2 aimDirection;
     [HideInInspector] public float aimAngle;
+    [HideInInspector] public bool attack = false;
 
     public float attackingMovingSpeedMultiplier = 0.15f;
     public float attackMovementSlowDuration = 0.33f;
@@ -45,24 +48,37 @@ public class PlayerAttack : MonoBehaviour
         mousePosition = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
         if (Time.time >= nextAttackTime){
 
-            if(Input.GetKey(KeyCode.Space) && !playerMovementScript.isDashing || Input.GetMouseButton(0) && !playerMovementScript.isDashing){
-                StartCoroutine(AttackMovementSlowdown(attackMovementSlowDuration));
-                RotateAttackPoint2();
-                StartCoroutine(Attack());
-                nextAttackTime = Time.time + 1f / attackRate;
+            if(Input.GetMouseButton(0) && !playerMovementScript.isDashing){
+                attack = true;
+                nextAttackTime = Time.time + 1f / attackRate;                
             }
         }
+    }
+    private void FixedUpdate() {
+        if(attack){
+            StartCoroutine(AttackMovementSlowdown(attackMovementSlowDuration));
+            RotateAttackPoint2();
+            //ApplyForceFoward();
+            StartCoroutine(Attack());
+            attack = false;
+        }
+    }
+
+    private void ApplyForceFoward()
+    {
+        Debug.Log(aimDirection.normalized);
+        rb.AddForce(aimDirection.normalized * fowardForceMultiplier, ForceMode2D.Impulse);
     }
 
     IEnumerator Attack(){
         //Physics2D.OverlapCircleNonAlloc(attackPoint.position + rangeOffset, attackRange, hitEnemies, hittableMask);
         attackPointAnimator.SetBool("Attack", true);
         playerAnimator.SetBool("Attack", true);
+        yield return new WaitForSeconds(attackDelay);
 
         audioSource.clip = attackSFX;
         audioSource.Play(); 
 
-        yield return new WaitForSeconds(attackDelay);
 
         RaycastHit2D[] hitEnemies = Physics2D.CircleCastAll(transform.position, attackRange, aimDirection, 
         Vector3.Distance(transform.position, attackPoint.position + rangeOffset), hittableMask);
