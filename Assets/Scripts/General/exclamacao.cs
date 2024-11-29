@@ -7,6 +7,8 @@ public class exclamacao : MonoBehaviour
 {
     public GameObject TelaExplicaçao;
     public Button exclacacoBTN;
+    public AudioSource audioSource;
+    public AudioClip PickUp;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,8 @@ public class exclamacao : MonoBehaviour
         {
             TelaExplicaçao.SetActive(true);
             Time.timeScale = 0;
+            audioSource.clip = PickUp;
+            audioSource.Play();
             exclacacoBTN.enabled = true;
             Destroy(gameObject);
         }

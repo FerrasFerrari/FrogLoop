@@ -24852,6 +24852,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "TelaExplica\xE7ao": {fileID: 1901268024}
   exclacacoBTN: {fileID: 233834206}
+  audioSource: {fileID: 665964566}
+  PickUp: {fileID: 8300000, guid: c5ac8ec2471af3542940795b8bc55f7b, type: 3}
 --- !u!114 &1162260233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54463,8 +54465,8 @@ Transform:
   - {fileID: 1962252417}
   - {fileID: 1012346178}
   - {fileID: 317936575}
-  - {fileID: 1992165578}
   - {fileID: 1162260231}
+  - {fileID: 1992165578}
   m_Father: {fileID: 1811621319}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2000708740 stripped
