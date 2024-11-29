@@ -11,6 +11,9 @@ public class RoomTrigger : MonoBehaviour
     [SerializeField]private AudioClip openDoorsSFX;
     private List<GameObject> enemiesInRoom = new();
     [SerializeField]private List<GameObject> doorsInRoom = new();
+    [SerializeField]private Color roomFightingBackgroundColor;
+    [SerializeField]private float colorChangeTransitionDuration;
+
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.CompareTag("Enemy")){
             enemiesInRoom.Add(other.gameObject);
@@ -51,10 +54,12 @@ public class RoomTrigger : MonoBehaviour
             audioSource.clip = closeDoorsSFX;
             audioSource.Play();
             CloseDoors();
+            BackgroundEffectManager.Instance.ChangeColor(roomFightingBackgroundColor, colorChangeTransitionDuration);
         }else{
             audioSource.clip = openDoorsSFX;
             audioSource.Play();
             OpenDoors();
+            BackgroundEffectManager.Instance.ResetColor(colorChangeTransitionDuration);
         }
     }
     private void OnDrawGizmosSelected() {

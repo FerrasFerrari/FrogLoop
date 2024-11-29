@@ -6,8 +6,9 @@ public class Bullet : MonoBehaviour
 {
     GameObject target;
     public float speed;
-    public Rigidbody2D BulletRB;
-    public Vector2 moveDir;
+    [SerializeField]private Sprite parriedBulletSprite; 
+    [HideInInspector]public Rigidbody2D BulletRB;
+    [HideInInspector]public Vector2 moveDir;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,5 +28,8 @@ public class Bullet : MonoBehaviour
     {
         collision.gameObject.GetComponent<IDamageable>()?.Damage(1, gameObject);
         Destroy(gameObject);
+    }
+    public void Parry(){
+        GetComponent<SpriteRenderer>().sprite = parriedBulletSprite;
     }
 }

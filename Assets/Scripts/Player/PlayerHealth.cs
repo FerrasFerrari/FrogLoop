@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [SerializeField]private float immunityDuration = 1.2f;
     [SerializeField]private int numberOfFlicks = 4;
     [SerializeField]private float hitStopDuration = 0.35f;
+    [ColorUsage(true, true)]
     [SerializeField]private Color deathFlashColor = Color.red;
     [SerializeField]private float deathStopDuration = 1.2f;
     //[SerializeField]private float delayBeforeGameOver;

@@ -14,7 +14,6 @@ public class HitStop : MonoBehaviour
         }else{
             _instance = this;
         }
-        //DontDestroyOnLoad(this.gameObject);
     }
     public void Stop(float duration){
         if(WAITING){return;}

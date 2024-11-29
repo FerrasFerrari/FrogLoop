@@ -215,13 +215,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerNumber: 0
   towerHP: 5
+  hitStopDuration: 0.2
+  deathStopDuration: 0.75
   Spawn1: 0
   Spawn2: 0
   Spawn3: 0
   TowerSpawn: 0
   audioSource: {fileID: 0}
-  dano: {fileID: 0}
-  morte: {fileID: 0}
+  dano: {fileID: 8300000, guid: 2aa414bd106eefe4787832e81d6e7758, type: 3}
+  morte: {fileID: 8300000, guid: 7c9251dbd25b6da4e9273ab7cbd341a6, type: 3}
 --- !u!95 &8910879500234309921
 Animator:
   serializedVersion: 5

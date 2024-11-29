@@ -54,18 +54,22 @@ public class PlayerMovement : MonoBehaviour
                 if (dashCoolCounter <= 0 && dashCounter <= 0)
                 {
                     anim.SetBool("Dash", true);
+
                     Color ogColor = damageFlash.flashColor;
                     damageFlash.flashColor = dashFlashColor;
                     damageFlash.CallDamageFlasher();
+
                     damageFlash.flashColor = ogColor;
                     lastPositionBeforeDash = transform.position;
+                    
                     HitStop.Instance.Stop(timeStopDurationDash);
+
                     isDashing = true;
                     activeMoveSpeed = dashSpeed;
                     dashCounter = dashLength;
                     Intangivel = true;
-                    audioSource.clip = dash;
-                    audioSource.Play();
+
+                    StartCoroutine(DashAudioPlayWaitForTimeScale());
                 }
             }
         }
@@ -115,6 +119,14 @@ public class PlayerMovement : MonoBehaviour
     void Move(){
         rb.velocity = new Vector2(moveDirection.x * activeMoveSpeed, moveDirection.y * activeMoveSpeed);
        
+    }
+
+    IEnumerator DashAudioPlayWaitForTimeScale(){
+        while(Time.timeScale == 0){
+            yield return null;
+        }
+        audioSource.clip = dash;
+        audioSource.Play();
     }
     
 }

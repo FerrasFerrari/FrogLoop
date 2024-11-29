@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class DashingEnemy : MonoBehaviour
+public class DashingEnemy : MonoBehaviour, IStunnable
 {
     public float speed;
     public float dashRate;
@@ -13,6 +13,7 @@ public class DashingEnemy : MonoBehaviour
     [SerializeField]private float dashSpeed;
     [SerializeField]private float dashDuration;
     [SerializeField]private float dashDelay;
+    private bool canAttack = true;
     private Collider2D[] colliders = new Collider2D[1];
     private Transform player;
     private Animator animator;
@@ -36,7 +37,7 @@ public class DashingEnemy : MonoBehaviour
             animator.SetBool("Dash", false);
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
         }
-        else if (distanceFromPlayer <= lineOfSite && nextDashTime < Time.time)
+        else if (distanceFromPlayer <= lineOfSite && nextDashTime < Time.time && canAttack)
         {
             rb.velocity = Vector2.zero;
             animator.SetBool("Dash", true);
@@ -91,5 +92,13 @@ public class DashingEnemy : MonoBehaviour
                 }
             }
         }
+    }
+    public IEnumerator Stun(float duration){
+        canAttack = false;
+        StopAllCoroutines();
+        speed *= .2f;
+        yield return new WaitForSeconds(duration);
+        speed /= .2f;
+        canAttack = true;
     }
 }

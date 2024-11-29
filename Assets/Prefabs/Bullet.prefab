@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8283668109136032592}
   - component: {fileID: -8245913689512955844}
   - component: {fileID: 1638079266341007665}
-  - component: {fileID: 6213736216412673475}
   m_Layer: 8
   m_Name: Bullet
   m_TagString: Bullet
@@ -163,26 +162,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4.1
+  parriedBulletSprite: {fileID: 21300000, guid: a1c25990816553d4e8c8193ee4abd11e, type: 3}
   BulletRB: {fileID: 0}
   moveDir: {x: 0, y: 0}
---- !u!95 &6213736216412673475
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8543673341932354033}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 530fdb60d9b17e9488ce34a52aaf95cb, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0

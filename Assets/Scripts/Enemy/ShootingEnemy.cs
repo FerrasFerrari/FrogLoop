@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ShootingEnemy : MonoBehaviour
+public class ShootingEnemy : MonoBehaviour, IStunnable
 {
     public float speed;
     public float fireRate;
@@ -18,6 +18,8 @@ public class ShootingEnemy : MonoBehaviour
     private Rigidbody2D rb;
     public AudioSource audioSource;
     public AudioClip tiro;
+    private bool canAttack = true;
+
     void Start()
     {
         audioSource = GameObject.FindGameObjectWithTag("AudioSourceMosca").GetComponent<AudioSource>();
@@ -35,7 +37,7 @@ public class ShootingEnemy : MonoBehaviour
             animator.SetBool("isAttacking", false);
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
         }
-        else if (distanceFromPlayer <= lineOfSite && nextFireTime < Time.time)
+        else if (distanceFromPlayer <= lineOfSite && nextFireTime < Time.time && canAttack)
         {
             if(!hasEnteredLOA){ rb.velocity = Vector2.zero; hasEnteredLOA = true; }
             animator.SetBool("isAttacking", true);
@@ -61,4 +63,14 @@ public class ShootingEnemy : MonoBehaviour
             transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
         }
     }
+    public IEnumerator Stun(float duration)
+    {
+        canAttack = false;
+        StopAllCoroutines();
+        speed *= .2f;
+        yield return new WaitForSeconds(duration);
+        speed /= .2f;
+        canAttack = true;
+    }
+
 }

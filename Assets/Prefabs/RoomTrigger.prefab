@@ -97,3 +97,5 @@ MonoBehaviour:
   doorsInRoom:
   - {fileID: 0}
   - {fileID: 0}
+  roomFightingBackgroundColor: {r: 0.7214409, g: 0.36147374, b: 0.07857903, a: 0}
+  colorChangeTransitionDuration: 50
