@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 814075a21d3e94140b9083f15d4d73e1
+guid: 4ade73cf314610545914aff26d11dd03
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tocha frente_0
+      name: fio_chao_torres_portal_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 5
-        width: 39
-        height: 39
+        x: 0
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ace20fffd3517d14383811eed756048d
-      internalID: 1615354829
+      spriteID: 186092b8ea67a7b40a56b65512638d91
+      internalID: 218149530
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tocha frente_1
+      name: fio_chao_torres_portal_1
       rect:
         serializedVersion: 2
-        x: 54
-        y: 7
-        width: 36
-        height: 36
+        x: 0
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f79eb8efadd38a4ab2d48cf432ed027
-      internalID: -1114134770
+      spriteID: 666d1ebbc38c2a4458539ed5a0168c05
+      internalID: 896225065
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tocha frente_2
+      name: fio_chao_torres_portal_2
       rect:
         serializedVersion: 2
-        x: 105
-        y: 9
-        width: 30
-        height: 30
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb4782628670cff48a11a4822a169623
-      internalID: 2134287721
+      spriteID: c7f0e8e007676554a83864b535f609cc
+      internalID: 339171229
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tocha frente_3
+      name: fio_chao_torres_portal_3
       rect:
         serializedVersion: 2
-        x: 150
-        y: 7
-        width: 36
-        height: 36
+        x: 64
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,8 +187,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ceed09fa51c5c542b7974aed7787223
-      internalID: -1153017824
+      spriteID: aeb41632250809d4ca3cf9a3b3cd0808
+      internalID: 589697175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fio_chao_torres_portal_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4138e4f23a40be4a9dded3e7dd64163
+      internalID: 1591020012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fio_chao_torres_portal_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50f2181a3c759b542a71e18beab1d172
+      internalID: 1004025846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fio_chao_torres_portal_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bceb942b872d8104e826cb95ef04de03
+      internalID: 813057791
       vertices: []
       indices: 
       edges: []
@@ -204,10 +267,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tocha frente_0: 1615354829
-      tocha frente_1: -1114134770
-      tocha frente_2: 2134287721
-      tocha frente_3: -1153017824
+      fio_chao_torres_portal_0: 218149530
+      fio_chao_torres_portal_1: 896225065
+      fio_chao_torres_portal_2: 339171229
+      fio_chao_torres_portal_3: 589697175
+      fio_chao_torres_portal_4: 1591020012
+      fio_chao_torres_portal_5: 1004025846
+      fio_chao_torres_portal_6: 813057791
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
