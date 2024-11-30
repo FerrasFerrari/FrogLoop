@@ -56,7 +56,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b41e2ffe1bf9b3a409d01d771dac39d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4.1
+  parriedBulletSprite: {fileID: 0}
   BulletRB: {fileID: 0}
   moveDir: {x: 0, y: 0}
 --- !u!95 &1182266842384478125
