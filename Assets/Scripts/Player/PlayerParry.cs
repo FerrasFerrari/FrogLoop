@@ -17,6 +17,7 @@ public class PlayerParry : MonoBehaviour
     public float parryKnockback = 12f;
 
     private Animator animator;
+    [SerializeField]private UIAbilitySpriteChanger uiElement;
 
     public AudioSource audioSource;
     public AudioClip parry;
@@ -28,7 +29,9 @@ public class PlayerParry : MonoBehaviour
     void Update()
     {
         if(Time.time >= nextParryTime){
+            uiElement.ChangeImage(true);
             if(Input.GetKeyDown(KeyCode.Mouse1)){
+                uiElement.ChangeImage(false);
                 animator.SetBool("Parry", true);
                 StartCoroutine(Parry());
                 nextParryTime = Time.time + parryCooldown;

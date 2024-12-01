@@ -11,6 +11,7 @@ public class PlayerAttack : MonoBehaviour
     public Animator attackPointAnimator;
     public float attackRange = 0.75f;
     public float attackDamage = 1f;
+    public float manaPerHit = 1f;
     [SerializeField]private float fowardForceMultiplier = 3f;
     [SerializeField]private float attackKnockbackMultiplier = 10f;
     [SerializeField]private Vector3 rangeOffset;
@@ -18,6 +19,7 @@ public class PlayerAttack : MonoBehaviour
     [HideInInspector] public Vector2 aimDirection;
     [HideInInspector] public float aimAngle;
     [HideInInspector] public bool attack = false;
+    private Mana manaScript;
 
     public float attackingMovingSpeedMultiplier = 0.15f;
     public float attackMovementSlowDuration = 0.33f;
@@ -36,25 +38,24 @@ public class PlayerAttack : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip attackSFX;
 
-
-    private void Start() {
+    private void Awake() {
         playerMovementScript = GetComponent<PlayerMovement>();
         playerAnimator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        manaScript = GetComponent<Mana>();
     }
 
     void Update()
     {
         mousePosition = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
         if (Time.time >= nextAttackTime){
-
-            if(Input.GetMouseButton(0) && !playerMovementScript.isDashing){
+            if(Input.GetMouseButton(0) && !playerMovementScript.isDashing & !attack){
                 attack = true;
                 nextAttackTime = Time.time + 1f / attackRate;                
             }
         }
     }
-    private void FixedUpdate() {
+    private void LateUpdate() {
         if(attack){
             StartCoroutine(AttackMovementSlowdown(attackMovementSlowDuration));
             RotateAttackPoint2();
@@ -88,8 +89,11 @@ public class PlayerAttack : MonoBehaviour
 
         for(int i = 0; i < hitEnemies.Length; i++) {
             GameObject enemyGameObject = hitEnemies[i].collider.gameObject;
-            if(!hitEnemiesInstanceID.Contains(enemyGameObject.GetInstanceID())) { 
+            if(!hitEnemiesInstanceID.Contains(enemyGameObject.GetInstanceID())) {
                 hitEnemiesInstanceID.Add(enemyGameObject.GetInstanceID());
+
+                if(enemyGameObject.layer == LayerMask.NameToLayer("Enemy")) 
+                    manaScript.AddMana(manaPerHit);
 
                 enemyGameObject.GetComponent<IDamageable>().Damage(attackDamage, gameObject);
                 enemyGameObject.GetComponent<ScreenShaker>()?.ShakeDirectional(aimDirection);
@@ -98,6 +102,7 @@ public class PlayerAttack : MonoBehaviour
         }
     }
     private IEnumerator AttackMovementSlowdown(float duration){
+        StopCoroutine(AttackMovementSlowdown(duration));
         playerMovementScript.activeMoveSpeed *= attackingMovingSpeedMultiplier;
         yield return new WaitForSeconds(duration);
         playerMovementScript.activeMoveSpeed = playerMovementScript.moveSpeed;

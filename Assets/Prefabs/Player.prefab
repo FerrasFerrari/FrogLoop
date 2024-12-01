@@ -56,9 +56,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1 &2634259656116305959
 GameObject:
@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 4749756933946694701}
   - component: {fileID: 9158333293788628948}
   - component: {fileID: 687261008318086066}
+  - component: {fileID: 9090520462129348071}
   - component: {fileID: -444926508360994160}
   - component: {fileID: 747879532617766906}
   - component: {fileID: 4743043753205495229}
@@ -303,11 +304,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   immunityDuration: 1.8
   numberOfFlicks: 4
+  screenEffectIntensity: 0.549
+  screenEffectTransitionDuration: 0.8
   hitStopDuration: 0.2
   deathFlashColor: {r: 0.27015442, g: 0.0013713423, b: 0, a: 1}
   deathStopDuration: 1.2
   isOnImmunity: 0
   dead: 0
+  vignette: {fileID: 0}
   HealthBarScript: {fileID: 0}
   PlayerMovementScript: {fileID: 4749756933946694701}
   audioSource: {fileID: 0}
@@ -340,6 +344,7 @@ MonoBehaviour:
   collidingSceneObjectsLayerMask:
     serializedVersion: 2
     m_Bits: 144
+  uiElement: {fileID: 0}
   audioSource: {fileID: 0}
   dash: {fileID: 8300000, guid: 38995ab4a60870745844b94c937d4c36, type: 3}
   passos: {fileID: 8300000, guid: 984a526bd214be1488b0786f32c9be54, type: 3}
@@ -359,6 +364,7 @@ MonoBehaviour:
   attackPointAnimator: {fileID: 22610186825507777}
   attackRange: 0.54
   attackDamage: 1
+  manaPerHit: 1
   fowardForceMultiplier: 0
   attackKnockbackMultiplier: 6
   rangeOffset: {x: 0.01, y: 0, z: 0}
@@ -370,7 +376,7 @@ MonoBehaviour:
   attack: 0
   attackingMovingSpeedMultiplier: 0.1
   attackMovementSlowDuration: 0.4
-  attackDelay: 0.15
+  attackDelay: 0.1
   attackRate: 2.5
   sceneCamera: {fileID: 0}
   rotationPoint: {fileID: 229383869990927638}
@@ -397,8 +403,23 @@ MonoBehaviour:
   parriedBulletSpeedMultiplier: 1.5
   enemyStunDuration: 1
   parryKnockback: 8
+  uiElement: {fileID: 0}
   audioSource: {fileID: 0}
   parry: {fileID: 8300000, guid: c70f5113aee58724bb3fe008566d442a, type: 3}
+--- !u!114 &9090520462129348071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3548942525033517359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 947ebb870eb92bb419d05f85b8ad7476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mana: 0
+  bowCost: 2
 --- !u!114 &-444926508360994160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -531,8 +552,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.19099796}
-  m_Size: {x: 0.46851408, y: 0.53075194}
+  m_Offset: {x: 0, y: -0.14554012}
+  m_Size: {x: 0.46851408, y: 0.6216676}
   m_Direction: 0
 --- !u!1 &7471707648354930943
 GameObject:

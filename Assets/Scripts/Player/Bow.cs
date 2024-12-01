@@ -11,37 +11,48 @@ public class Bow : MonoBehaviour
     public GameObject ArrowPrefab;
     [SerializeField] private Transform ArrowPos;
     [SerializeField] private Transform ArrowRotationObject;
+    private bool shoot = false;
+    private Mana manaScript;
     private PlayerAttack Rotate;
+    private Animator anim;
     public AudioSource audioSource;
     public AudioClip arco;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        UnlockBowScrpit.Unlocked = false;
+    private void Awake() {
+        manaScript = GetComponent<Mana>();
         Rotate = GetComponent<PlayerAttack>();
-        
+        UnlockBowScrpit.Unlocked = false;
+    }
+    private void Start() {
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        ShootBow();
-        
+        BowInput();
     }
-    void ShootBow()
+    void BowInput()
     {
         if (UnlockBowScrpit.Unlocked == true)
         {
-                if (Input.GetKeyDown(KeyCode.Q))
+                if (Input.GetKeyDown(KeyCode.Q) && manaScript.CanUseBow() && !shoot)
                 {
-                    Rotate.RotateAttackPoint2();
-                    GameObject Arrow = Instantiate(ArrowPrefab, ArrowPos.position + new Vector3(arrowSpawnOffsetX,0,0), ArrowRotationObject.rotation);
-                    Arrow.GetComponent<Rigidbody2D>().AddForce(Rotate.aimDirection.normalized * ArrowForce, ForceMode2D.Impulse);
-                audioSource.clip = arco;
-                audioSource.Play();
+                    shoot = true;        
                 }
             
+        }
+    }
+    private void LateUpdate() {
+        if(shoot){
+            Rotate.RotateAttackPoint2();
+            anim.SetBool("Bow", true);
+            GameObject Arrow = Instantiate(ArrowPrefab, ArrowPos.position + new Vector3(arrowSpawnOffsetX,0,0), ArrowRotationObject.rotation);
+            Arrow.GetComponent<Rigidbody2D>().AddForce(Rotate.aimDirection.normalized * ArrowForce, ForceMode2D.Impulse);
+            audioSource.clip = arco;
+            audioSource.Play();
+            shoot = false;
+            anim.SetBool("Bow", false);
         }
     }
     private void OnDrawGizmosSelected() {

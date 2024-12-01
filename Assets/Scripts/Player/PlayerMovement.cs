@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     public bool Intangivel;
     private Vector3 lastPositionBeforeDash;
     [SerializeField]private LayerMask collidingSceneObjectsLayerMask;
+    [SerializeField]private UIAbilitySpriteChanger uiElement;
     public AudioSource audioSource;
     public AudioClip dash, passos;
     private DamageFlash damageFlash;
@@ -39,8 +40,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Inputs();
-        
-        
     }
     private void LateUpdate() {
             
@@ -49,10 +48,12 @@ public class PlayerMovement : MonoBehaviour
 
         if(UnlockDashScrpit.UnlockedSprint == true)
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (dashCoolCounter <= 0 && dashCounter <= 0)
             {
-                if (dashCoolCounter <= 0 && dashCounter <= 0)
+                uiElement.ChangeImage(true);
+                if (Input.GetKeyDown(KeyCode.LeftShift))
                 {
+                    uiElement.ChangeImage(false);
                     anim.SetBool("Dash", true);
 
                     Color ogColor = damageFlash.flashColor;

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2815464615024822187}
   - component: {fileID: 740850986658118205}
   - component: {fileID: 2355877152426298283}
+  - component: {fileID: 3401435214374658100}
   m_Layer: 16
   m_Name: UnlockDash
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3827920448214989039}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -17.95, y: 13.05, z: 0}
   m_LocalScale: {x: 1.0966933, y: 1.0966933, z: 1.0966933}
   m_ConstrainProportionsScale: 0
@@ -148,3 +149,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0000008, y: 0.89745355}
   m_EdgeRadius: 0
+--- !u!95 &3401435214374658100
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3827920448214989039}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 32fbd79a20e456948a0701bf97787b9d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour, IDamageable
 {
     [SerializeField]private float immunityDuration = 1.2f;
     [SerializeField]private int numberOfFlicks = 4;
+    [Range(0f, 1f)]
+    [SerializeField]private float screenEffectIntensity;
+    [SerializeField]private float screenEffectTransitionDuration;
     [SerializeField]private float hitStopDuration = 0.35f;
     [ColorUsage(true, true)]
     [SerializeField]private Color deathFlashColor = Color.red;
@@ -15,12 +20,14 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [HideInInspector]public bool isOnImmunity = false;
     [HideInInspector]public bool dead = false;
     private DamageFlash damageFlashScript;
+    [SerializeField]private Volume vignette;
     public HealthBar HealthBarScript;
     public PlayerMovement PlayerMovementScript;
     public AudioSource audioSource;
     public AudioClip dano, morte;
     void Start()
     {
+        //vignette = FindObjectOfType<Vignette>();
         damageFlashScript = GetComponent<DamageFlash>();
         HealthBarScript.Life = 6;
         PlayerMovementScript.Intangivel = false;
@@ -51,6 +58,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     {
         if (PlayerMovementScript.Intangivel == false)
         {
+            StartCoroutine(ScreenDamageEffect(screenEffectIntensity, screenEffectTransitionDuration));
             StartCoroutine(TakeDamage(damageAmount));
         }
     }
@@ -94,14 +102,31 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     }
     IEnumerator TransparencyFlicker(){
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        
         while(Time.timeScale != 1f){
             yield return null;
         }
         for(int i = 0; i < numberOfFlicks; i++){
             spriteRenderer.color = new Color(1, 1, 1, 0.5f);
             yield return new WaitForSeconds(immunityDuration / (2*numberOfFlicks));
+
             spriteRenderer.color = Color.white;
             yield return new WaitForSeconds(immunityDuration / (2*numberOfFlicks));
         }
+    }
+    IEnumerator ScreenDamageEffect(float intensity, float transitionDuration){
+        Debug.Log(vignette);
+        vignette.weight = intensity;
+
+        float elapsedTime = 0f;
+        while(elapsedTime < transitionDuration){
+            elapsedTime += Time.deltaTime;
+
+            vignette.weight = Mathf.Lerp(intensity, 0f, elapsedTime / transitionDuration);
+
+            yield return null;
+        }
+
+        vignette.weight = 0f;
     }
 }
