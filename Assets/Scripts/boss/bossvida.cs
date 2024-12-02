@@ -10,7 +10,7 @@ public class bossvida : MonoBehaviour, IDamageable
     // Start is called before the first frame update
     void Start()
     {
-        BossBarraScript.healthAmount = 100f;
+        BossBarraScript.healthAmount = 10f;
     }
 
     public void Damage(float damageAmount, GameObject sender)
@@ -25,6 +25,6 @@ public class bossvida : MonoBehaviour, IDamageable
         GetComponent<Animator>().SetTrigger("Damage");
         audioSource.clip = dano;
         audioSource.Play();
-        BossBarraScript.BarraVidaFG.fillAmount = BossBarraScript.healthAmount / 100f;
+        BossBarraScript.BarraVidaFG.fillAmount = BossBarraScript.healthAmount / 10f;
     }
 }
