@@ -7,6 +7,7 @@ public class Buttons : MonoBehaviour
     public UnlockBow UnlockBowScrpit;
     public UnlockDash UnlockDashScript;
     public exclamacao exclamacaoScript;
+    public  Exclamçao2 ataquesScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,9 @@ public class Buttons : MonoBehaviour
 
         exclamacaoScript.TelaExplicaçao.SetActive(false);
         exclamacaoScript.exclacacoBTN.enabled = false;
+
+        ataquesScript.TelaAtaques.SetActive(false);
+        ataquesScript.AtaquesBTN.enabled = false;
     }
 
     // Update is called once per frame
@@ -51,6 +55,15 @@ public class Buttons : MonoBehaviour
         {
             exclamacaoScript.TelaExplicaçao.SetActive(false);
             exclamacaoScript.exclacacoBTN.enabled = false;
+            Time.timeScale = 1;
+        }
+    }
+    public void BtnExclamaçaoAtaques()
+    {
+        if (ataquesScript.TelaAtaques.activeSelf == true && ataquesScript.AtaquesBTN.enabled == true)
+        {
+            ataquesScript.TelaAtaques.SetActive(false);
+            ataquesScript.AtaquesBTN.enabled = false;
             Time.timeScale = 1;
         }
     }

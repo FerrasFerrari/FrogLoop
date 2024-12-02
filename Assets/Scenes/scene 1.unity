@@ -22974,8 +22974,8 @@ GameObject:
   - component: {fileID: 456436552}
   - component: {fileID: 456436556}
   - component: {fileID: 456436555}
-  - component: {fileID: 456436554}
   - component: {fileID: 456436553}
+  - component: {fileID: 456436557}
   m_Layer: 0
   m_Name: "exclama\xE7ao (1)"
   m_TagString: Untagged
@@ -23048,22 +23048,6 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
---- !u!114 &456436554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 456436551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f922aa5635a424ca91581cb27739d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  "TelaExplica\xE7ao": {fileID: 554048588}
-  exclacacoBTN: {fileID: 233834206}
-  audioSource: {fileID: 665964566}
-  PickUp: {fileID: 8300000, guid: c5ac8ec2471af3542940795b8bc55f7b, type: 3}
 --- !u!61 &456436555
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23161,6 +23145,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &456436557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456436551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfa7c9ad2dee97f40976a9ab98fcb635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TelaAtaques: {fileID: 554048588}
+  AtaquesBTN: {fileID: 884592132}
+  audioSource: {fileID: 665964566}
+  PickUp: {fileID: 8300000, guid: c5ac8ec2471af3542940795b8bc55f7b, type: 3}
 --- !u!1001 &459428020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24384,7 +24384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &554048589
 Transform:
   m_ObjectHideFlags: 0
@@ -27565,7 +27565,7 @@ Transform:
   m_GameObject: {fileID: 813120760}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.91, y: 9.98, z: -10}
+  m_LocalPosition: {x: 0, y: -21.92, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -28634,7 +28634,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.007, y: -0.967}
+  m_AnchoredPosition: {x: -0.007, y: -0.973}
   m_SizeDelta: {x: 68.0855, y: 19.3753}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &884592132
@@ -28683,7 +28683,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1439867054}
         m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
-        m_MethodName: "BtnExclama\xE7ao"
+        m_MethodName: "BtnExclama\xE7aoAtaques"
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -34627,11 +34627,11 @@ PrefabInstance:
       objectReference: {fileID: 1291161226}
     - target: {fileID: 1185280420047819839, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.91
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1185280420047819839, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.98
+      value: -21.92
       objectReference: {fileID: 0}
     - target: {fileID: 1185280420047819839, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
       propertyPath: m_LocalPosition.z
@@ -37066,7 +37066,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1367023337
 RectTransform:
   m_ObjectHideFlags: 0
@@ -38109,6 +38109,7 @@ MonoBehaviour:
   UnlockBowScrpit: {fileID: 1012346179}
   UnlockDashScript: {fileID: 317936573}
   exclamacaoScript: {fileID: 1162260232}
+  ataquesScript: {fileID: 456436557}
 --- !u!4 &1439867055
 Transform:
   m_ObjectHideFlags: 0
@@ -38396,7 +38397,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17.91, y: 9.98}
+  m_AnchoredPosition: {x: 0, y: -21.92}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1457147396
