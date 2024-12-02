@@ -12,7 +12,9 @@ public class Mana : MonoBehaviour
     }
 
     public void AddMana(float amount){
-        if(mana >= (bowCost * 3)) { return; }
+        if(amount > 0){
+            if(mana >= (bowCost * 3)) { return; }
+        }
         mana += amount;
     }
     public bool CanUseBow(){

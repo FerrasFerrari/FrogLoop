@@ -8,15 +8,17 @@ public class Spawner : MonoBehaviour
     
     public float Intervalo = 2f;
     private Transform spawnPoint;
+    [SerializeField]private Material defaultMaterial;
     public Tower TowerScript;
     public int SpawnNumber;
     public TowerRoomTrigger TriggerScript;
+    private Animator anim;
 
     // Start is called before the first frame update
     private void Start()
 
     {
-
+        anim = GetComponent<Animator>();
         // Start spawning enemies
         spawnPoint = GetComponent<Transform>();
 
@@ -34,18 +36,23 @@ public class Spawner : MonoBehaviour
     {
         if(SpawnNumber == 1 && TowerScript.Spawn1 == false)
         {
-            Destroy(gameObject);
+            TurnOff();
         }
         if(SpawnNumber == 2 && TowerScript.Spawn2 == false)
         {
-            Destroy(gameObject);
+            TurnOff();
         }
         if(SpawnNumber == 3 && TowerScript.Spawn3 == false)
         {
-            Destroy(gameObject);
+            TurnOff();
         }
     }
 
+    public void TurnOff(){
+        CancelInvoke();
+        GetComponent<SpriteRenderer>().material = defaultMaterial;
+        anim.SetBool("Off", true);
+    }
 
 
     void SpawnEnemy()

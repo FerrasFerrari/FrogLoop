@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyPrefab: {fileID: 2523934454928234597, guid: b99ec44a54326da40b074de1118a9df1, type: 3}
   Intervalo: 5
+  defaultMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   TowerScript: {fileID: 0}
   SpawnNumber: 1
   TriggerScript: {fileID: 0}
