@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
@@ -57,7 +55,7 @@ public class PlayerAttack : MonoBehaviour
     }
     private void LateUpdate() {
         if(attack){
-            StartCoroutine(AttackMovementSlowdown(attackMovementSlowDuration));
+            StartCoroutine(GetComponent<PlayerSlowDown>().MovementSlowDown(attackMovementSlowDuration, attackingMovingSpeedMultiplier));
             RotateAttackPoint2();
             //ApplyForceFoward();
             StartCoroutine(Attack());
@@ -77,9 +75,7 @@ public class PlayerAttack : MonoBehaviour
         playerAnimator.SetBool("Attack", true);
         yield return new WaitForSeconds(attackDelay);
 
-        audioSource.clip = attackSFX;
-        audioSource.Play(); 
-
+        PlayAudioClip();
 
         RaycastHit2D[] hitEnemies = Physics2D.CircleCastAll(transform.position, attackRange, aimDirection, 
         Vector3.Distance(transform.position, attackPoint.position + rangeOffset), hittableMask);
@@ -101,12 +97,7 @@ public class PlayerAttack : MonoBehaviour
             }
         }
     }
-    private IEnumerator AttackMovementSlowdown(float duration){
-        StopCoroutine(AttackMovementSlowdown(duration));
-        playerMovementScript.activeMoveSpeed *= attackingMovingSpeedMultiplier;
-        yield return new WaitForSeconds(duration);
-        playerMovementScript.activeMoveSpeed = playerMovementScript.moveSpeed;
-    }
+    
     void OnDrawGizmosSelected(){
         if(attackPoint == null){ return; }
         Gizmos.color = Color.red;
@@ -132,7 +123,7 @@ public class PlayerAttack : MonoBehaviour
         rotationPoint.transform.position = transform.position;
         aimDirection = mousePosition - rb.position;
         aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
-        rotationPoint.GetComponent<Rigidbody2D>().rotation = aimAngle;
+        rotationPoint.transform.rotation = Quaternion.Euler(0, 0, aimAngle);
         Vector3 playerPositionPixels = Camera.main.WorldToScreenPoint(transform.position);
         Vector3 mouseDirection = (Input.mousePosition - playerPositionPixels).normalized;
 
@@ -185,5 +176,12 @@ public class PlayerAttack : MonoBehaviour
         //     playerAnimator.SetFloat("AimHorizontal", 1);
         // }
 
+    }
+    private void PlayAudioClip(){
+        float randomPitch = Random.Range(0.9f, 1.1f);
+        audioSource.pitch *= randomPitch;
+        audioSource.clip = attackSFX;
+        audioSource.Play();
+        audioSource.pitch /= randomPitch;
     }
 }

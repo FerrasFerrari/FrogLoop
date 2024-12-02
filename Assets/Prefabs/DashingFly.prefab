@@ -330,6 +330,9 @@ MonoBehaviour:
   dashSpeed: 7.4
   dashDuration: 1
   dashDelay: 0.3
+  noCollisionWhileDashing:
+    serializedVersion: 2
+    m_Bits: 8200
   audioSource: {fileID: 0}
   dashAudio: {fileID: 8300000, guid: e11f59ea14873f2418de3e9a6d7d61e1, type: 3}
 --- !u!114 &1871675769131175876

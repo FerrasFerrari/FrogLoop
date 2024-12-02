@@ -13,14 +13,14 @@ public class Bow : MonoBehaviour
     [SerializeField] private Transform ArrowRotationObject;
     private bool shoot = false;
     private Mana manaScript;
-    private PlayerAttack Rotate;
+    private PlayerAttack playerAttackScript;
     private Animator anim;
     public AudioSource audioSource;
     public AudioClip arco;
 
     private void Awake() {
         manaScript = GetComponent<Mana>();
-        Rotate = GetComponent<PlayerAttack>();
+        playerAttackScript = GetComponent<PlayerAttack>();
         UnlockBowScrpit.Unlocked = false;
     }
     private void Start() {
@@ -45,14 +45,15 @@ public class Bow : MonoBehaviour
     }
     private void LateUpdate() {
         if(shoot){
-            Rotate.RotateAttackPoint2();
+            playerAttackScript.RotateAttackPoint2();
             anim.SetBool("Bow", true);
+            StartCoroutine(GetComponent<PlayerSlowDown>().MovementSlowDown(playerAttackScript.attackMovementSlowDuration, 0f));
             GameObject Arrow = Instantiate(ArrowPrefab, ArrowPos.position + new Vector3(arrowSpawnOffsetX,0,0), ArrowRotationObject.rotation);
-            Arrow.GetComponent<Rigidbody2D>().AddForce(Rotate.aimDirection.normalized * ArrowForce, ForceMode2D.Impulse);
+            Arrow.GetComponent<Rigidbody2D>().AddForce(playerAttackScript.aimDirection.normalized * ArrowForce, ForceMode2D.Impulse);
             audioSource.clip = arco;
             audioSource.Play();
             shoot = false;
-            anim.SetBool("Bow", false);
+            //anim.SetBool("Bow", false);
         }
     }
     private void OnDrawGizmosSelected() {

@@ -44,6 +44,7 @@ public class PlayerParry : MonoBehaviour
         Collider2D[] hittablesInRange = Physics2D.OverlapCircleAll(transform.position, parryRange, hittablesMask);
 
         List<int> hitEnemiesInstanceID = new();
+        bool gottenMana = false;
 
         foreach(Collider2D hit in hittablesInRange){
 
@@ -53,6 +54,10 @@ public class PlayerParry : MonoBehaviour
                 hitEnemiesInstanceID.Add(hitGameObject.GetInstanceID());
 
                 if(hit.gameObject.layer == LayerMask.NameToLayer("Bullet")){
+                    if(!gottenMana){
+                        GetComponent<Mana>().AddMana(1);
+                        gottenMana = true;
+                    }
 
                     Bullet bulletScript = hit.GetComponent<Bullet>();
                     //bullet.gameObject.GetComponent<SpriteRenderer>().color = new Color(62, 59, 102);

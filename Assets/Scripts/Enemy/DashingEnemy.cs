@@ -13,6 +13,7 @@ public class DashingEnemy : MonoBehaviour, IStunnable
     [SerializeField]private float dashSpeed;
     [SerializeField]private float dashDuration;
     [SerializeField]private float dashDelay;
+    [SerializeField]private LayerMask noCollisionWhileDashing;
     private bool canAttack = true;
     private Collider2D[] colliders = new Collider2D[1];
     private Transform player;
@@ -65,7 +66,7 @@ public class DashingEnemy : MonoBehaviour, IStunnable
     private IEnumerator Reset(){
         yield return new WaitForSeconds(dashDuration);
         rb.velocity = Vector2.zero;
-        SwitchCollisionWithOtherEnemies(true);
+        SwitchCollisionWithOtherEntities(true);
         speed *= .2f;
         yield return new WaitForSeconds(.8f);
         speed /= .2f;
@@ -76,19 +77,19 @@ public class DashingEnemy : MonoBehaviour, IStunnable
         audioSource.clip = dashAudio;
         audioSource.Play();
         rb.velocity = direction * dashSpeed;
-        SwitchCollisionWithOtherEnemies(false);
+        SwitchCollisionWithOtherEntities(false);
     }
-    private void SwitchCollisionWithOtherEnemies(bool b)
+    private void SwitchCollisionWithOtherEntities(bool b)
     {
         foreach (Collider2D collider in colliders)
         {
             if (!collider.isTrigger) {
                 if(!b)
                 {
-                    collider.excludeLayers += LayerMask.GetMask("Enemy");
+                    collider.excludeLayers += noCollisionWhileDashing;
                 }else
                 {
-                    collider.excludeLayers -= LayerMask.GetMask("Enemy");
+                    collider.excludeLayers -= noCollisionWhileDashing;
                 }
             }
         }
@@ -100,5 +101,10 @@ public class DashingEnemy : MonoBehaviour, IStunnable
         yield return new WaitForSeconds(duration);
         speed /= .2f;
         canAttack = true;
+    }
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.gameObject.layer == LayerMask.NameToLayer("Assets")){
+            other.gameObject.GetComponent<IDamageable>().Damage(2, gameObject);
+        }
     }
 }
