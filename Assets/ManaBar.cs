@@ -3,23 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
+public class ManaBar : MonoBehaviour
 {
-    public int Life;
-    public Sprite[] Barradevida;
+    [HideInInspector]public float mana;
+    public Sprite[] manaSprites;
     private Image imageComp;
     // Start is called before the first frame update
     void Start()
     {
         imageComp = GetComponent<Image>();
-        Life = 6;
+        mana = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
 
-        imageComp.sprite = Barradevida[Life];
+        imageComp.sprite = manaSprites[Mathf.FloorToInt(mana / 2)];
 
     }
 }

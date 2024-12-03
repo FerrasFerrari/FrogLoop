@@ -365,7 +365,7 @@ MonoBehaviour:
   attackPointAnimator: {fileID: 22610186825507777}
   attackRange: 0.54
   attackDamage: 1
-  manaPerHit: 1
+  manaPerHit: 0.75
   fowardForceMultiplier: 0
   attackKnockbackMultiplier: 6
   rangeOffset: {x: 0.01, y: 0, z: 0}
@@ -433,6 +433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mana: 0
   bowCost: 2
+  manaBarScript: {fileID: 0}
 --- !u!114 &-444926508360994160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -499,7 +500,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0037984848, y: -0.36467656}
+  m_Offset: {x: -0.0006914139, y: -0.38263613}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -510,7 +511,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.57267785, y: 0.31537062}
+  m_Size: {x: 0.39607376, y: 0.2794515}
   m_EdgeRadius: 0
 --- !u!95 &6668338507429724546
 Animator:

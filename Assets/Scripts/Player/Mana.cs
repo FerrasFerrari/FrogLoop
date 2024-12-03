@@ -6,6 +6,7 @@ public class Mana : MonoBehaviour
 {
     public float mana = 0;
     public float bowCost = 2;
+    [SerializeField]private ManaBar manaBarScript;
     private Bow bowScript;
     private void Awake() {
         bowScript = GetComponent<Bow>();
@@ -13,9 +14,10 @@ public class Mana : MonoBehaviour
 
     public void AddMana(float amount){
         if(amount > 0){
-            if(mana >= (bowCost * 3)) { return; }
+            if(mana >= (bowCost * 4)) { return; }
         }
         mana += amount;
+        manaBarScript.mana = mana;
     }
     public bool CanUseBow(){
         if(mana >= bowCost){

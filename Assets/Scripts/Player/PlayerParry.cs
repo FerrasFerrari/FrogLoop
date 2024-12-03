@@ -64,6 +64,7 @@ public class PlayerParry : MonoBehaviour
                     bulletScript.moveDir = (bulletScript.gameObject.transform.position - transform.position).normalized * bulletScript.speed * parriedBulletSpeedMultiplier;
                     
                     hit.gameObject.GetComponent<CircleCollider2D>().excludeLayers -= LayerMask.GetMask("Enemy");
+                    hit.gameObject.GetComponent<CircleCollider2D>().excludeLayers -= LayerMask.GetMask("Boss");
                     bulletScript.Parry();
                     
                     bulletScript.BulletRB.velocity = new Vector2(bulletScript.moveDir.x, bulletScript.moveDir.y);

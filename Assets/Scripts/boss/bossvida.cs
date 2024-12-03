@@ -7,10 +7,11 @@ public class bossvida : MonoBehaviour, IDamageable
     public BossBarra BossBarraScript;
     public AudioSource audioSource;
     public AudioClip dano, morte;
+    public float bossHealth;
     // Start is called before the first frame update
     void Start()
     {
-        BossBarraScript.healthAmount = 10f;
+        BossBarraScript.healthAmount = bossHealth;
     }
 
     public void Damage(float damageAmount, GameObject sender)
