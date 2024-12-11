@@ -12,6 +12,7 @@ public class BreakObject : MonoBehaviour, IDamageable
 
     public void Damage(float damageAmount, GameObject sender)
     {
+        GetComponent<DamageFlash>().CallDamageFlasher();
         hp -= damageAmount;
         if (hp <= 0)
         {

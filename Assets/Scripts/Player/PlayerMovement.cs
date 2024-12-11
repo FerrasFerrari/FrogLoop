@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -82,15 +83,13 @@ public class PlayerMovement : MonoBehaviour
             if(dashCounter <= 0)
             {
                 anim.SetBool("Dash", false);
+
                 activeMoveSpeed = moveSpeed;
                 dashCoolCounter = dashCooldown;
+
                 isDashing = false;
                 Intangivel = false;
-                //if(Physics2D.OverlapPoint(new Vector2(transform.position.x, transform.position.y - 0.4f), collidingSceneObjectsLayerMask)){
-                // if(GetComponent<BoxCollider2D>().OverlapCollider(collidingSceneObjectsLayerMask)){
-                //     Debug.Log("Stuck");
-                //     transform.position = lastPositionBeforeDash;
-                // }
+
             }
         }
 
@@ -128,6 +127,14 @@ public class PlayerMovement : MonoBehaviour
         }
         audioSource.clip = dash;
         audioSource.Play();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.gameObject.layer == LayerMask.NameToLayer("Water")){
+            gameObject.GetComponent<IDamageable>().Damage(1, gameObject);
+            transform.position = lastPositionBeforeDash;
+
+        }
     }
     
 }

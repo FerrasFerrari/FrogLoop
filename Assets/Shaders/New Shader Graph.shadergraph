@@ -485,8 +485,8 @@
     ],
     "m_VertexContext": {
         "m_Position": {
-            "x": -144.0,
-            "y": -80.00000762939453
+            "x": -139.6363525390625,
+            "y": -89.01820373535156
         },
         "m_Blocks": []
     },
@@ -1213,7 +1213,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Alpha",
     "m_StageCapability": 2,
-    "m_Value": 1.0,
+    "m_Value": 2.6500000953674318,
     "m_DefaultValue": 1.0,
     "m_Labels": []
 }

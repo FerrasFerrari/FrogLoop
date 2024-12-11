@@ -115,7 +115,6 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         }
     }
     IEnumerator ScreenDamageEffect(float intensity, float transitionDuration){
-        Debug.Log(vignette);
         vignette.weight = intensity;
 
         float elapsedTime = 0f;
