@@ -49,16 +49,23 @@ public class RoomTrigger : MonoBehaviour
     }
 
     private IEnumerator ChangeDoorState(bool estate){
+        
         yield return new WaitForSeconds(.75f);
         if(estate){
+
             audioSource.clip = closeDoorsSFX;
             audioSource.Play();
+
             CloseDoors();
+
             BackgroundEffectManager.Instance.ChangeColor(roomFightingBackgroundColor, colorChangeTransitionDuration);
         }else{
+
             audioSource.clip = openDoorsSFX;
             audioSource.Play();
+
             OpenDoors();
+
             BackgroundEffectManager.Instance.ResetColor(colorChangeTransitionDuration);
         }
     }

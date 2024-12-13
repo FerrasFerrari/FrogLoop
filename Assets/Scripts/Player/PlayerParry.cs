@@ -29,11 +29,16 @@ public class PlayerParry : MonoBehaviour
     void Update()
     {
         if(Time.time >= nextParryTime){
+
             uiElement.ChangeImage(true);
+
             if(Input.GetKeyDown(KeyCode.Mouse1)){
+
                 uiElement.ChangeImage(false);
                 animator.SetBool("Parry", true);
+
                 StartCoroutine(Parry());
+
                 nextParryTime = Time.time + parryCooldown;
             }
         }
@@ -61,7 +66,8 @@ public class PlayerParry : MonoBehaviour
 
                     Bullet bulletScript = hit.GetComponent<Bullet>();
                     //bullet.gameObject.GetComponent<SpriteRenderer>().color = new Color(62, 59, 102);
-                    bulletScript.moveDir = (bulletScript.gameObject.transform.position - transform.position).normalized * bulletScript.speed * parriedBulletSpeedMultiplier;
+                    bulletScript.moveDir = bulletScript.speed * parriedBulletSpeedMultiplier 
+                    * (bulletScript.gameObject.transform.position - transform.position).normalized;
                     
                     hit.gameObject.GetComponent<CircleCollider2D>().excludeLayers -= LayerMask.GetMask("Enemy");
                     hit.gameObject.GetComponent<CircleCollider2D>().excludeLayers -= LayerMask.GetMask("Boss");
