@@ -117,9 +117,6 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("Horizontal", x);
         anim.SetFloat("Vertical", y);
         anim.SetFloat("Speed", mDirection.sqrMagnitude);
-
-        
-        
     }
 
     void Move(){
@@ -127,7 +124,18 @@ public class PlayerMovement : MonoBehaviour
        
     }
     private void WalkParticles(Vector2 mDirection){
+
         var partSys = _walkParticlesTransform.GetComponent<ParticleSystem>();
+
+        var pEmission = partSys.emission;
+        var pMain = partSys.main;
+
+        // pMain.startSpeedMultiplier = activeMoveSpeed / moveSpeed;
+        pEmission.rateOverTimeMultiplier = (activeMoveSpeed / moveSpeed) * 4.5f;
+
+        var ang = Mathf.Atan2(mDirection.y, mDirection.x) * Mathf.Rad2Deg;
+        _walkParticlesTransform.rotation = Quaternion.Euler(0f, 0f, ang + 180);
+
         if(mDirection != Vector2.zero){
             if(!partSys.isPlaying){
                 partSys.Play();
@@ -138,8 +146,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        var ang = Mathf.Atan2(mDirection.y, mDirection.x) * Mathf.Rad2Deg;
-        _walkParticlesTransform.rotation = Quaternion.Euler(0f, 0f, ang + 180);
     }
 
     IEnumerator DashAudioPlayWaitForTimeScale(){
@@ -152,6 +158,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.layer == LayerMask.NameToLayer("Water")){
+
             gameObject.GetComponent<IDamageable>().Damage(1, gameObject);
             transform.position = lastPositionBeforeDash;
 

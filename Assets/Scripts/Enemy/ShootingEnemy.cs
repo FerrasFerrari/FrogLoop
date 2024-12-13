@@ -31,6 +31,7 @@ public class ShootingEnemy : MonoBehaviour, IStunnable
     void Update()
     {
         float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
+            animator.SetBool("isAttacking", false);
         if (distanceFromPlayer < lineOfSite && distanceFromPlayer > shootingRange)
         {
             hasEnteredLOA = false;
