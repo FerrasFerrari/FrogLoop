@@ -30,12 +30,14 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip dash, passos;
     private DamageFlash damageFlash;
+    private Transform _walkParticlesTransform;
     void Start()
     {
         damageFlash = GetComponent<DamageFlash>();
         activeMoveSpeed = moveSpeed;
         UnlockDashScrpit.UnlockedSprint = false;
         Intangivel = false;
+        _walkParticlesTransform = GetComponentInChildren<ParticleSystem>().transform;
     }
 
     void Update()
@@ -102,9 +104,11 @@ public class PlayerMovement : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
 
+
         moveDirection = new Vector2(moveX, moveY).normalized;
 
         SetAnimations(moveX, moveY, moveDirection);
+        WalkParticles(moveDirection);
         
     }
 
@@ -113,12 +117,29 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("Horizontal", x);
         anim.SetFloat("Vertical", y);
         anim.SetFloat("Speed", mDirection.sqrMagnitude);
+
+        
         
     }
 
     void Move(){
         rb.velocity = new Vector2(moveDirection.x * activeMoveSpeed, moveDirection.y * activeMoveSpeed);
        
+    }
+    private void WalkParticles(Vector2 mDirection){
+        var partSys = _walkParticlesTransform.GetComponent<ParticleSystem>();
+        if(mDirection != Vector2.zero){
+            if(!partSys.isPlaying){
+                partSys.Play();
+            }
+        }else{
+            if(partSys.isPlaying){
+                partSys.Stop();
+            }
+        }
+
+        var ang = Mathf.Atan2(mDirection.y, mDirection.x) * Mathf.Rad2Deg;
+        _walkParticlesTransform.rotation = Quaternion.Euler(0f, 0f, ang + 180);
     }
 
     IEnumerator DashAudioPlayWaitForTimeScale(){
