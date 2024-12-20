@@ -8515,7 +8515,7 @@ Tilemap:
       - {fileID: -337351275, guid: f7d03ad3edac94b478fcbccc6a9d03b6, type: 3}
       - {fileID: 832731498, guid: f7d03ad3edac94b478fcbccc6a9d03b6, type: 3}
       - {fileID: 2108524850, guid: f7d03ad3edac94b478fcbccc6a9d03b6, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -21, y: -26, z: 0}
@@ -8770,7 +8770,7 @@ Tilemap:
       - {fileID: -337351275, guid: f7d03ad3edac94b478fcbccc6a9d03b6, type: 3}
       - {fileID: 832731498, guid: f7d03ad3edac94b478fcbccc6a9d03b6, type: 3}
       - {fileID: 2108524850, guid: f7d03ad3edac94b478fcbccc6a9d03b6, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 20, y: -15, z: 0}
@@ -8804,7 +8804,7 @@ Tilemap:
       - {fileID: -337351275, guid: f7d03ad3edac94b478fcbccc6a9d03b6, type: 3}
       - {fileID: 832731498, guid: f7d03ad3edac94b478fcbccc6a9d03b6, type: 3}
       - {fileID: 2108524850, guid: f7d03ad3edac94b478fcbccc6a9d03b6, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 24, y: -15, z: 0}
@@ -8821,7 +8821,7 @@ Tilemap:
       - {fileID: -337351275, guid: f7d03ad3edac94b478fcbccc6a9d03b6, type: 3}
       - {fileID: 832731498, guid: f7d03ad3edac94b478fcbccc6a9d03b6, type: 3}
       - {fileID: 2108524850, guid: f7d03ad3edac94b478fcbccc6a9d03b6, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 43, y: -7, z: 0}
@@ -9212,7 +9212,7 @@ Tilemap:
       - {fileID: -337351275, guid: f7d03ad3edac94b478fcbccc6a9d03b6, type: 3}
       - {fileID: 832731498, guid: f7d03ad3edac94b478fcbccc6a9d03b6, type: 3}
       - {fileID: 2108524850, guid: f7d03ad3edac94b478fcbccc6a9d03b6, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 4, y: 32, z: 0}
@@ -9263,7 +9263,7 @@ Tilemap:
       - {fileID: -337351275, guid: f7d03ad3edac94b478fcbccc6a9d03b6, type: 3}
       - {fileID: 832731498, guid: f7d03ad3edac94b478fcbccc6a9d03b6, type: 3}
       - {fileID: 2108524850, guid: f7d03ad3edac94b478fcbccc6a9d03b6, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 2, y: 33, z: 0}
@@ -28591,7 +28591,7 @@ Transform:
   m_GameObject: {fileID: 813120760}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02, y: -21.41, z: -10}
+  m_LocalPosition: {x: 0.08, y: -20.82, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -36000,16 +36000,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 117776250}
     - target: {fileID: 687261008318086066, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
+      propertyPath: parryRange
+      value: 0.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 687261008318086066, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1291161226}
     - target: {fileID: 1185280420047819839, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.02
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 1185280420047819839, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -21.41
+      value: -20.82
       objectReference: {fileID: 0}
     - target: {fileID: 1185280420047819839, guid: ce9acb2bf15a91444a622da79fd3f492, type: 3}
       propertyPath: m_LocalPosition.z
@@ -39857,7 +39861,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.02, y: -21.41}
+  m_AnchoredPosition: {x: 0.08, y: -20.82}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1457147396

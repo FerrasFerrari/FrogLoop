@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerParry : MonoBehaviour
@@ -11,10 +12,15 @@ public class PlayerParry : MonoBehaviour
     private float nextParryTime = 0f;
     [Tooltip("Cooldown between parrys")]
     public float parryCooldown = 1f;
-    public float parryDelay = 0.15f;
+    [SerializeField]private float _parryDuration;
+    private bool _parry;
     public float parriedBulletSpeedMultiplier = 1.5f;
     [SerializeField]private float enemyStunDuration;
     public float parryKnockback = 12f;
+
+    private List<Collider2D> _hittablesInRange = new();
+    private List<int> hitEnemiesInstanceID = new();
+    private bool gottenMana = false;
 
     private Animator animator;
     [SerializeField]private UIAbilitySpriteChanger uiElement;
@@ -37,21 +43,42 @@ public class PlayerParry : MonoBehaviour
                 uiElement.ChangeImage(false);
                 animator.SetBool("Parry", true);
 
-                StartCoroutine(Parry());
+                StartCoroutine(StartParry());
 
                 nextParryTime = Time.time + parryCooldown;
             }
         }
     }
-    public IEnumerator Parry(){
-        yield return new WaitForSeconds(parryDelay);
 
-        Collider2D[] hittablesInRange = Physics2D.OverlapCircleAll(transform.position, parryRange, hittablesMask);
+    private void LateUpdate() {
+        if(_parry){
+            GetHittables();
+            Parry();
+        }
+    }
+    private IEnumerator StartParry(){
+        _parry = true;
 
-        List<int> hitEnemiesInstanceID = new();
-        bool gottenMana = false;
+        audioSource.clip = parry;
+        audioSource.Play();
 
-        foreach(Collider2D hit in hittablesInRange){
+        yield return new WaitForSeconds(_parryDuration);
+
+        _parry = false;
+        animator.SetBool("Parry", false);
+        
+        _hittablesInRange.Clear();
+    }
+    
+    private void GetHittables(){
+        Collider2D[] h = Physics2D.OverlapCircleAll(transform.position, parryRange, hittablesMask);
+        for(int i = 0; i < h.Length; i++){
+            _hittablesInRange.Add(h[i]);
+        }
+    }
+    public void Parry(){
+
+        foreach(Collider2D hit in _hittablesInRange){
 
             GameObject hitGameObject = hit.gameObject;
 
@@ -65,13 +92,13 @@ public class PlayerParry : MonoBehaviour
                     }
 
                     Bullet bulletScript = hit.GetComponent<Bullet>();
-                    //bullet.gameObject.GetComponent<SpriteRenderer>().color = new Color(62, 59, 102);
-                    bulletScript.moveDir = bulletScript.speed * parriedBulletSpeedMultiplier 
-                    * (bulletScript.gameObject.transform.position - transform.position).normalized;
-                    
+
                     hit.gameObject.GetComponent<CircleCollider2D>().excludeLayers -= LayerMask.GetMask("Enemy");
                     hit.gameObject.GetComponent<CircleCollider2D>().excludeLayers -= LayerMask.GetMask("Boss");
                     bulletScript.Parry();
+
+                    bulletScript.moveDir = bulletScript.speed * parriedBulletSpeedMultiplier 
+                    * (bulletScript.gameObject.transform.position - transform.position).normalized;
                     
                     bulletScript.BulletRB.velocity = new Vector2(bulletScript.moveDir.x, bulletScript.moveDir.y);
 
@@ -79,11 +106,8 @@ public class PlayerParry : MonoBehaviour
                     hit.GetComponent<Knockbacker>().Knockback(parryKnockback, gameObject, enemyStunDuration);
                 }
                 
-                audioSource.clip = parry;
-                audioSource.Play();
             }
-        }
-        animator.SetBool("Parry", false);
+        } 
     }
     private void OnDrawGizmosSelected() {
         Gizmos.color = Color.green;

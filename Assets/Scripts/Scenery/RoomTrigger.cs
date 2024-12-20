@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Assertions;
+using UnityEngine.Assertions.Must;
 
 public class RoomTrigger : MonoBehaviour
 {
@@ -27,6 +29,9 @@ public class RoomTrigger : MonoBehaviour
         if(other.gameObject.CompareTag("Enemy")){
             enemiesInRoom.Remove(other.gameObject);
             CheckEnemiesAlive();
+        }else if(other.gameObject.CompareTag("Player")){
+            hasEntered = false;
+            StopAllCoroutines();
         }
     }
 

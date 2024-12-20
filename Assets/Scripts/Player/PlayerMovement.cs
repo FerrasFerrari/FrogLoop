@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator anim;
     public float moveSpeed = 7;
     Vector2 moveDirection;
-    public float activeMoveSpeed;
+    [HideInInspector]public float activeMoveSpeed;
 
 
     public float dashSpeed;

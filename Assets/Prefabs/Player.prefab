@@ -5232,8 +5232,8 @@ MonoBehaviour:
   hittablesMask:
     serializedVersion: 2
     m_Bits: 264
-  parryCooldown: 1.5
-  parryDelay: 0.08
+  parryCooldown: 1.4
+  _parryDuration: 0.1
   parriedBulletSpeedMultiplier: 1.5
   enemyStunDuration: 1
   parryKnockback: 8
