@@ -5170,7 +5170,7 @@ MonoBehaviour:
   dashSpeed: 17
   dashLength: 0.24
   dashCooldown: 0.75
-  timeStopDurationDash: 0.2
+  timeStopDurationDash: 0
   dashFlashColor: {r: 0.12743773, g: 0.4341537, b: 0.22322798, a: 0}
   isDashing: 0
   UnlockDashScrpit: {fileID: 0}
@@ -5228,7 +5228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f61e117343099de4f964f61cbf613bb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parryRange: 1.11
+  parryRange: 0.89
   hittablesMask:
     serializedVersion: 2
     m_Bits: 264

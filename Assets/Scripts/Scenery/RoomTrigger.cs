@@ -12,6 +12,7 @@ public class RoomTrigger : MonoBehaviour
     [SerializeField]private AudioClip closeDoorsSFX;
     [SerializeField]private AudioClip openDoorsSFX;
     private List<GameObject> enemiesInRoom = new();
+    private bool _opened = false;
     [SerializeField]private List<GameObject> doorsInRoom = new();
     [SerializeField]private Color roomFightingBackgroundColor;
     [SerializeField]private float colorChangeTransitionDuration;
@@ -27,11 +28,15 @@ public class RoomTrigger : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other) {
         if(other.gameObject.CompareTag("Enemy")){
+
             enemiesInRoom.Remove(other.gameObject);
             CheckEnemiesAlive();
-        }else if(other.gameObject.CompareTag("Player")){
+
+        }else if(other.gameObject.CompareTag("Player") && !_opened){
+
             hasEntered = false;
             StopAllCoroutines();
+
         }
     }
 
@@ -43,6 +48,7 @@ public class RoomTrigger : MonoBehaviour
         }
     }
     private void OpenDoors(){
+        _opened = true;
         foreach(GameObject door in doorsInRoom){
             door.GetComponent<Door>().Open();
         }
